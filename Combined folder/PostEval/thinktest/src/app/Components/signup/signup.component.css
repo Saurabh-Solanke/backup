@@ -1,0 +1,36 @@
+.auth-main {
+  position: relative;
+}
+
+.auth-main .auth-wrapper {
+  height: 100%;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.auth-main .auth-wrapper.v3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.auth-main .auth-wrapper.v3 .auth-form {
+  min-height: 100vh;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-main .auth-wrapper .auth-form .card {
+  width: 100%;
+  max-width: 495px;
+  box-shadow: none;
+}
+
+.btn-c1:hover {
+  color: #4a154b;
+  border-color: #4a154b;
+  font-weight: bold;
+}

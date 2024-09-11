@@ -1,0 +1,108 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg fixed-top g-0 p-3" style="background-color: #4a154b;">
+  <div class="container-fluid" style="background-color: #4a154b;">
+    <a class="navbar-brand" href="#">
+    
+      <span class="text-white ps-4 fs-3 "><span class="fw-bold">think</span>test</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item mb-3">
+          <a class="nav-link btn btn-danger text-white ms-2 rounded-pill ps-3 pe-3" title="Logout"
+            (click)="onLogoutClick()"> <i class="fas fa-sign-out-alt"></i>&nbsp;Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="d-flex flex-column flex-md-row mt-5">
+  <!-- Sidebar -->
+  <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+    <div class="position-sticky">
+      <ul class="nav flex-column">
+        <li class="nav-item my-3">
+          <a class="nav-link active" aria-current="page" href="#">
+            <i class="fas fa-home"></i>
+            Dashboard
+          </a>
+        </li>
+        <li class="nav-item mb-3">
+          <a class="nav-link" routerLink="/startexam">
+            <i class="fas fa-file-alt"></i>
+            Take a test
+          </a>
+        </li>
+        <li class="nav-item mb-3">
+          <a class="nav-link" href="#">
+            <i class="fas fa-user"></i>
+            Profile
+          </a>
+        </li>
+        <li class="nav-item mb-3">
+          <a class="nav-link" href="#">
+            <i class="fas fa-cog"></i>
+            Settings
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mt-5 ps-5 pe-5 pb-5">
+    <div
+      class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+      <h1 class="h2">Dashboard</h1>
+    </div>
+
+    <div class="row mt-5">
+      <div class="col-12">
+        <h3>Welcome {{(name)}}</h3>
+        <p>Your gateway to seamless examination experiences.</p>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card text-center">
+              <div class="card-body">
+                <i class="fas fa-file-alt fa-3x mb-3"></i>
+                <h5 class="card-title">Start a Test</h5>
+                <p class="card-text">Take new tests and get knowledge.</p>
+                <a routerLink="/startexam" class="btn btn-startTest rounded-pill ps-5 pe-5 text-light">Start Now</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card text-center">
+              <div class="card-body">
+                <i class="fas fa-history fa-3x mb-3"></i>
+                <h5 class="card-title">Test History</h5>
+                <p class="card-text">Review your past test results.</p>
+                <a routerLink="/testHistory" class="btn btn-viewHistory rounded-pill ps-5 pe-5 text-light">View
+                  History</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card text-center">
+              <div class="card-body">
+                <i class="fas fa-user fa-3x mb-3"></i>
+                <h5 class="card-title">Profile</h5>
+                <p class="card-text">Update your personal information.</p>
+                <a href="#" class="btn btn-secondary rounded-pill ps-5 pe-5">Go to Profile</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<app-logged-in-footer></app-logged-in-footer>

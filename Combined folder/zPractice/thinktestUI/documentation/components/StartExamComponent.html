@@ -1,0 +1,730 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>online-mcq-exam documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">online-mcq-exam documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  StartExamComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/Components/start-exam/start-exam.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-start-exam</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>CommonModule</code>
+                            <code>RouterOutlet</code>
+                            <code>FormsModule</code>
+                            <code>HttpClientModule</code>
+                                <code><a href="../components/LoggedInFooterComponent.html" target="_self" >LoggedInFooterComponent</a></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./start-exam.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./start-exam.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#termsAccepted" >termsAccepted</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#startExam" >startExam</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(router: Router)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/Components/start-exam/start-exam.component.ts:18</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="startExam"></a>
+                    <span class="name">
+                        <span ><b>startExam</b></span>
+                        <a href="#startExam"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>startExam()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="20"
+                                    class="link-to-prism">src/app/Components/start-exam/start-exam.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="termsAccepted"></a>
+                    <span class="name">
+                        <span ><b>termsAccepted</b></span>
+                        <a href="#termsAccepted"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/Components/start-exam/start-exam.component.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+import { CommonModule } from &#x27;@angular/common&#x27;;
+import { Router, RouterOutlet } from &#x27;@angular/router&#x27;;
+import Swal from &#x27;sweetalert2&#x27;;
+import { FormsModule } from &#x27;@angular/forms&#x27;;
+import { HttpClientModule } from &#x27;@angular/common/http&#x27;;
+
+import { LoggedInFooterComponent } from &#x27;../../shared/components/logged-in-footer/logged-in-footer.component&#x27;;
+
+@Component({
+  selector: &#x27;app-start-exam&#x27;,
+  standalone: true,
+  imports: [CommonModule, RouterOutlet, FormsModule, HttpClientModule, LoggedInFooterComponent],
+  templateUrl: &#x27;./start-exam.component.html&#x27;,
+  styleUrls: [&#x27;./start-exam.component.css&#x27;]
+})
+export class StartExamComponent {
+  termsAccepted: boolean &#x3D; false;
+  constructor(private router: Router) { }
+  startExam() {
+    if (!this.termsAccepted) {
+      Swal.fire({
+        icon: &#x27;error&#x27;,
+        title: &#x27;Terms not accepted&#x27;,
+        text: &#x27;Please accept the terms and conditions to start the exam&#x27;,
+      });
+      return;
+    } else {
+      Swal.fire({
+        title: &#x27;Are you sure?&#x27;,
+        text: &quot;Do you want to start the exam?&quot;,
+        icon: &#x27;warning&#x27;,
+        showCancelButton: true,
+        confirmButtonText: &#x27;Yes, start!&#x27;,
+        cancelButtonText: &#x27;No, cancel&#x27;
+      }).then((result) &#x3D;&gt; {
+        if (result.isConfirmed) {          
+          this.router.navigate([&#x27;/exam&#x27;]);
+        }
+      });
+    }
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css&quot;&gt;
+
+&lt;header class&#x3D;&quot;header&quot;&gt;
+  &lt;div class&#x3D;&quot;container d-flex align-items-center justify-content-center&quot;&gt;
+    &lt;div class&#x3D;&quot;logo me-3&quot;&gt;
+      &lt;img src&#x3D;&quot;../../../assets/images/logo.png&quot; alt&#x3D;&quot;Exam Portal Logo&quot; id&#x3D;&quot;logo&quot;&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;header-text&quot;&gt;
+      &lt;h2&gt;thinktest&lt;/h2&gt;
+      &lt;p&gt;Prepare yourself for success with our interactive and challenging exams.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/header&gt;
+&lt;div class&#x3D;&quot;container-fluid main d-flex justify-content-center align-items-center&quot;&gt;
+  &lt;div class&#x3D;&quot;card p-5 shadow custom-card rounded-5&quot;&gt;
+    &lt;div class&#x3D;&quot;card-body&quot;&gt;
+      &lt;h5 class&#x3D;&quot;card-title text-center fs-4 mb-4&quot;&gt;INSTRUCTIONS&lt;/h5&gt;
+      &lt;div class&#x3D;&quot;terms mt-3&quot;&gt;
+        &lt;h6 class&#x3D;&quot;mb-4&quot;&gt;Please read them carefully before your start:&lt;/h6&gt;
+        &lt;i class&#x3D;&quot;far fa-clock me-2 text-primary&quot;&gt;&lt;/i&gt;
+        You must complete the exam within the allotted time.&lt;br&gt;
+        &lt;i class&#x3D;&quot;fas fa-laptop me-2 text-primary&quot;&gt;&lt;/i&gt;
+        No use of electronic devices other than the computer for taking the exam.&lt;br&gt;
+        &lt;i class&#x3D;&quot;fas fa-ban me-2 text-primary&quot;&gt;&lt;/i&gt;
+        Any form of cheating will result in immediate disqualification.&lt;br&gt;
+        &lt;i class&#x3D;&quot;fas fa-wifi me-2 text-primary&quot;&gt;&lt;/i&gt;
+        Ensure you have a stable internet connection before starting the exam.&lt;br&gt;
+        &lt;i class&#x3D;&quot;fas fa-sync-alt me-2 text-primary&quot;&gt;&lt;/i&gt;
+        Do not refresh or close the browser during the exam.&lt;br&gt;
+        &lt;i class&#x3D;&quot;fas fa-check me-2 text-primary&quot;&gt;&lt;/i&gt;
+        All answers must be submitted before the time runs out.&lt;br&gt;
+        &lt;i class&#x3D;&quot;fas fa-save me-2 text-primary&quot;&gt;&lt;/i&gt;
+        Your progress will be saved automatically as you proceed.&lt;br&gt;
+        &lt;i class&#x3D;&quot;fas fa-chart-line me-2 text-primary&quot;&gt;&lt;/i&gt;
+        Results will be available immediately after the exam ends.&lt;br&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;form-check mt-4&quot;&gt;
+        &lt;input type&#x3D;&quot;checkbox&quot; class&#x3D;&quot;form-check-input&quot; id&#x3D;&quot;termsCheck&quot; [(ngModel)]&#x3D;&quot;termsAccepted&quot;&gt;
+        &lt;label class&#x3D;&quot;form-check-label&quot; for&#x3D;&quot;termsCheck&quot;&gt;I agree to the terms and conditions&lt;/label&gt;
+      &lt;/div&gt;
+      &lt;button class&#x3D;&quot;btn btn-start rounded-pill w-100 mt-3&quot; (click)&#x3D;&quot;startExam()&quot;&gt;&lt;i class&#x3D;&quot;fas fa-play me-2&quot;&gt;&lt;/i&gt;Start
+        Exam&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;app-logged-in-footer&gt;&lt;/app-logged-in-footer&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./start-exam.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">/* Default styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+  }
+  
+  /* .container-fluid {
+    width: 100%;
+    margin: 0 auto;
+    position: stretch;
+    background: url(&#x27;../../../assets/images/omr_sheet.jpg&#x27;);
+  } */
+
+  .container-fluid {
+    width: 100%;
+    margin: 0 auto;
+    position: relative; /* Change from &#x27;stretch&#x27; to &#x27;relative&#x27; */
+    z-index: 1; /* Ensure content is above the background */
+  }
+  
+  .container-fluid::before {
+    content: &quot;&quot;;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(&#x27;../../../assets/images/omr_sheet.jpg&#x27;) no-repeat center center;
+    background-size: cover; /* Ensure the background image covers the entire area */
+    opacity: 0.3; /* Adjust the opacity as needed */
+    z-index: -1; /* Ensure the pseudo-element is behind the content */
+  }
+  
+  
+  .header {
+    background-color: #4a154b;
+    color: white;
+    padding: 15px 0;
+  }
+  
+  .header .logo img {
+    height: 50px;
+    width: auto;
+  }
+  
+  .header .header-text {
+    margin-top: 10px;
+  }
+  
+  
+  .custom-card {
+    width: 100%;
+    max-width: 900px;
+    border: 1px solid #ccc;
+    background-color: Wheat;
+    margin: 20px auto;
+    padding: 20px;
+  }
+  
+  .card-title {
+    color: #343a40;
+    text-align: center;
+  }
+  
+  .terms {
+    color: #343a40;
+  }
+  
+  .form-check-label {
+    color: #343a40;
+    margin-left: 5px;
+  }
+  
+  .form-check-input:hover {
+    cursor: pointer;
+  }
+
+  
+  /* Media Queries */
+  @media (max-width: 992px) {
+    .container {
+      width: 90%;
+    }
+    .custom-card {
+      padding: 15px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .header .logo img {
+      height: 40px;
+    }
+    .header .header-text h2 {
+      font-size: 1.5rem;
+    }
+    .custom-card {
+      max-width: 90%;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .header .logo img {
+      height: 30px;
+    }
+    .header .header-text h2 {
+      font-size: 1.2rem;
+    }
+    .custom-card {
+      padding: 10px;
+    }
+  }
+  /* Footer styles */
+  
+  .footer p {
+    margin-top: auto;
+  }
+  
+  /* Adjust padding for smaller screens */
+  @media (max-width: 576px) {
+    .footer {
+      margin: auto;
+      padding: 8px 0;
+    }
+  }
+  .main{
+   padding: 60px; 
+  }
+  
+
+  .fas far{
+    color: #b8b8ff;
+  }
+
+  .btn-start{
+    background-color: #df6404;
+    color: #fff;
+  }</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"><header class="header">  <div class="container d-flex align-items-center justify-content-center">    <div class="logo me-3">         </div>    <div class="header-text">      <h2>thinktest</h2>      <p>Prepare yourself for success with our interactive and challenging exams.</p>    </div>  </div></header><div class="container-fluid main d-flex justify-content-center align-items-center">  <div class="card p-5 shadow custom-card rounded-5">    <div class="card-body">      <h5 class="card-title text-center fs-4 mb-4">INSTRUCTIONS</h5>      <div class="terms mt-3">        <h6 class="mb-4">Please read them carefully before your start:</h6>        <i class="far fa-clock me-2 text-primary"></i>        You must complete the exam within the allotted time.<br>        <i class="fas fa-laptop me-2 text-primary"></i>        No use of electronic devices other than the computer for taking the exam.<br>        <i class="fas fa-ban me-2 text-primary"></i>        Any form of cheating will result in immediate disqualification.<br>        <i class="fas fa-wifi me-2 text-primary"></i>        Ensure you have a stable internet connection before starting the exam.<br>        <i class="fas fa-sync-alt me-2 text-primary"></i>        Do not refresh or close the browser during the exam.<br>        <i class="fas fa-check me-2 text-primary"></i>        All answers must be submitted before the time runs out.<br>        <i class="fas fa-save me-2 text-primary"></i>        Your progress will be saved automatically as you proceed.<br>        <i class="fas fa-chart-line me-2 text-primary"></i>        Results will be available immediately after the exam ends.<br>      </div>      <div class="form-check mt-4">        <input type="checkbox" class="form-check-input" id="termsCheck" [(ngModel)]="termsAccepted">        <label class="form-check-label" for="termsCheck">I agree to the terms and conditions</label>      </div>      <button class="btn btn-start rounded-pill w-100 mt-3" (click)="startExam()"><i class="fas fa-play me-2"></i>Start        Exam</button>    </div>  </div></div><app-logged-in-footer></app-logged-in-footer></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ExamComponent', 'selector': 'app-exam'},{'name': 'HomepageComponent', 'selector': 'app-homepage'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'LoggedInFooterComponent', 'selector': 'app-logged-in-footer'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'ResultComponent', 'selector': 'app-result'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'StartExamComponent', 'selector': 'app-start-exam'},{'name': 'TestHistoryComponent', 'selector': 'app-test-history'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'StartExamComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'StartExamComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

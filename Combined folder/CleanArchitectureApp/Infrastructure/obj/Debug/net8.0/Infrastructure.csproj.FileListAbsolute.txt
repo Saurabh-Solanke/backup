@@ -1,0 +1,34 @@
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Infrastructure\bin\Debug\net8.0\Core.dll
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Infrastructure\bin\Debug\net8.0\Core.pdb
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Infrastructure\obj\Debug\net8.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Infrastructure\obj\Debug\net8.0\Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Infrastructure\obj\Debug\net8.0\Infrastructure.AssemblyInfo.cs
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Infrastructure\obj\Debug\net8.0\Infrastr.15EFFBFE.Up2Date
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Infrastructure\obj\Debug\net8.0\Infrastructure.genruntimeconfig.cache
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Infrastructure\bin\Debug\net8.0\CleanArchitectureApp.Infrastructure.deps.json
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Infrastructure\bin\Debug\net8.0\CleanArchitectureApp.Infrastructure.runtimeconfig.json
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Infrastructure\bin\Debug\net8.0\CleanArchitectureApp.Infrastructure.dll
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Infrastructure\bin\Debug\net8.0\CleanArchitectureApp.Infrastructure.pdb
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Infrastructure\obj\Debug\net8.0\CleanArchitectureApp.Infrastructure.dll
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Infrastructure\obj\Debug\net8.0\refint\CleanArchitectureApp.Infrastructure.dll
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Infrastructure\obj\Debug\net8.0\CleanArchitectureApp.Infrastructure.pdb
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Infrastructure\obj\Debug\net8.0\ref\CleanArchitectureApp.Infrastructure.dll
+F:\zSaurabh\CleanArchitectureApp\Infrastructure\bin\Debug\net8.0\CleanArchitectureApp.Infrastructure.deps.json
+F:\zSaurabh\CleanArchitectureApp\Infrastructure\bin\Debug\net8.0\CleanArchitectureApp.Infrastructure.runtimeconfig.json
+F:\zSaurabh\CleanArchitectureApp\Infrastructure\bin\Debug\net8.0\CleanArchitectureApp.Infrastructure.dll
+F:\zSaurabh\CleanArchitectureApp\Infrastructure\bin\Debug\net8.0\CleanArchitectureApp.Infrastructure.pdb
+F:\zSaurabh\CleanArchitectureApp\Infrastructure\bin\Debug\net8.0\Core.dll
+F:\zSaurabh\CleanArchitectureApp\Infrastructure\bin\Debug\net8.0\Core.pdb
+F:\zSaurabh\CleanArchitectureApp\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.AssemblyReference.cache
+F:\zSaurabh\CleanArchitectureApp\Infrastructure\obj\Debug\net8.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+F:\zSaurabh\CleanArchitectureApp\Infrastructure\obj\Debug\net8.0\Infrastructure.AssemblyInfoInputs.cache
+F:\zSaurabh\CleanArchitectureApp\Infrastructure\obj\Debug\net8.0\Infrastructure.AssemblyInfo.cs
+F:\zSaurabh\CleanArchitectureApp\Infrastructure\obj\Debug\net8.0\Infrastructure.csproj.CoreCompileInputs.cache
+F:\zSaurabh\CleanArchitectureApp\Infrastructure\obj\Debug\net8.0\Infrastr.15EFFBFE.Up2Date
+F:\zSaurabh\CleanArchitectureApp\Infrastructure\obj\Debug\net8.0\CleanArchitectureApp.Infrastructure.dll
+F:\zSaurabh\CleanArchitectureApp\Infrastructure\obj\Debug\net8.0\refint\CleanArchitectureApp.Infrastructure.dll
+F:\zSaurabh\CleanArchitectureApp\Infrastructure\obj\Debug\net8.0\CleanArchitectureApp.Infrastructure.pdb
+F:\zSaurabh\CleanArchitectureApp\Infrastructure\obj\Debug\net8.0\Infrastructure.genruntimeconfig.cache
+F:\zSaurabh\CleanArchitectureApp\Infrastructure\obj\Debug\net8.0\ref\CleanArchitectureApp.Infrastructure.dll

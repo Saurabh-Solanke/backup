@@ -1,0 +1,234 @@
+<!-- Candidate Home Page -->
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand fs-5 ms-4 me-5" href="">
+    <span class="partnvblogo fw-bold">think</span>test&trade;
+  </a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNav"
+    aria-controls="navbarNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <a
+          class="nav-link btn btn-signup me-3"
+          title="Logout"
+          (click)="onLogoutClick()"
+        >
+          <i class="fas fa-sign-out-alt"></i>&nbsp;Logout
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <header class="header py-4">
+    <h1>Welcome to ThinkTest, {{ name }}!</h1>
+  </header>
+
+  <section class="sub-header py-3">
+    <h4>Enhance Your Skills with Our Comprehensive Exams</h4>
+  </section>
+
+  <div class="content mt-5">
+    <!-- New Cards Section -->
+    <div class="row">
+      <div class="col-12 col-md-4 mb-4">
+        <div class="card h-100 custom-card">
+          <div class="card-body text-center d-flex flex-column">
+            <i
+              class="fas fa-book fa-3x mb-3 animated-icon"
+              style="color: #4a154b"
+            ></i>
+            <h5 class="card-title">Extensive Resources</h5>
+            <p class="card-text flex-grow-1">
+              Utilize our extensive library of resources to boost your exam
+              preparations.
+            </p>
+            <a
+              routerLink="/"
+              class="btn btn-c2 mt-3 w-50 mx-auto"
+              data-bs-toggle="tooltip"
+              title="Coming Soon"
+              disabled
+            >
+              <i class="fas fa-book-open me-2"></i>View Resources
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4 mb-4">
+        <div class="card h-100 custom-card">
+          <div class="card-body text-center d-flex flex-column">
+            <i
+              class="fas fa-chart-line fa-3x mb-3 animated-icon"
+              style="color: #4a154b"
+            ></i>
+            <h5 class="card-title">Test History</h5>
+            <p class="card-text flex-grow-1">
+              Track your progress with our detailed performance analytics.
+            </p>
+            <a
+              routerLink="/test-history"
+              class="btn btn-c2 mt-3 w-50 mx-auto"
+              data-bs-toggle="tooltip"
+              title="Coming Soon"
+              disabled
+            >
+              <i class="fas fa-chart-bar me-2"></i>View Analytics
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4 mb-4">
+        <div class="card h-100 custom-card">
+          <div class="card-body text-center d-flex flex-column">
+            <i
+              class="fas fa-award fa-3x mb-3 animated-icon"
+              style="color: #4a154b"
+            ></i>
+            <h5 class="card-title">Certifications</h5>
+            <p class="card-text flex-grow-1">
+              Earn certifications to showcase your skills and achievements.
+            </p>
+            <a
+              routerLink="/certifications"
+              class="btn btn-c2 mt-3 w-50 mx-auto"
+              data-bs-toggle="tooltip"
+              title="Coming Soon"
+              disabled
+            >
+              <i class="fas fa-certificate me-2"></i>View Certifications
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4 mb-4">
+        <div class="card h-100 custom-card">
+          <div class="card-body text-center d-flex flex-column">
+            <i
+              class="fas fa-cogs fa-3x mb-3 animated-icon"
+              style="color: #4a154b"
+            ></i>
+            <h5 class="card-title">Advanced Tools</h5>
+            <p class="card-text flex-grow-1">
+              Utilize our advanced tools to enhance your learning experience.
+            </p>
+            <a
+              routerLink="/tools"
+              class="btn btn-c2 mt-3 w-50 mx-auto"
+              data-bs-toggle="tooltip"
+              title="Coming Soon"
+              disabled
+            >
+              <i class="fas fa-tools me-2"></i>Explore Tools
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4 mb-4">
+        <div class="card h-100 custom-card">
+          <div class="card-body text-center d-flex flex-column">
+            <i
+              class="fas fa-medal fa-3x mb-3 animated-icon"
+              style="color: #4a154b"
+            ></i>
+            <h5 class="card-title">Achievements</h5>
+            <p class="card-text flex-grow-1">
+              Track and display your achievements as you progress through your
+              learning journey.
+            </p>
+            <a
+              routerLink="/achievements"
+              class="btn btn-c2 mt-3 w-50 mx-auto"
+              data-bs-toggle="tooltip"
+              title="Coming Soon"
+              disabled
+            >
+              <i class="fas fa-trophy me-2"></i>View Achievements
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-md-4 mb-4">
+        <div class="card h-100 custom-card">
+          <div class="card-body text-center d-flex flex-column">
+            <i
+              class="fas fa-play-circle fa-3x mb-3 animated-icon"
+              style="color: #4a154b"
+            ></i>
+            <h5 class="card-title">Start Exam</h5>
+            <p class="card-text flex-grow-1">
+              Begin your exam and test your knowledge now.
+            </p>
+            <a routerLink="/startexam" class="btn btn-c2 mt-3 w-50 mx-auto">
+              <i class="fas fa-play-circle me-2"></i>Start Exam
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="contact container-fluid pt-4 mt-5" id="contact">
+  <div class="row mx-5">
+    <div class="col-md-6">
+      <h4>Contact Us</h4>
+      <p>Email: support&#64;thinktest.com</p>
+      <p>Phone: +1 (800) 123-4567</p>
+      <p>Address: 123 ThinkTest Lane, Suite 100, Exam City, EX 12345</p>
+    </div>
+    <div class="col-md-6">
+      <h4>Follow us on social media:</h4>
+      <p>
+        <a href="#" class="text-dark">Facebook</a> |
+        <a href="#" class="text-dark">Twitter</a> |
+        <a href="#" class="text-dark">LinkedIn</a> |
+        <a href="#" class="text-dark">Instagram</a>
+      </p>
+    </div>
+  </div>
+</footer>
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+/>
+
+<!-- Add Tooltip and Card Hover Animation -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var tooltipTriggerList = [].slice.call(
+      document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    );
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+  });
+</script>
+
+<style>
+  .custom-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .custom-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  }
+  .animated-icon {
+    transition: transform 0.5s;
+  }
+  .custom-card:hover .animated-icon {
+    transform: rotate(20deg);
+  }
+</style>

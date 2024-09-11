@@ -1,0 +1,25 @@
+.btn-c1 {
+  background-color: #4a154b;
+  color: white;
+}
+
+.btn-c2 {
+  background-color: #df6404;
+  color: white;
+}
+
+.btn-c1:hover {
+  background-color: white;
+  color: #4a154b;
+  font-weight: bolder;
+}
+.btn-c2:hover {
+  background-color: white;
+  color: #df6404;
+  font-weight: bolder;
+}
+.chart-container {
+  position: relative;
+  height: 400px;
+  width: 400px;
+}

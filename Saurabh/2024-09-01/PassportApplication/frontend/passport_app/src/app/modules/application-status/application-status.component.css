@@ -1,0 +1,59 @@
+.table-container {
+    margin: 30px;
+    margin-bottom: 450px;
+  }
+  .table th, .table td {
+    vertical-align: middle;
+    text-align: center;
+  }
+  .btn-view {
+    width: 80px;
+  }
+  .status-new {
+    background-color: lightblue;
+    color: blue;
+  }
+  
+  .status-pending {
+    background-color: lightyellow;
+    color: orange;
+  }
+  
+  .status-approved {
+    background-color: lightgreen;
+    color: green;
+  }
+  
+  .status-rejected {
+    background-color: lightcoral;
+    color: red;
+  }
+  
+  .payment-unpaid {
+    background-color: lightpink;
+    color: darkred;
+  }
+  
+  .payment-paid {
+    background-color: lightgray;
+    color: darkgreen;
+  }
+
+  .table-container .table td button {
+    background-color: #28a745; /* Bootstrap's success color */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .table-container .table td button:hover {
+    background-color: #218838; /* Darker shade of the success color */
+  }
+  
+  .table-container .table td button:focus {
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5); /* Focus outline */
+  }
+  

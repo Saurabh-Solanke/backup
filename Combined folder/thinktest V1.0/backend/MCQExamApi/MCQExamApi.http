@@ -1,0 +1,6 @@
+@MCQExamApi_HostAddress = http://localhost:5125
+
+GET {{MCQExamApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,196 @@
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+/>
+
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand fs-5 ms-4 me-5" href="">
+    <span class="partnvblogo fw-bold">think</span>test&trade;
+  </a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNav"
+    aria-controls="navbarNav"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item"></li>
+      <li class="nav-item"></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container mt-4">
+  <div class="d-flex justify-content-end mb-3">
+    <div id="timer" class="bg-danger text-white fw-bolder p-3 rounded-2">
+      <i class="fas fa-clock"></i>&nbsp; Time Left: {{ minutes }}:{{
+        seconds | number: '2.0'
+      }}
+    </div>
+  </div>
+
+  <div class="row">
+    <!-- Main content section -->
+    <div class="col-lg-8 mt-0">
+      <div *ngIf="questions.length > 0; else loading">
+        <div class="card px-5 py-4 mt-3 shadow mb-3" id="questions">
+          <h4 class="c1 mb-4 fs-5">
+            <i class="fas fa-question-circle"></i>&nbsp; Question
+            {{ currentQuestionIndex + 1 }}
+          </h4>
+          <strong>{{ questions[currentQuestionIndex].question }}</strong>
+
+          <!-- Multiple select info for multiple-choice questions -->
+          <p
+            *ngIf="questions[currentQuestionIndex].isMultiple"
+            class="text-muted mb-2"
+          >
+            <b> Multiple select is allowed</b><sup id="req">*</sup>
+          </p>
+
+          <!-- Single choice question -->
+          <div
+            *ngIf="!questions[currentQuestionIndex].isMultiple"
+            class="form-check mt-3"
+          >
+            <div class="mb-3"
+              *ngFor="
+                let option of questions[currentQuestionIndex]?.options;
+                let i = index
+              "
+            >
+              <input
+                class="form-check-input me-3"
+                type="radio"
+                [name]="'question' + currentQuestionIndex"
+                [id]="'option' + i"
+                [value]="i"
+                [(ngModel)]="userResponses[currentQuestionIndex]"
+                (change)="selectOption(i)"
+              />
+              <label class="form-check-label" [for]="'option' + i">{{
+                option
+              }}</label>
+            </div>
+          </div>
+
+          <!-- Multiple choice question -->
+          <div
+            *ngIf="questions[currentQuestionIndex].isMultiple"
+            class="form-check mt-3"
+          >
+            <div class="mb-3"
+              *ngFor="
+                let option of questions[currentQuestionIndex]?.options;
+                let i = index
+              "
+            >
+              <input
+                class="form-check-input me-3 "
+                type="checkbox"
+                [id]="'option' + i"
+                [value]="i"
+                [checked]="
+                  userResponses[currentQuestionIndex]?.includes(i)
+                "
+                (change)="updateMultipleChoiceAnswer(currentQuestionIndex, i, $event)"
+              />
+              <label class="form-check-label" [for]="'option' + i">{{
+                option
+              }}</label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Loading screen -->
+      <ng-template #loading>
+        <div class="card p-4 shadow mb-3">
+          <h6>
+            <i class="fas fa-spinner fa-spin"></i>&nbsp; Loading questions...
+          </h6>
+        </div>
+      </ng-template>
+
+      <!-- Navigation buttons -->
+      <div class="d-flex justify-content-between" *ngIf="questions.length > 0">
+        <button
+          class="btn btn-c2 fw-bolder m-1"
+          (click)="navigateQuestion('previous')"
+          [disabled]="currentQuestionIndex === 0"
+        >
+          <i class="fas fa-arrow-left"></i>&nbsp; Previous
+        </button>
+        <button
+          class="btn btn-danger text-white fw-bolder m-1"
+          (click)="toggleReviewStatus()"
+          [ngClass]="reviewedQuestions[currentQuestionIndex] ? 'btn-warning' : ''"
+        >
+          <i class="fas fa-bookmark"></i>&nbsp;
+          {{ reviewedQuestions[currentQuestionIndex] ? 'Remove Mark for Review' : 'Mark for Review' }}
+        </button>
+        <button
+          class="btn btn-c2 fw-bolder m-1"
+          (click)="navigateQuestion('next')"
+          [disabled]="currentQuestionIndex === questions.length - 1"
+        >
+           Next &nbsp;<i class="fas fa-arrow-right"></i>
+        </button>
+        <button class="btn btn-c3 text-white fw-bolder m-1" (click)="clearResponse()">
+          <i class="fas fa-eraser"></i>&nbsp; Clear Response
+        </button>
+      </div>
+    </div>
+
+    <!-- Sidebar showing question status -->
+    <div class="col-lg-4 mt-3" id="questionStatus">
+      <div class="card p-4 shadow">
+        <h5 class="mb-4 c1">
+          <i class="fas fa-list"></i>&nbsp; Questions
+        </h5>
+        <div class="d-flex flex-wrap">
+          <button
+            *ngFor="let q of questions; let i = index"
+            class="btn btn-sm me-2 mb-2"
+            [ngClass]="{
+              'btn-success': userResponses[i] !== null && i !== currentQuestionIndex,
+              'btn-secondary': userResponses[i] === null && i !== currentQuestionIndex,
+              'btn-info text-white': i === currentQuestionIndex,
+              'btn-danger': reviewedQuestions[i]
+            }"
+            (click)="jumpToQuestion(i)"
+          >
+            {{ i + 1 }}
+          </button>
+        </div>
+        <p>
+          Attempted: <span class="badge bg-success">{{ attempted }}</span>
+        </p>
+        <p>
+          Remaining: <span class="badge bg-secondary">{{ remaining }}</span>
+        </p>
+        <p>
+          Marked for Review:
+          <span class="badge bg-danger">{{ markedForReviewCount }}</span>
+        </p>
+        <button class="btn btn-danger text-white fw-bold w-100 mt-3" (click)="submitExam()">
+          <i class="fas fa-check"></i>&nbsp; Submit Exam
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="footer fixed-bottom bg-body-secondary">
+  <div class="text-center text-dark">
+    <p>&copy; 2024 <b>think</b>test</p>
+  </div>
+</footer>

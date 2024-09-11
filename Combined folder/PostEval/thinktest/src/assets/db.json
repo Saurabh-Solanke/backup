@@ -1,0 +1,170 @@
+{
+  "questions": [
+    {
+      "id": "1",
+      "question": "Who is the author of 'The Metamorphosis'?",
+      "options": [
+        "Franz Kafka",
+        "Fyodor Dostoevsky",
+        "Albert Camus",
+        "Friedrich Nietzsche"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "2",
+      "question": "Which philosophical concept is associated with Albert Camus?",
+      "options": [
+        "Existentialism",
+        "Absurdism",
+        "Nihilism",
+        "Stoicism"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "3",
+      "question": "What is the title of Marcus Aurelius' collection of personal writings?",
+      "options": [
+        "The Republic",
+        "The Meditations",
+        "The Confessions",
+        "The Discourses"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "4",
+      "question": "Which work is considered one of Fyodor Dostoevsky's greatest novels?",
+      "options": [
+        "War and Peace",
+        "Crime and Punishment",
+        "The Brothers Karamazov",
+        "The Idiot"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "5",
+      "question": "Who wrote 'Beyond Good and Evil'?",
+      "options": [
+        "Franz Kafka",
+        "Albert Camus",
+        "Friedrich Nietzsche",
+        "Epicurus"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "6",
+      "question": "Which ancient philosopher is known for his teachings on pleasure and pain?",
+      "options": [
+        "Marcus Aurelius",
+        "Epicurus",
+        "Chanakya",
+        "Nietzsche"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "7",
+      "question": "Chanakya is best known for which ancient Indian text?",
+      "options": [
+        "Arthashastra",
+        "Mahabharata",
+        "Bhagavad Gita",
+        "Ramayana"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "8",
+      "question": "Which novel by Albert Camus is often cited as a classic of existential literature?",
+      "options": [
+        "The Stranger",
+        "The Plague",
+        "The Fall",
+        "The Myth of Sisyphus"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "9",
+      "question": "Which philosopher wrote extensively on the concept of 'eternal recurrence'?",
+      "options": [
+        "Marcus Aurelius",
+        "Friedrich Nietzsche",
+        "Fyodor Dostoevsky",
+        "Albert Camus"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "10",
+      "question": "Who is the author of 'Notes from Underground'?",
+      "options": [
+        "Franz Kafka",
+        "Friedrich Nietzsche",
+        "Fyodor Dostoevsky",
+        "Albert Camus"
+      ],
+      "answer": 2
+    }
+  ],
+  "users": [
+    {
+      "id": "c42c",
+      "name": "Anurag Maldhure",
+      "email": "anurag@gmail.com",
+      "password": "Anurag@12345",
+      "companyName": "Thinkbridge",
+      "phone": 9673597718
+    },
+    {
+      "id": "2699",
+      "name": "Sandesh Tribhuvan",
+      "email": "sandesh@gmail.com",
+      "password": "Sandesh@123",
+      "companyName": "PhonePe",
+      "phone": 2345678921
+    },
+    {
+      "id": "4702",
+      "name": "Nikhil Chauhan",
+      "email": "nikhil@gmail.com",
+      "password": "Nikhil@123",
+      "companyName": "Thinkbridge",
+      "phone": 1234567889
+    },
+    {
+      "id": "1462",
+      "name": "Pradeep Singh",
+      "email": "pradeep@gmail.com",
+      "password": "Pradeep@123",
+      "companyName": "Thinkbridge",
+      "phone": 1234567892
+    },
+    {
+      "id": "5d20",
+      "name": "Dale",
+      "email": "dales@gmail.com",
+      "password": "Pass@123",
+      "companyName": "SA",
+      "phone": 9874589612
+    },
+    {
+      "id": "88e4",
+      "name": "Saurabh Solanke",
+      "email": "saurabhsolanke07@gmail.com",
+      "password": "Pass@123",
+      "phone": 7770070411
+    },
+    {
+      "id": "9a19",
+      "name": "Saurabh ",
+      "email": "sanket@gmail.com",
+      "password": "Pass@123",
+      "phone": "7770070411"
+    }
+  ]
+}

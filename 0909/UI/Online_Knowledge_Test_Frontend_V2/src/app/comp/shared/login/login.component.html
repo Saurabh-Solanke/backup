@@ -1,0 +1,90 @@
+<div class="container">
+    <div class="row align-items-center vh-100">
+      <!-- Illustration column (hidden on smaller screens) -->
+      <div class="col-md-6 d-none d-md-flex justify-content-center">
+        <img
+          src="../../../../assets/images/login.gif"
+          alt="Illustration"
+          class="img-fluid illustration animate__animated animate__fadeInLeft"
+        />
+      </div>
+  
+      <!-- Login form column -->
+      <div class="col-md-6">
+        <div class="card animate__animated hover-animate">
+          <div class="card-body">
+            <!-- Card title for the login form -->
+            <div>
+              <h4 class="c1 card-title text-center fs-3 mb-3 fw-bold">Login</h4>
+            </div>
+  
+            <!-- Login form -->
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+              <!-- Error Message -->
+              <div *ngIf="errorMessage" class="alert alert-danger mb-3">
+                {{ errorMessage }}
+              </div>
+  
+              <!-- Email Field -->
+              <div class="control no-margin mt-2">
+                <label for="email">Email <span class="text-danger">*</span></label>
+                <input
+                  id="email"
+                  type="email"
+                  formControlName="email"
+                  placeholder="Enter your email"
+                  class="form-control rounded"
+                  [class.is-invalid]="loginForm.get('email')?.invalid && (loginForm.get('email')?.touched || loginForm.get('email')?.dirty)"
+                />
+                <div *ngIf="loginForm.get('email')?.invalid && (loginForm.get('email')?.touched || loginForm.get('email')?.dirty)"
+                     class="invalid-feedback">
+                  <p *ngIf="loginForm.get('email')?.errors?.['required']">Please enter your email address.</p>
+                  <p *ngIf="loginForm.get('email')?.errors?.['email']">Enter a valid email address.</p>
+                </div>
+              </div>
+  
+              <!-- Password Field -->
+              <div class="control no-margin mt-3">
+                <label for="password">Password <span class="text-danger">*</span></label>
+                <input
+                  id="password"
+                  type="password"
+                  formControlName="password"
+                  placeholder="Enter your password"
+                  class="form-control rounded"
+                  [class.is-invalid]="loginForm.get('password')?.invalid && (loginForm.get('password')?.touched || loginForm.get('password')?.dirty)"
+                />
+                <div *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.touched || loginForm.get('password')?.dirty)"
+                     class="invalid-feedback">
+                  <p *ngIf="loginForm.get('password')?.errors?.['required']">Please enter your password.</p>
+                  <p *ngIf="loginForm.get('password')?.errors?.['minlength']">Password must be at least 8 characters.</p>
+                </div>
+              </div>
+  
+              <!-- Submit and Go Back Buttons -->
+              <div class="d-grid mt-4">
+                <div class="row">
+                  <a class="btn btn-nxt w-25 ms-3" routerLink="/">
+                    <i class="fas fa-arrow-left me-0"></i> Go Back
+                  </a>
+                  <button
+                    type="submit"
+                    class="btn my-btn btn-prev me-2 ms-auto w-50"
+                    [disabled]="loginForm.invalid"
+                  >
+                    <i class="fas fa-sign-in-alt me-2"></i> Login
+                  </button>
+                </div>
+              </div>
+  
+              <!-- Link to the signup page -->
+              <div class="text-center mt-4">
+                <span>Don't have an account? <a class="c2" routerLink="/register">Signup</a></span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

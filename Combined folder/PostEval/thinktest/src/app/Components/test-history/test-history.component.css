@@ -1,0 +1,14 @@
+.navbar {
+    margin-bottom: 1rem;
+    color: white;
+    padding: 5px 0;
+  }
+
+  .btn-goHome{
+    background-color: #4a154b;
+  }
+  
+  .btn-start{
+    background-color: #df6404;
+    color: #fff;
+  }

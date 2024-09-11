@@ -1,0 +1,32 @@
+=>backend
+	->insatlling Dependencies
+	->Models with nav roperties->
+		public class ExamContext : IdentityDbContext<ExamUser ,IdentityRole<Guid>,Guid >
+{
+    public ExamContext(DbContextOptions options) : base(options)
+    {
+
+    }
+
+    public DbSet<User> Users { get; set; }
+
+    public DbSet<Exam> Exams { get; set; }
+
+    public DbSet<Question> Questions { get; set; }
+
+    public DbSet<Option> Options { get; set; }
+
+    public DbSet<StudentExam> StudentExams { get; set; }
+
+    public DbSet<StudentAnswer> StudentAnswers { get; set; }
+
+    public DbSet<Result> Results { get; set; }
+
+    public DbSet<ExamResultsView> ExamResultsViews { get; set; }
+}
+
+	->Identity User Wih JWT roles Based Authenication
+	->Creating DTOs
+	->Genric Repository
+	-->AutoMapper
+	->Adding Cntrollers

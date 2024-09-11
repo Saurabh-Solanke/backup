@@ -1,0 +1,30 @@
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Application\bin\Debug\net8.0\Application.deps.json
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Application\bin\Debug\net8.0\Application.dll
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Application\bin\Debug\net8.0\Application.pdb
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Application\bin\Debug\net8.0\Core.dll
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Application\bin\Debug\net8.0\Core.pdb
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Application\obj\Debug\net8.0\Application.csproj.AssemblyReference.cache
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Application\obj\Debug\net8.0\Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Application\obj\Debug\net8.0\Application.AssemblyInfoInputs.cache
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Application\obj\Debug\net8.0\Application.AssemblyInfo.cs
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Application\obj\Debug\net8.0\Application.csproj.CoreCompileInputs.cache
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Application\obj\Debug\net8.0\Applicat.44B5EDA2.Up2Date
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Application\obj\Debug\net8.0\Application.dll
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Application\obj\Debug\net8.0\refint\Application.dll
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Application\obj\Debug\net8.0\Application.pdb
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Application\obj\Debug\net8.0\ref\Application.dll
+F:\zSaurabh\CleanArchitectureApp\Application\obj\Debug\net8.0\Application.csproj.AssemblyReference.cache
+F:\zSaurabh\CleanArchitectureApp\Application\obj\Debug\net8.0\Application.GeneratedMSBuildEditorConfig.editorconfig
+F:\zSaurabh\CleanArchitectureApp\Application\obj\Debug\net8.0\Application.AssemblyInfoInputs.cache
+F:\zSaurabh\CleanArchitectureApp\Application\obj\Debug\net8.0\Application.AssemblyInfo.cs
+F:\zSaurabh\CleanArchitectureApp\Application\obj\Debug\net8.0\Application.csproj.CoreCompileInputs.cache
+F:\zSaurabh\CleanArchitectureApp\Application\obj\Debug\net8.0\Application.dll
+F:\zSaurabh\CleanArchitectureApp\Application\obj\Debug\net8.0\refint\Application.dll
+F:\zSaurabh\CleanArchitectureApp\Application\obj\Debug\net8.0\Application.pdb
+F:\zSaurabh\CleanArchitectureApp\Application\bin\Debug\net8.0\Application.deps.json
+F:\zSaurabh\CleanArchitectureApp\Application\bin\Debug\net8.0\Application.dll
+F:\zSaurabh\CleanArchitectureApp\Application\bin\Debug\net8.0\Application.pdb
+F:\zSaurabh\CleanArchitectureApp\Application\bin\Debug\net8.0\Core.dll
+F:\zSaurabh\CleanArchitectureApp\Application\bin\Debug\net8.0\Core.pdb
+F:\zSaurabh\CleanArchitectureApp\Application\obj\Debug\net8.0\Applicat.44B5EDA2.Up2Date
+F:\zSaurabh\CleanArchitectureApp\Application\obj\Debug\net8.0\ref\Application.dll

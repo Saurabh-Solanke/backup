@@ -1,0 +1,52 @@
+<div class="table-container">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th>Application No.</th>
+          <th>Applicant Name</th>
+          <th>Application Type</th>
+          <th>Payment Status</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+      <!--No forms to show up yet-->
+      @if(applicationStatus.length==0){
+        <tr class="no-records">
+          <td colspan="5">No records to display</td>
+        </tr>
+      }@else {
+        @for(application of applicationStatus;track application.applicationId){
+          <tr>
+            <td>{{application.applicationId}}</td>
+            <td>{{application.applicantName}}</td>
+            <td>{{application.applicationType}}</td>
+            <td>{{application.paymentStatus}}</td>
+            <td>{{application.applicationStatus}}</td>
+          </tr>
+        }
+        <!-- @for(applicationForm of applicationForms;track  applicationForm.applicationNo){
+          <tr>
+            <td>{{ applicationForm.applicationNo }}</td>
+            <td>Rohit</td>
+            <td>{{ applicationForm.applicationType }}</td>
+            <td [ngClass]="getPaymentStatusClass(applicationForm.paymentStatus)">
+              @if(applicationForm.paymentStatus === 'unpaid'){
+                <button (click)="pay(applicationForm)">Pay</button>
+              }@else {
+                {{applicationForm.paymentStatus}}
+              }
+              
+            </td>
+            <td [ngClass]="getStatusClass(applicationForm.applicationStatus)">
+              {{ applicationForm.applicationStatus }}
+            </td>
+          </tr>
+        } -->
+      }
+      
+      
+      
+      </tbody>
+    </table>
+  </div>

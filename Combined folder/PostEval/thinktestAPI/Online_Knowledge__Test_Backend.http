@@ -1,0 +1,6 @@
+@Online_Knowledge__Test_Backend_HostAddress = http://localhost:5247
+
+GET {{Online_Knowledge__Test_Backend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

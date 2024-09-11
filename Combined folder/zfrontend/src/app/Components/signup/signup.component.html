@@ -1,0 +1,104 @@
+<div class="wrapper">
+    <header class="header">
+        <div class="container d-flex align-items-center justify-content-center">
+            <div class="logo me-3">
+                <img src="../../../assets/quiz.png" alt="Exam Portal Logo" id="logo">
+            </div>
+            <div class="header-text">
+                <h2>Online MCQ Exam Portal</h2>
+                <em>Prepare yourself for success with our interactive and challenging exams.</em>
+            </div>
+        </div>
+    </header>
+    <div class="container d-flex justify-content-center align-items-center">
+        <div class="card p-4 shadow custom-card">
+            <h3 class="card-title text-center">Signup</h3>
+            <div class="card-body">
+                <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+                    <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+                    <div class="form-group mt-2">
+                        <label for="name">Name<sup id="req">*</sup></label>
+                        <input type="text" id="name" formControlName="name" class="form-control"
+                            placeholder="Enter your name here"
+                            [class.is-invalid]="signupForm.get('name')?.invalid && (signupForm.get('name')?.touched || signupForm.get('name')?.dirty)">
+                        <div *ngIf="signupForm.get('name')?.invalid && (signupForm.get('name')?.touched || signupForm.get('name')?.dirty)"
+                            class="invalid-feedback">
+                            <span *ngIf="signupForm.get('name')?.errors?.['required']">Name is required.</span>
+                            <span *ngIf="signupForm.get('name')?.errors?.['pattern']">Please enter a valid name (only
+                                letters and spaces).</span>
+                        </div>
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="email">Email<sup id="req">*</sup></label>
+                        <input type="email" id="email" formControlName="email" class="form-control"
+                            placeholder="Enter your email here"
+                            [class.is-invalid]="signupForm.get('email')?.invalid && (signupForm.get('email')?.touched || signupForm.get('email')?.dirty)">
+                        <div *ngIf="signupForm.get('email')?.invalid && (signupForm.get('email')?.touched || signupForm.get('email')?.dirty)"
+                            class="invalid-feedback">
+                            <span *ngIf="signupForm.get('email')?.errors?.['required']">Email is required.</span>
+                            <span *ngIf="signupForm.get('email')?.errors?.['email']">Please enter a valid email
+                                address.</span>
+                        </div>
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="password">Password<sup id="req">*</sup></label>
+                        <input type="password" id="password" formControlName="password" class="form-control"
+                            placeholder="Enter your password here"
+                            [class.is-invalid]="signupForm.get('password')?.invalid && (signupForm.get('password')?.touched || signupForm.get('password')?.dirty)">
+                        <div *ngIf="signupForm.get('password')?.invalid && (signupForm.get('password')?.touched || signupForm.get('password')?.dirty)"
+                            class="invalid-feedback">
+                            <span *ngIf="signupForm.get('password')?.errors?.['required']">Password is required.</span>
+                            <span *ngIf="signupForm.get('password')?.errors?.['minlength']">Password must be at least 8
+                                characters long.</span>
+                        </div>
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="confirmPassword">Confirm Password<sup id="req">*</sup></label>
+                        <input type="password" id="confirmPassword" formControlName="confirmPassword"
+                            class="form-control" placeholder="Confirm your password"
+                            [class.is-invalid]="signupForm.get('confirmPassword')?.invalid && (signupForm.get('confirmPassword')?.touched || signupForm.get('confirmPassword')?.dirty) || signupForm.hasError('mismatch')">
+                        <div *ngIf="signupForm.get('confirmPassword')?.invalid && (signupForm.get('confirmPassword')?.touched || signupForm.get('confirmPassword')?.dirty) || signupForm.hasError('mismatch')"
+                            class="invalid-feedback">
+                            <span *ngIf="signupForm.get('confirmPassword')?.errors?.['required']">Please confirm your
+                                password.</span>
+                            <span *ngIf="signupForm.hasError('mismatch')">Passwords must match.</span>
+                        </div>
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="address">Address<sup id="req">*</sup></label>
+                        <input type="text" id="address" formControlName="address" class="form-control"
+                            placeholder="Enter your address here"
+                            [class.is-invalid]="signupForm.get('address')?.invalid && (signupForm.get('address')?.touched || signupForm.get('address')?.dirty)">
+                        <div *ngIf="signupForm.get('address')?.invalid && (signupForm.get('address')?.touched || signupForm.get('address')?.dirty)"
+                            class="invalid-feedback">
+                            <span *ngIf="signupForm.get('address')?.errors?.['required']">Address is required.</span>
+                        </div>
+                    </div>
+                    <div class="form-group mt-2">
+                        <label for="pincode">Pincode<sup id="req">*</sup></label>
+                        <input type="text" id="pincode" formControlName="pincode" class="form-control"
+                            placeholder="Enter your pincode here"
+                            [class.is-invalid]="signupForm.get('pincode')?.invalid && (signupForm.get('pincode')?.touched || signupForm.get('pincode')?.dirty)">
+                        <div *ngIf="signupForm.get('pincode')?.invalid && (signupForm.get('pincode')?.touched || signupForm.get('pincode')?.dirty)"
+                            class="invalid-feedback">
+                            <span *ngIf="signupForm.get('pincode')?.errors?.['required']">Pincode is required.</span>
+                            <span *ngIf="signupForm.get('pincode')?.errors?.['pattern']">Please enter a valid 6-digit
+                                pincode.</span>
+                        </div>
+                    </div>
+                    <div class="text-center mt-3">
+                        <button type="submit" class="btn btn-success">Signup</button>
+                    </div>
+                    <div class="text-center mt-3">
+                        <span>Already have an account? <a routerLink="" >Login</a></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2024 Online MCQ Exam Portal. All rights reserved.</p>
+        </div>
+    </footer>
+</div>

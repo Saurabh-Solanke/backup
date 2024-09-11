@@ -1,0 +1,47 @@
+<div class="container py-5">
+    <div class="bg-light p-5 rounded">
+      <img src="https://via.placeholder.com/80" alt="Profile Picture">
+      <h2 class="text-center mb-4">Profile</h2>
+      <p class="text-center text-muted mb-4">Update your personal information</p>
+      <form [formGroup]="updateProfileForm" (ngSubmit)="onSubmit()">
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label for="firstname" class="form-label">First Name</label>
+            <input type="text" class="form-control" name="firstname" id="firstname" placeholder="First Name" formControlName="firstname">
+            <p class="control-error" *ngIf="updateProfileForm.get('firstname')?.invalid && updateProfileForm.get('firstname')?.touched">
+                Please enter at least three character name
+            </p>
+          </div>
+          <div class="col-md-6">
+            <label for="lastname" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name" formControlName="lastname">
+            <p class="control-error" *ngIf="updateProfileForm.get('lastname')?.invalid && updateProfileForm.get('lastname')?.touched">
+                Please enter at least three character name
+            </p>
+          </div>
+        </div>
+        <div class="row mb-3">
+          <div class="col-md-6">
+            <label for="mobileNo" class="form-label">Phone</label>
+            <input type="tel" class="form-control" name="mobileNo" id="mobileNo" placeholder="Phone" formControlName="mobileNo">
+            <p class="control-error" *ngIf="updateProfileForm.get('mobileNo')?.invalid && updateProfileForm.get('mobileNo')?.touched">
+                Please enter 10 digit Mobile No
+            </p>
+          </div>
+          <div class="col-md-6">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email" [value]="currentUser?.email" readonly>
+          </div>
+        </div>
+        <div class="d-flex w-100 justify-content-center">
+          <div class="text-center">
+            <button class="btn btn-custom" routerLink="../">Back</button>
+          </div>
+          <div class="text-center ms-2">
+            <button type="submit" class="btn btn-custom">Save Changes</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  

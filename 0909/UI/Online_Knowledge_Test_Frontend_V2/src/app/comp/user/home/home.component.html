@@ -1,0 +1,93 @@
+<app-navbar></app-navbar>
+
+
+<div class="d-flex flex-column flex-md-row mt-5">
+    <!-- Sidebar -->
+    <!-- Sidebar -->
+    <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <div class="position-sticky">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/user/home">
+                        <i class="fas fa-home"></i>
+                        <span class="menu-text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/user/choose-exam">
+                        <i class="fas fa-file-alt"></i>
+                        <span class="menu-text">Take a test</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/profile">
+                        <i class="fas fa-user"></i>
+                        <span class="menu-text">Profile</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/user/test-history">
+                        <i class="fas fa-history"></i>
+                        <span class="menu-text">Test History</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- Main Content -->
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mt-5 ps-5 pe-5 pb-5">
+        <div
+            class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Dashboard</h1>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-12">
+                <h3>Welcome {{(name)}}</h3>
+                <p>We provide gateway for delivering seamless examination experiences to you!</p>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <i class="fas fa-file-alt fa-3x mb-3"></i>
+                                <h5 class="card-title">Start a Test</h5>
+                                <p class="card-text">Take new tests and get knowledge.</p>
+                                <a routerLink="/user/choose-exam"
+                                    class="btn btn-startTest rounded-pill ps-5 pe-5 text-light">Start Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <i class="fas fa-history fa-3x mb-3"></i>
+                                <h5 class="card-title">Test History</h5>
+                                <p class="card-text">Review your past test results.</p>
+                                <a routerLink="/user/test-history"
+                                    class="btn btn-viewHistory rounded-pill ps-5 pe-5 text-light">View
+                                    History</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <i class="fas fa-user fa-3x mb-3"></i>
+                                <h5 class="card-title">Profile</h5>
+                                <p class="card-text">Update your personal information.</p>
+                                <a routerLink="/user/profile"
+                                 class="btn btn-viewHistory text-light rounded-pill ps-5 pe-5">Go to Profile</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+
+
+
+<app-footer></app-footer>

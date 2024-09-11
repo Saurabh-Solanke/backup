@@ -1,0 +1,102 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-4 mt-2">
+      Welcome
+      <span id="username" style="color: var(--color-secondary)">{{
+        username
+      }}</span>
+    </h1>
+    <hr class="my-3" />
+    <p class="lead">Manage Your Passport Applications with Ease</p>
+  </div>
+
+  <!-- Dashboard Overview -->
+  <div class="dashboard-section">
+    <h2><i class="fas fa-clipboard-list"></i> Dashboard</h2>
+    <div class="notifications p-4 mt-3 mb-2">
+      <p>
+        <strong><i class="fas fa-bell"></i> Notification:</strong> 
+      </p>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 my-2">
+        <div class="profile-card">
+          <h3><i class="fas fa-user"></i> Profile Information</h3>
+          <p><strong>Name:</strong> {{ profileName }}</p>
+          <p><strong>Email:</strong> {{ profileEmail }}</p>
+          <p><strong>Phone:</strong> {{ profilePhone }}</p>
+          <button routerLink="/profile" class="btn">
+            <i class="fas fa-edit me-2"></i> Edit Profile
+          </button>
+        </div>
+      </div>
+      <div class="col-lg-6 my-2">
+        <div class="profile-card">
+          <h3><i class="fas fa-history"></i> Recent Activity</h3>
+          <ul>
+            <li *ngFor="let activity of recentActivities">{{ activity }}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="my-4">
+    <h2>Get your Passport right now...!</h2>
+    <p>Available plans</p>
+
+    <!-- Normal Section -->
+    <h2 class="my-4">Normal</h2>
+    <div class="row">
+      <div
+        class="col-12 col-md-6 col-lg-3 mb-4"
+        *ngFor="let plan of normalPlans"
+      >
+        <div class="card">
+          <div class="card-header text-center">
+            <i class="fas fa-clock fa-2x"></i>
+          </div>
+          <div class="card-body">
+            <h5><i class="fas fa-file-alt"></i> {{ plan.title }}</h5>
+            <p>{{ plan.description }}</p>
+            <a
+              [routerLink]="plan.link"
+              class="btn btn-primary w-50 m-2"
+              [attr.data-application-type]="plan.applicationType"
+              [attr.data-booklet-type]="plan.bookletType"
+              ><i class="fas fa-clipboard-check me-2"></i> Apply</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tatkal Section -->
+    <h2 class="my-4">Tatkal</h2>
+    <div class="row">
+      <div
+        class="col-12 col-md-6 col-lg-3 mb-4"
+        *ngFor="let plan of tatkalPlans"
+      >
+        <div class="card">
+          <div class="card-header text-center">
+            <i class="fas fa-bolt fa-2x"></i>
+          </div>
+          <div class="card-body">
+            <h5><i class="fas fa-file-alt"></i> {{ plan.title }}</h5>
+            <p>{{ plan.description }}</p>
+            <a
+              [routerLink]="plan.link"
+              class="btn btn-primary w-50 m-2"
+              [attr.data-application-type]="plan.applicationType"
+              [attr.data-booklet-type]="plan.bookletType"
+              ><i class="fas fa-clipboard-check me-2"></i> Apply</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+<app-footer></app-footer>

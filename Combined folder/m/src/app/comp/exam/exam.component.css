@@ -1,0 +1,63 @@
+/* Set cursor to pointer on hover for form-check inputs (radio buttons) */
+.form-check-input:hover {
+  cursor: pointer;
+}
+
+/* Set cursor to pointer on hover for buttons */
+.btn:hover {
+  cursor: pointer;
+}
+
+/* Set cursor to pointer on hover for badges */
+.badge:hover {
+  cursor: pointer;
+}
+
+#timer {
+  margin-right: 20px;
+}
+
+#user {
+  margin-left: 20px;
+}
+
+.header {
+  background-color: #9381ff;
+  color: white;
+  padding: 5px 0;
+}
+
+.header .logo img {
+  height: 50px;
+  width: auto;
+}
+
+.header .header-text {
+  margin-top: 10px;
+}
+
+.time{
+  background-color: #9381ff;
+}
+
+/* Adjust padding for smaller screens */
+@media (max-width: 576px) {
+  .footer {
+    margin-top: 50;
+    padding: 8px 0;
+  }
+}
+
+.timer{
+  background-color: #9381ff;
+}
+
+
+.markForReview{
+  background-color: #9381ff;
+}
+
+
+.questionCard{
+  border-width: 5px;
+}

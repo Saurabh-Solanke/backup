@@ -1,0 +1,390 @@
+{
+  "questions": [
+    {
+      "id": "1",
+      "question": "What is Angular?",
+      "type": "single",
+      "options": [
+        "A front-end web framework",
+        "A back-end framework",
+        "A database",
+        "A design pattern"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "2",
+      "question": "Which company developed Angular?",
+      "type": "single",
+      "options": [
+        "Facebook",
+        "Google",
+        "Microsoft",
+        "Apple"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "3",
+      "question": "What is the purpose of Angular CLI?",
+      "type": "single",
+      "options": [
+        "To serve as a text editor",
+        "To facilitate rapid development",
+        "To debug JavaScript code",
+        "To manage databases"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "4",
+      "question": "What is a component in Angular?",
+      "type": "single",
+      "options": [
+        "A service for making HTTP calls",
+        "A directive for DOM manipulation",
+        "A building block of the UI",
+        "A module for organizing code"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "5",
+      "question": "Which Angular decorator is used to define a component?",
+      "type": "single",
+      "options": [
+        "@NgModule",
+        "@Injectable",
+        "@Directive",
+        "@Component"
+      ],
+      "answer": 3
+    },
+    {
+      "id": "6",
+      "question": "Which of the following is a lifecycle hook in Angular?",
+      "type": "single",
+      "options": [
+        "ngOnInit",
+        "ngBegin",
+        "ngSetup",
+        "ngCreate"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "7",
+      "question": "What is Angular's two-way data binding?",
+      "type": "single",
+      "options": [
+        "Binding data from the view to the model",
+        "Binding data from the model to the view",
+        "Binding data both from the view to the model and from the model to the view",
+        "None of the above"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "8",
+      "question": "What is a directive in Angular?",
+      "type": "single",
+      "options": [
+        "A type of service",
+        "A way to extend HTML",
+        "A type of component",
+        "A way to handle events"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "9",
+      "question": "Which Angular module is required for making HTTP calls?",
+      "type": "single",
+      "options": [
+        "HttpClientModule",
+        "FormsModule",
+        "RouterModule",
+        "CommonModule"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "10",
+      "question": "What is Angular Router used for?",
+      "type": "single",
+      "options": [
+        "Managing state",
+        "Routing and navigation",
+        "Handling HTTP requests",
+        "Performing animations"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "11",
+      "question": "What is a service in Angular?",
+      "type": "single",
+      "options": [
+        "A reusable class that performs a specific task",
+        "A component that handles user input",
+        "A module that organizes the application",
+        "A directive that manipulates the DOM"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "12",
+      "question": "What is dependency injection in Angular?",
+      "type": "single",
+      "options": [
+        "A way to include external libraries",
+        "A method for handling events",
+        "A design pattern for managing dependencies",
+        "A technique for optimizing performance"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "13",
+      "question": "Which command is used to create a new Angular project?",
+      "type": "single",
+      "options": [
+        "ng build",
+        "ng generate",
+        "ng new",
+        "ng serve"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "14",
+      "question": "What is RxJS used for in Angular?",
+      "type": "single",
+      "options": [
+        "Handling HTTP requests",
+        "Managing state",
+        "Handling asynchronous data streams",
+        "Performing animations"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "15",
+      "question": "What is Angular Material?",
+      "type": "single",
+      "options": [
+        "A library for HTTP requests",
+        "A CSS framework",
+        "A UI component library",
+        "A router module"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "16",
+      "question": "Which of the following are Angular directives?",
+      "type": "multiple",
+      "options": [
+        "ngIf",
+        "ngFor",
+        "ngModel",
+        "ngBind"
+      ],
+      "answer": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "id": "17",
+      "question": "Which of the following are Angular pipes?",
+      "type": "multiple",
+      "options": [
+        "UpperCasePipe",
+        "LowerCasePipe",
+        "DatePipe",
+        "HttpPipe"
+      ],
+      "answer": [
+        0,
+        1,
+        2
+      ]
+    }
+  ],
+  "users": [
+    {
+      "id": "c42c",
+      "name": "Anurag Maldhure",
+      "email": "anurag@gmail.com",
+      "password": "Anurag@12345",
+      "companyName": "Thinkbridge",
+      "phone": 9673597718,
+      "testHistory": [
+        {
+          "date": "2024-07-24T12:58:49.245Z",
+          "score": 0,
+          "totalQuestions": 17,
+          "timeTaken": 8
+        },
+        {
+          "date": "2024-07-24T13:14:45.191Z",
+          "score": 0,
+          "totalQuestions": 17,
+          "timeTaken": 6
+        },
+        {
+          "date": "2024-07-24T13:59:41.468Z",
+          "score": 0,
+          "totalQuestions": 17,
+          "timeTaken": 2
+        },
+        {
+          "date": "2024-07-24T14:51:44.014Z",
+          "score": 0,
+          "totalQuestions": 17,
+          "timeTaken": 2
+        },
+        {
+          "date": "2024-07-24T15:50:02.056Z",
+          "score": 0,
+          "totalQuestions": 17,
+          "timeTaken": 11
+        },
+        {
+          "date": "2024-07-25T09:31:01.667Z",
+          "score": 0,
+          "totalQuestions": 17,
+          "timeTaken": 35
+        },
+        {
+          "date": "2024-07-25T09:53:12.094Z",
+          "score": 0,
+          "totalQuestions": 17,
+          "timeTaken": 8
+        },
+        {
+          "date": "2024-07-25T09:53:35.841Z",
+          "score": 0,
+          "totalQuestions": 17,
+          "timeTaken": 9
+        },
+        {
+          "date": "2024-07-25T09:54:02.035Z",
+          "score": 0,
+          "totalQuestions": 17,
+          "timeTaken": 9
+        },
+        {
+          "date": "2024-07-25T09:54:16.697Z",
+          "score": 0,
+          "totalQuestions": 17,
+          "timeTaken": 9
+        },
+        {
+          "date": "2024-07-25T09:54:34.439Z",
+          "score": 0,
+          "totalQuestions": 17,
+          "timeTaken": 9
+        },
+        {
+          "date": "2024-07-25T09:55:02.383Z",
+          "score": 0,
+          "totalQuestions": 17,
+          "timeTaken": 7
+        },
+        {
+          "date": "2024-07-27T06:39:54.590Z",
+          "score": 1,
+          "totalQuestions": 17,
+          "timeTaken": 7
+        },
+        {
+          "date": "2024-07-27T07:26:59.900Z",
+          "score": 1,
+          "totalQuestions": 17,
+          "timeTaken": 7
+        },
+        {
+          "date": "2024-07-27T07:59:05.607Z",
+          "score": 0,
+          "totalQuestions": 17,
+          "timeTaken": 10
+        },
+        {
+          "date": "2024-07-27T09:28:56.295Z",
+          "score": 0,
+          "totalQuestions": 17,
+          "timeTaken": 45
+        },
+        {
+          "date": "2024-08-10T10:53:41.599Z",
+          "score": 4,
+          "totalQuestions": 17,
+          "timeTaken": 604
+        },
+        {
+          "date": "2024-08-20T17:29:56.395Z",
+          "score": 4,
+          "totalQuestions": 17,
+          "timeTaken": 45
+        }
+      ]
+    },
+    {
+      "id": "2699",
+      "name": "Sandesh Tribhuvan",
+      "email": "sandesh@gmail.com",
+      "password": "Sandesh@123",
+      "companyName": "PhonePe",
+      "phone": 2345678921,
+      "testHistory": [
+        {
+          "date": "2024-09-05T06:30:09.317Z",
+          "score": 3,
+          "totalQuestions": 17,
+          "timeTaken": 142
+        },
+        {
+          "date": "2024-09-05T11:59:32.993Z",
+          "score": 5,
+          "totalQuestions": 17,
+          "timeTaken": 297
+        }
+      ]
+    },
+    {
+      "id": "4702",
+      "name": "Nikhil Chauhan",
+      "email": "nikhil@gmail.com",
+      "password": "Nikhil@123",
+      "companyName": "Thinkbridge",
+      "phone": 1234567889
+    },
+    {
+      "id": "1462",
+      "name": "Pradeep Singh",
+      "email": "pradeep@gmail.com",
+      "password": "Pradeep@123",
+      "companyName": "Thinkbridge",
+      "phone": 1234567892
+    },
+    {
+      "id": "8846",
+      "name": "Gaurav Pandey",
+      "email": "gaurav@gmail.com",
+      "password": "Gaurav@123",
+      "companyName": "Thinkbridge",
+      "phone": "2345678621",
+      "testHistory": [
+        {
+          "date": "2024-08-12T13:38:50.195Z",
+          "score": 3,
+          "totalQuestions": 17,
+          "timeTaken": 94
+        }
+      ]
+    }
+  ]
+}

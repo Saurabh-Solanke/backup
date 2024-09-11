@@ -1,0 +1,22 @@
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Core\bin\Debug\net8.0\Core.deps.json
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Core\bin\Debug\net8.0\Core.dll
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Core\bin\Debug\net8.0\Core.pdb
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Core\obj\Debug\net8.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Core\obj\Debug\net8.0\Core.AssemblyInfoInputs.cache
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Core\obj\Debug\net8.0\Core.AssemblyInfo.cs
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Core\obj\Debug\net8.0\Core.csproj.CoreCompileInputs.cache
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Core\obj\Debug\net8.0\Core.dll
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Core\obj\Debug\net8.0\refint\Core.dll
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Core\obj\Debug\net8.0\Core.pdb
+C:\Users\Vinod Patil\Desktop\CleanArchitectureApp\Core\obj\Debug\net8.0\ref\Core.dll
+F:\zSaurabh\CleanArchitectureApp\Core\bin\Debug\net8.0\Core.deps.json
+F:\zSaurabh\CleanArchitectureApp\Core\bin\Debug\net8.0\Core.dll
+F:\zSaurabh\CleanArchitectureApp\Core\bin\Debug\net8.0\Core.pdb
+F:\zSaurabh\CleanArchitectureApp\Core\obj\Debug\net8.0\Core.GeneratedMSBuildEditorConfig.editorconfig
+F:\zSaurabh\CleanArchitectureApp\Core\obj\Debug\net8.0\Core.AssemblyInfoInputs.cache
+F:\zSaurabh\CleanArchitectureApp\Core\obj\Debug\net8.0\Core.AssemblyInfo.cs
+F:\zSaurabh\CleanArchitectureApp\Core\obj\Debug\net8.0\Core.csproj.CoreCompileInputs.cache
+F:\zSaurabh\CleanArchitectureApp\Core\obj\Debug\net8.0\Core.dll
+F:\zSaurabh\CleanArchitectureApp\Core\obj\Debug\net8.0\refint\Core.dll
+F:\zSaurabh\CleanArchitectureApp\Core\obj\Debug\net8.0\Core.pdb
+F:\zSaurabh\CleanArchitectureApp\Core\obj\Debug\net8.0\ref\Core.dll

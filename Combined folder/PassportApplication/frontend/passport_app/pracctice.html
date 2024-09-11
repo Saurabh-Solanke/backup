@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Submission Fee</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .card {
+            border-radius: 15px;
+        }
+        .btn-primary {
+            background-color: #C00;
+            border: none;
+        }
+        .btn-primary:hover {
+            background-color: #A00;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title text-center mb-4">Application Submission Fee</h4>
+                        <p class="text-center">Please enter your payment information to complete your application.</p>
+                        <div class="form-row">
+                          <div class="col-md-6 mb-3">
+                              <label for="name">Name</label>
+                              <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                          </div>
+                          <div class="col-md-6 mb-3">
+                              <label for="email">Email</label>
+                              <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                          </div>
+                      </div>
+                      <hr/>
+                        <form>
+                          <h5>Card Details</h5>
+                            <div class="form-group">
+                              <label for="cardNumber">Card Holder Name</label>
+                              <input type="text" class="form-control" id="cardHolderName" placeholder="Rohit Sanjay Bachhav" required>
+                          </div>
+                            <div class="form-group">
+                                <label for="cardNumber">Card Number</label>
+                                <input type="text" class="form-control" id="cardNumber" placeholder="0000 0000 0000 0000" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="col-md-4 mb-3">
+                                    <label for="expirationMM">Month</label>
+                                    <select class="form-control" id="expirationMM" required>
+                                        <!-- Options added by JavaScript -->
+                                    </select>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="expirationYY">Year</label>
+                                    <select class="form-control" id="expirationYY" required>
+                                        <!-- Options added by JavaScript -->
+                                    </select>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <label for="cvv">CVV</label>
+                                    <input type="text" class="form-control" id="cvv" placeholder="123" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="applicationFee">Application Fee</label>
+                                <input type="text" class="form-control" id="applicationFee" value="$50.00" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="total">Total</label>
+                                <input type="text" class="form-control" id="total" value="$50.00" disabled>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Submit Payment</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        window.onload = function() {
+            const expirationMM = document.getElementById('expirationMM');
+            const expirationYY = document.getElementById('expirationYY');
+            const currentYear = new Date().getFullYear();
+
+            // Add month options
+            for (let i = 1; i <= 12; i++) {
+                let month = i.toString().padStart(2, '0');
+                let option = new Option(month, month);
+                expirationMM.add(option);
+            }
+
+            // Add year options
+            for (let i = 0; i < 10; i++) {
+                let year = (currentYear + i).toString().substr(-2);
+                let option = new Option(year, year);
+                expirationYY.add(option);
+            }
+        }
+    </script>
+</body>
+</html>

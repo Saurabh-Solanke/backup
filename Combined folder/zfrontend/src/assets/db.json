@@ -1,0 +1,202 @@
+{
+  "questions": [
+    {
+      "id": "1",
+      "question": "What is the capital of France?",
+      "type": "single",
+      "options": [
+        "Paris",
+        "Berlin",
+        "Madrid",
+        "Lisbon"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "2",
+      "question": "Which planet is known as the Red Planet?",
+      "type": "single",
+      "options": [
+        "Earth",
+        "Mars",
+        "Jupiter",
+        "Saturn"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "3",
+      "question": "Who wrote 'To Kill a Mockingbird'?",
+      "type": "single",
+      "options": [
+        "Harper Lee",
+        "J.K. Rowling",
+        "Ernest Hemingway",
+        "F. Scott Fitzgerald"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "4",
+      "question": "What is the capital of Italy?",
+      "type": "single",
+      "options": [
+        "Rome",
+        "Paris",
+        "Madrid",
+        "Berlin"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "5",
+      "question": "Which element has the chemical symbol O?",
+      "type": "single",
+      "options": [
+        "Oxygen",
+        "Gold",
+        "Silver",
+        "Iron"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "6",
+      "question": "Who painted the Mona Lisa?",
+      "type": "single",
+      "options": [
+        "Vincent van Gogh",
+        "Pablo Picasso",
+        "Leonardo da Vinci",
+        "Claude Monet"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "7",
+      "question": "What is the largest planet in our solar system?",
+      "type": "single",
+      "options": [
+        "Earth",
+        "Mars",
+        "Jupiter",
+        "Saturn"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "8",
+      "question": "What is the hardest natural substance on Earth?",
+      "type": "single",
+      "options": [
+        "Gold",
+        "Iron",
+        "Diamond",
+        "Ruby"
+      ],
+      "answer": 2
+    },
+    {
+      "id": "9",
+      "question": "What is the capital of Japan?",
+      "type": "single",
+      "options": [
+        "Tokyo",
+        "Beijing",
+        "Seoul",
+        "Bangkok"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "10",
+      "question": "Which planet is known as the Earth's Twin?",
+      "type": "single",
+      "options": [
+        "Mars",
+        "Venus",
+        "Mercury",
+        "Neptune"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "11",
+      "question": "Who discovered penicillin?",
+      "type": "single",
+      "options": [
+        "Marie Curie",
+        "Alexander Fleming",
+        "Louis Pasteur",
+        "Isaac Newton"
+      ],
+      "answer": 1
+    },
+    {
+      "id": "12",
+      "question": "Which is the longest river in the world?",
+      "type": "single",
+      "options": [
+        "Nile",
+        "Amazon",
+        "Yangtze",
+        "Mississippi"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "13",
+      "question": "Who wrote '1984'?",
+      "type": "single",
+      "options": [
+        "George Orwell",
+        "Aldous Huxley",
+        "J.D. Salinger",
+        "Mark Twain"
+      ],
+      "answer": 0
+    },
+    {
+      "id": "14",
+      "question": "Which of the following are programming languages?",
+      "type": "multiple",
+      "options": [
+        "JavaScript",
+        "Python",
+        "HTML",
+        "CSS"
+      ],
+      "answer": [0, 1]
+    },
+    {
+      "id": "15",
+      "question": "Which of the following are prime numbers?",
+      "type": "multiple",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "answer": [0, 1, 3]
+    }
+  ],
+  "users": [
+    {
+      "id": "c4a2",
+      "name": "Saurabh Khandu Lambe",
+      "email": "saurabh@gmail.com",
+      "password": "Saurabh@1",
+      "address": "3,runwal villa, baner,pune",
+      "pincode": "422222"
+    },
+    {
+      "id": "aadc",
+      "name": "Mayur Sarode",
+      "email": "mayur@gmail.com",
+      "password": "Mayur@123",
+      "address": "3,runwal villa, baner,pune",
+      "pincode": "412052"
+    }
+  ]
+}

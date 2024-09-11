@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.header {
+  background-color: #ffffff;
+  color: #4a154b;
+}
+
+.sub-header {
+  background-color: #ffffff;
+  color: #df6404;
+}
+
+.testimonials {
+  background-color: #f5f5f5;
+  text-align: center;
+}
+
+.carousel-item blockquote {
+  color: #4a154b;
+}
+
+.carousel-item.active {
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #4a154b;
+}
+.blockquote-footer {
+  margin-top: 10px;
+}
+
+.contact {
+  background-color: #f5f5f5;
+  color: #4a154b;
+}
+
+.btn-signup {
+  background-color: #df6404;
+  color: white;
+  border: none;
+}
+
+.btn-login {
+  background-color: #4a154b;
+  color: white;
+  border: none;
+}
+
+.btn-signup:hover,
+.btn-login:hover {
+  opacity: 0.9;
+  background-color: #ffffff;
+  font-weight: bold;
+}
+
+.btn-login:hover {
+  color: #4a154b;
+  border-color: #4a154b;
+}
+
+.btn-signup:hover {
+  color: #df6404;
+  border-color: #df6404;
+}
+
+.index-nav-btn {
+  border-width: 1px;
+  border-style: solid;
+}
+
+.footer {
+  background-color: #ffffff;
+  color: #4a154b;
+}

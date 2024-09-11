@@ -1,0 +1,292 @@
+
+
+.app-root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
+/* body {
+  margin: 0;
+  font-family: "Lato", serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #d9e2f1;
+  min-height: 100vh;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+} */
+/* 
+header {
+  margin: 2rem 0;
+  text-align: center;
+} */
+
+header img {
+  width: 5rem;
+  height: 5rem;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 2px solid #405050;
+  filter: drop-shadow(0 0 4px rgba(31, 42, 42, 0.5));
+}
+
+header h1 {
+ 
+  font-weight: 700;
+  font-size: 3rem;
+  margin: 1rem 0;
+  letter-spacing: 0.2rem;
+  color: #2f4444;
+}
+
+.control,
+fieldset {
+  margin: 0.5rem 0;
+}
+
+.control.no-margin {
+  margin-bottom: 0;
+}
+
+.control label {
+  display: block;
+  font-size: 0.8rem;
+  margin-bottom: 0.2rem;
+
+  font-weight: bold;
+  color: var(--color-primary);
+}
+
+
+
+.control select {
+  display: block;
+  width: 100%;
+  max-width: 15rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: 1px solid #758a8a;
+}
+
+.control:has(input[type="checkbox"]) {
+  display: flex;
+  align-items: center;
+}
+
+.control:has(input[type="checkbox"]) label {
+  margin: 0;
+}
+
+.control input[type="checkbox"] {
+  display: inline-block;
+  width: auto;
+  max-width: none;
+  margin-right: 0.5rem;
+  border-radius: 0;
+  border: none;
+  background-color: transparent;
+  color: #d9e2f1;
+}
+
+.control-error {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  color: #d12323;
+  font-weight: 600;
+  height: 0.5rem;
+  padding: 0.25rem 0 0 0;
+  height: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.control-error p {
+  margin: 0;
+}
+
+.control-row {
+  margin: 0.5rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 0.5rem;
+}
+
+.control-row .control {
+  flex: 1;
+}
+
+hr {
+  margin: 1.5rem 0;
+  border: 1px solid #147b73;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: none;
+  background-color: #147b73;
+  color: #d9e2f1;
+  cursor: pointer;
+}
+
+.button:hover,
+.button:focus {
+  background-color: #319890;
+}
+
+.button-flat {
+  background-color: transparent;
+  color: #9cbaba;
+}
+
+.button-flat:hover,
+.button-flat:focus {
+  background-color: transparent;
+  color: #869999;
+}
+
+
+[formgroupname].ng-invalid.ng-touched.ng-dirty input,
+input.ng-invalid.ng-touched.ng-dirty {
+  background-color: #fbdcd6;
+  border-color: #f84e2c;
+}
+
+/* /////////////////////////////// */
+
+
+:root {
+  --color-primary: #4a154b;
+  --color-secondary: #df6404;
+  --color-background: #ffe1cc;
+  --color-support1: #faf2f2;
+}
+.c1 {
+color: var(--color-primary);
+}
+.c2 {
+color: var(--color-secondary);
+}
+.content {
+  padding-top: 0px; /* Adjust this based on the height of your navbar */
+}
+
+.breadcrumb {
+  margin-top: 2.8em; /* Remove padding-top */
+  margin-left: 0.3em;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.btn {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: white;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:hover {
+  background-color: white;
+  border-color: var(--color-secondary);
+  border-width: 1px;
+  color: var(--color-secondary);
+  /* font-weight: bold; */
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
+
+.my-btn {
+  color: white;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.my-btn:hover {
+  border-width: 1px;
+  font-weight: bold;
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-nxt {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+.btn-nxt:hover {
+  background-color: white;
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+}
+
+.btn-prev {
+  background-color: white;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.btn-prev:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+}
+/* focused field styles */
+
+@keyframes glow {
+  0%,
+  100% {
+    box-shadow: 0 0 2px var(--color-secondary);
+  }
+  50% {
+    box-shadow: 0px 0px 4px var(--color-secondary);
+  }
+}
+select:focus,
+input:focus {
+  border-color: var(--color-secondary) !important;
+  outline: none;
+  animation: glow 1.5s infinite alternate;
+  background-color: var(--color-support1);
+}
+
+.navbar {
+  z-index: 1030;
+  position: relative;
+}
+
+.breadcrumb {
+  position: relative;
+  z-index: 1020;
+}
+
+.p-toast {
+  z-index: 1050;
+}

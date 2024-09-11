@@ -1,0 +1,42 @@
+
+  .header {
+    background-color: #9381ff;
+    color: white;
+    padding: 5px 0;
+  }
+  
+  .header .logo img {
+    height: 50px;
+    width: auto;
+  }  
+  .custom-card {
+    width: 100%;
+    max-width: 500px;
+    border: 1px solid #ccc;
+    background-color: #f8f9fa;
+    margin: 20px auto;
+    padding: 20px;
+  }
+  .card-title {
+    color: #343a40;
+    text-align: center;
+  }
+  
+  .footer {
+    background-color: #9381ff;
+    color: white;
+    width: 100%;
+    margin-top: auto  ;
+  } 
+  #req{
+    color: red;
+   } 
+   .wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  .content {
+    flex: 1;
+  }
+  

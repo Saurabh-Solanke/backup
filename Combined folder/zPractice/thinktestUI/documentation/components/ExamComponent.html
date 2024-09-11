@@ -1,0 +1,1824 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>online-mcq-exam documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">online-mcq-exam documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  ExamComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/Components/exam/exam.component.ts</code>
+</p>
+
+
+
+
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">providers</td>
+                <td class="col-md-9">
+                                <code><a href="../injectables/QuestionService.html" target="_self" >QuestionService</a></code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-exam</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>CommonModule</code>
+                            <code>FormsModule</code>
+                            <code>RouterOutlet</code>
+                            <code>HttpClientModule</code>
+                                <code><a href="../components/LoggedInFooterComponent.html" target="_self" >LoggedInFooterComponent</a></code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./exam.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./exam.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#attempted" >attempted</a>
+                            </li>
+                            <li>
+                                <a href="#currentQuestionIndex" >currentQuestionIndex</a>
+                            </li>
+                            <li>
+                                <a href="#minutes" >minutes</a>
+                            </li>
+                            <li>
+                                <a href="#name" >name</a>
+                            </li>
+                            <li>
+                                <a href="#questions" >questions</a>
+                            </li>
+                            <li>
+                                <a href="#remaining" >remaining</a>
+                            </li>
+                            <li>
+                                <a href="#seconds" >seconds</a>
+                            </li>
+                            <li>
+                                <a href="#timer" >timer</a>
+                            </li>
+                            <li>
+                                <a href="#timerInterval" >timerInterval</a>
+                            </li>
+                            <li>
+                                <a href="#userResponses" >userResponses</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#clearResponse" >clearResponse</a>
+                            </li>
+                            <li>
+                                <a href="#fetchQuestions" >fetchQuestions</a>
+                            </li>
+                            <li>
+                                <a href="#jumpToQuestion" >jumpToQuestion</a>
+                            </li>
+                            <li>
+                                <a href="#nextQuestion" >nextQuestion</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#onPopState" >onPopState</a>
+                            </li>
+                            <li>
+                                <a href="#preventBackButton" >preventBackButton</a>
+                            </li>
+                            <li>
+                                <a href="#previousQuestion" >previousQuestion</a>
+                            </li>
+                            <li>
+                                <a href="#selectOption" >selectOption</a>
+                            </li>
+                            <li>
+                                <a href="#startTimer" >startTimer</a>
+                            </li>
+                            <li>
+                                <a href="#submitExam" >submitExam</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#unloadNotification" >unloadNotification</a>
+                            </li>
+                            <li>
+                                <a href="#updateStatus" >updateStatus</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>HostListeners</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#window:beforeunload" >window:beforeunload</a>
+                            </li>
+                            <li>
+                                <a href="#window:popstate" >window:popstate</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(questionService: <a href="../injectables/QuestionService.html" target="_self">QuestionService</a>, router: Router, sessionStorageService: <a href="../injectables/BrowserStorageService.html" target="_self">BrowserStorageService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/Components/exam/exam.component.ts:33</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>questionService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/QuestionService.html" target="_self" >QuestionService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                    <code>Router</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>sessionStorageService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/BrowserStorageService.html" target="_self" >BrowserStorageService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+    <section data-compodoc="block-methods">
+    <h3>HostListeners</h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="window:beforeunload"></a>
+                    <span class="name">
+                        <span ><b>window:beforeunload</b></span>
+                        <a href="#window:beforeunload"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <i>Arguments : </i><code>'$event' </code>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>window:beforeunload($event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="143"
+                                    class="link-to-prism">src/app/Components/exam/exam.component.ts:143</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="window:popstate"></a>
+                    <span class="name">
+                        <span ><b>window:popstate</b></span>
+                        <a href="#window:popstate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <i>Arguments : </i><code>'$event' </code>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>window:popstate($event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="149"
+                                    class="link-to-prism">src/app/Components/exam/exam.component.ts:149</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="clearResponse"></a>
+                    <span class="name">
+                        <span ><b>clearResponse</b></span>
+                        <a href="#clearResponse"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>clearResponse()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="82"
+                                    class="link-to-prism">src/app/Components/exam/exam.component.ts:82</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fetchQuestions"></a>
+                    <span class="name">
+                        <span ><b>fetchQuestions</b></span>
+                        <a href="#fetchQuestions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>fetchQuestions()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="45"
+                                    class="link-to-prism">src/app/Components/exam/exam.component.ts:45</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="jumpToQuestion"></a>
+                    <span class="name">
+                        <span ><b>jumpToQuestion</b></span>
+                        <a href="#jumpToQuestion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>jumpToQuestion(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="99"
+                                    class="link-to-prism">src/app/Components/exam/exam.component.ts:99</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>index</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="nextQuestion"></a>
+                    <span class="name">
+                        <span ><b>nextQuestion</b></span>
+                        <a href="#nextQuestion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>nextQuestion()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="93"
+                                    class="link-to-prism">src/app/Components/exam/exam.component.ts:93</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="40"
+                                    class="link-to-prism">src/app/Components/exam/exam.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onPopState"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>onPopState</b></span>
+                        <a href="#onPopState"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onPopState($event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@HostListener(&#x27;window:popstate&#x27;, [&#x27;$event&#x27;])<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="149"
+                                    class="link-to-prism">src/app/Components/exam/exam.component.ts:149</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>$event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="preventBackButton"></a>
+                    <span class="name">
+                        <span ><b>preventBackButton</b></span>
+                        <a href="#preventBackButton"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>preventBackButton()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="129"
+                                    class="link-to-prism">src/app/Components/exam/exam.component.ts:129</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="previousQuestion"></a>
+                    <span class="name">
+                        <span ><b>previousQuestion</b></span>
+                        <a href="#previousQuestion"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>previousQuestion()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="87"
+                                    class="link-to-prism">src/app/Components/exam/exam.component.ts:87</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="selectOption"></a>
+                    <span class="name">
+                        <span ><b>selectOption</b></span>
+                        <a href="#selectOption"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>selectOption(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="72"
+                                    class="link-to-prism">src/app/Components/exam/exam.component.ts:72</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>index</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="startTimer"></a>
+                    <span class="name">
+                        <span ><b>startTimer</b></span>
+                        <a href="#startTimer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>startTimer()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="57"
+                                    class="link-to-prism">src/app/Components/exam/exam.component.ts:57</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="submitExam"></a>
+                    <span class="name">
+                        <span ><b>submitExam</b></span>
+                        <a href="#submitExam"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>submitExam()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="103"
+                                    class="link-to-prism">src/app/Components/exam/exam.component.ts:103</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="unloadNotification"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>unloadNotification</b></span>
+                        <a href="#unloadNotification"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>unloadNotification($event: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@HostListener(&#x27;window:beforeunload&#x27;, [&#x27;$event&#x27;])<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="143"
+                                    class="link-to-prism">src/app/Components/exam/exam.component.ts:143</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>$event</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="updateStatus"></a>
+                    <span class="name">
+                        <span ><b>updateStatus</b></span>
+                        <a href="#updateStatus"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>updateStatus()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="77"
+                                    class="link-to-prism">src/app/Components/exam/exam.component.ts:77</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="attempted"></a>
+                    <span class="name">
+                        <span ><b>attempted</b></span>
+                        <a href="#attempted"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/Components/exam/exam.component.ts:30</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="currentQuestionIndex"></a>
+                    <span class="name">
+                        <span ><b>currentQuestionIndex</b></span>
+                        <a href="#currentQuestionIndex"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/Components/exam/exam.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="minutes"></a>
+                    <span class="name">
+                        <span ><b>minutes</b></span>
+                        <a href="#minutes"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/Components/exam/exam.component.ts:28</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="name"></a>
+                    <span class="name">
+                        <span ><b>name</b></span>
+                        <a href="#name"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string | null</code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/Components/exam/exam.component.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="questions"></a>
+                    <span class="name">
+                        <span ><b>questions</b></span>
+                        <a href="#questions"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/Question.html" target="_self" >Question[]</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">src/app/Components/exam/exam.component.ts:23</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="remaining"></a>
+                    <span class="name">
+                        <span ><b>remaining</b></span>
+                        <a href="#remaining"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/Components/exam/exam.component.ts:31</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="seconds"></a>
+                    <span class="name">
+                        <span ><b>seconds</b></span>
+                        <a href="#seconds"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="29" class="link-to-prism">src/app/Components/exam/exam.component.ts:29</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="timer"></a>
+                    <span class="name">
+                        <span ><b>timer</b></span>
+                        <a href="#timer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>30 * 60</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="26" class="link-to-prism">src/app/Components/exam/exam.component.ts:26</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="timerInterval"></a>
+                    <span class="name">
+                        <span ><b>timerInterval</b></span>
+                        <a href="#timerInterval"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/Components/exam/exam.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="userResponses"></a>
+                    <span class="name">
+                        <span ><b>userResponses</b></span>
+                        <a href="#userResponses"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>(number | null)[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/Components/exam/exam.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component } from &#x27;@angular/core&#x27;;
+import { CommonModule } from &#x27;@angular/common&#x27;;
+import { FormsModule } from &#x27;@angular/forms&#x27;;
+import { HttpClientModule } from &#x27;@angular/common/http&#x27;;
+import { Router, RouterOutlet } from &#x27;@angular/router&#x27;;
+import Swal from &#x27;sweetalert2&#x27;;
+import { QuestionService } from &#x27;../../service/question.service&#x27;;
+import { HostListener } from &#x27;@angular/core&#x27;;
+import { BrowserStorageService } from &#x27;../../service/browser-storage.service&#x27;;
+import { Question } from &#x27;../../shared/interfaces/Question&#x27;;
+
+import { LoggedInFooterComponent } from &#x27;../../shared/components/logged-in-footer/logged-in-footer.component&#x27;;
+
+@Component({
+  selector: &#x27;app-exam&#x27;,
+  standalone: true,
+  imports: [CommonModule, FormsModule, RouterOutlet, HttpClientModule, LoggedInFooterComponent],
+  providers: [QuestionService],
+  templateUrl: &#x27;./exam.component.html&#x27;,
+  styleUrls: [&#x27;./exam.component.css&#x27;]
+})
+export class ExamComponent {
+  questions: Question[] &#x3D; [];
+  userResponses: (number | null)[] &#x3D; [];
+  currentQuestionIndex &#x3D; 0;
+  timer: number &#x3D; 30 * 60; // 30 minutes in seconds
+  timerInterval: any;
+  minutes: number &#x3D; 0;
+  seconds: number &#x3D; 0;
+  attempted: number &#x3D; 0;
+  remaining: number &#x3D; 0;
+  
+  name: string | null;
+
+  constructor(private questionService: QuestionService, private router: Router, private sessionStorageService: BrowserStorageService) {
+    this.preventBackButton();
+    this.name &#x3D; this.sessionStorageService.getItem(&quot;loggedInUser&quot;);
+  }
+
+  ngOnInit(): void {
+    this.fetchQuestions(); // Fetch questions when component initializes
+    this.preventBackButton();
+  }
+
+  fetchQuestions() {
+    this.questionService.getQuestions().subscribe(data &#x3D;&gt; {
+      this.questions &#x3D; data;
+      this.userResponses &#x3D; new Array(data.length).fill(null);
+      this.updateStatus();
+      this.startTimer();
+    }, error &#x3D;&gt; {
+      console.error(&#x27;Error fetching questions:&#x27;, error);
+      Swal.fire(&#x27;Error&#x27;, &#x27;Failed to load questions. Please try again later.&#x27;, &#x27;error&#x27;);
+    });
+  }
+
+  startTimer() {
+    this.timerInterval &#x3D; setInterval(() &#x3D;&gt; {
+      this.timer--;
+      if (this.timer &#x3D;&#x3D;&#x3D; 600) {
+        Swal.fire(&#x27;Alert&#x27;, &#x27;10 minutes remaining!&#x27;, &#x27;warning&#x27;);
+      }
+      if (this.timer &lt;&#x3D; 0) {
+        clearInterval(this.timerInterval);
+        this.submitExam();
+      }
+      this.minutes &#x3D; Math.floor(this.timer / 60);
+      this.seconds &#x3D; this.timer % 60;
+    }, 1000);
+  }
+
+  selectOption(index: number) {
+    this.userResponses[this.currentQuestionIndex] &#x3D; index; // Store selected option index
+    this.updateStatus();
+  }
+
+  updateStatus() {
+    this.attempted &#x3D; this.userResponses.filter(response &#x3D;&gt; response !&#x3D;&#x3D; null).length;
+    this.remaining &#x3D; this.questions.length - this.attempted;
+  }
+
+  clearResponse() {
+    this.userResponses[this.currentQuestionIndex] &#x3D; null; // Clear user&#x27;s response for current question
+    this.updateStatus(); // Update attempted and remaining counts
+  }
+
+  previousQuestion() {
+    if (this.currentQuestionIndex &gt; 0) {
+      this.currentQuestionIndex--;
+    }
+  }
+
+  nextQuestion() {
+    if (this.currentQuestionIndex &lt; this.questions.length - 1) {
+      this.currentQuestionIndex++;
+    }
+  }
+
+  jumpToQuestion(index: number) {
+    this.currentQuestionIndex &#x3D; index;
+  }
+
+  submitExam() {
+
+    // const answeredCount &#x3D; this.userResponses.filter(response &#x3D;&gt; response !&#x3D;&#x3D; null).length;
+    // const minRequired &#x3D; Math.ceil(this.questions.length * 0.8);
+  
+    // if (answeredCount &lt; minRequired) {
+    //   Swal.fire(&#x27;Error&#x27;, &#x60;You must answer at least 80% of the questions before submitting.&#x60;, &#x27;error&#x27;);
+    //   return;
+    // }
+  
+    Swal.fire({
+      title: &#x27;Submit Exam?&#x27;,
+      text: &quot;Are you sure you want to submit?&quot;,
+      icon: &#x27;warning&#x27;,
+      showCancelButton: true,
+      confirmButtonText: &#x27;Yes, submit!&#x27;,
+      cancelButtonText: &#x27;No, cancel&#x27;
+    }).then((result) &#x3D;&gt; {
+      if (result.isConfirmed) {
+        clearInterval(this.timerInterval);
+        sessionStorage.setItem(&#x27;examFinished&#x27;, &#x27;true&#x27;);
+        this.router.navigate([&#x27;/result&#x27;], { state: { userResponses: this.userResponses, questions: this.questions, timeTaken: 30 * 60 - this.timer } });
+      }
+    });
+  }
+
+  preventBackButton() {
+    window.history.pushState(null, &#x27;&#x27;, location.href);
+    window.addEventListener(&#x27;popstate&#x27;, () &#x3D;&gt; {
+      window.history.pushState(null, &#x27;&#x27;, location.href);
+      Swal.fire({
+        title: &#x27;Warning&#x27;,
+        text: &#x27;Navigating away will end your exam. Please submit the test first.&#x27;,
+        icon: &#x27;warning&#x27;,
+        confirmButtonText: &#x27;OK&#x27;
+      });
+    });
+  }
+
+  @HostListener(&#x27;window:beforeunload&#x27;, [&#x27;$event&#x27;])
+  unloadNotification($event: any): void {
+    $event.preventDefault();
+    $event.returnValue &#x3D; &#x27;You have unsaved changes!&#x27;; // This line is required for the browser to show the native alert
+  }
+
+  @HostListener(&#x27;window:popstate&#x27;, [&#x27;$event&#x27;])
+  onPopState($event: any): void {
+    Swal.fire({
+      title: &#x27;Warning&#x27;,
+      text: &#x27;Navigating away will end your exam. Please submit the test first.&#x27;,
+      icon: &#x27;warning&#x27;,
+      confirmButtonText: &#x27;OK&#x27;
+    }).then(() &#x3D;&gt; {
+      window.history.pushState(null, &#x27;&#x27;, location.href);
+    });
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css&quot;&gt;
+
+
+&lt;header class&#x3D;&quot;header&quot;&gt;
+  &lt;div class&#x3D;&quot;container  d-flex align-items-center justify-content-between&quot;&gt;
+    &lt;div class&#x3D;&quot;d-flex align-items-center&quot;&gt;
+      &lt;div class&#x3D;&quot;logo me-3&quot;&gt;
+        &lt;img src&#x3D;&quot;../../../assets/images/logo.png&quot; alt&#x3D;&quot;Exam Portal Logo&quot; id&#x3D;&quot;logo&quot;&gt;
+      &lt;/div&gt;
+      &lt;div class&#x3D;&quot;header-text&quot;&gt;
+        &lt;p&gt;Relax and give your best!&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;d-flex align-items-center&quot; id&#x3D;&quot;user&quot;&gt;
+      &lt;i class&#x3D;&quot;fas fa-user-circle fa-4x me-2&quot;&gt;&lt;/i&gt;
+      &lt;h5 class&#x3D;&quot;ms-2&quot;&gt;{{(name)}}&lt;/h5&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/header&gt;
+
+&lt;div class&#x3D;&quot;container mt-4 mb-5&quot;&gt;
+  &lt;div class&#x3D;&quot;d-flex justify-content-end mb-3&quot;&gt;
+    &lt;div id&#x3D;&quot;timer&quot; class&#x3D;&quot;timer p-2 rounded-pill ps-5 pe-5 text-light fs-4&quot;&gt;Time Left: &lt;span class&#x3D;&quot;fw-bold fs-4&quot;&gt; {{ minutes }}:{{ seconds | number: &#x27;2.0&#x27; }}&lt;/span&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;!-- Display current question and options --&gt;
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;div class&#x3D;&quot;col-md-8&quot;&gt;
+      &lt;div class&#x3D;&quot;card p-5 shadow mb-3 rounded-5 fs-5  bordered border-5&quot; *ngIf&#x3D;&quot;questions.length &gt; 0; else loading&quot; style&#x3D;&quot;min-height: 350px;&quot;&gt;
+        &lt;h6 class&#x3D;&quot;text-muted&quot;&gt;Question {{ currentQuestionIndex + 1 }}&lt;/h6&gt;
+        &lt;strong&gt;{{ questions[currentQuestionIndex]  .question }}&lt;/strong&gt;
+
+        &lt;div *ngFor&#x3D;&quot;let option of questions[currentQuestionIndex]?.options; let i &#x3D; index&quot; class&#x3D;&quot;form-check&quot;&gt;
+          &lt;input class&#x3D;&quot;form-check-input&quot; type&#x3D;&quot;radio&quot; [name]&#x3D;&quot;&#x27;question&#x27; + currentQuestionIndex&quot; [id]&#x3D;&quot;&#x27;option&#x27; + i&quot;
+                 [value]&#x3D;&quot;i&quot; [(ngModel)]&#x3D;&quot;userResponses[currentQuestionIndex]&quot; (change)&#x3D;&quot;selectOption(i)&quot;&gt;
+          &lt;label class&#x3D;&quot;form-check-label&quot; [for]&#x3D;&quot;&#x27;option&#x27; + i&quot;&gt;{{ option }}&lt;/label&gt;
+        &lt;/div&gt;
+        
+      &lt;/div&gt;
+
+      &lt;!-- Loading placeholder --&gt;
+      &lt;ng-template #loading&gt;
+        &lt;div class&#x3D;&quot;card p-4 shadow mb-3&quot;&gt;
+          &lt;h6&gt;Loading questions...&lt;/h6&gt;
+        &lt;/div&gt;
+      &lt;/ng-template&gt;
+
+      &lt;!-- Navigation buttons --&gt;
+      &lt;div class&#x3D;&quot;row align-items-center&quot; *ngIf&#x3D;&quot;questions.length &gt; 0&quot;&gt;
+        &lt;div class&#x3D;&quot;col mb-2 mt-2 text-center&quot;&gt;        &lt;button class&#x3D;&quot;btn btn-secondary rounded-pill ps-5 pe-5&quot; (click)&#x3D;&quot;previousQuestion()&quot; [disabled]&#x3D;&quot;currentQuestionIndex &#x3D;&#x3D;&#x3D; 0&quot;&gt;Previous&lt;/button&gt;&lt;/div&gt;
+        &lt;div class&#x3D;&quot;col mb-2 mt-2 text-center&quot;&gt;        &lt;button class&#x3D;&quot;btn btn-warning rounded-pill ps-5 pe-5&quot; (click)&#x3D;&quot;clearResponse()&quot;&gt;Clear Response&lt;/button&gt;&lt;/div&gt;
+        &lt;!-- &lt;div class&#x3D;&quot;col mb-2 mt-2&quot;&gt;        &lt;button class&#x3D;&quot;btn rounded-pill text-light ps-5 pe-5 markForReview&quot; &gt;Mark for review&lt;/button&gt;&lt;/div&gt; --&gt;
+        &lt;div class&#x3D;&quot;col mb-2 mt-2 text-center&quot;&gt;        &lt;button class&#x3D;&quot;btn btn-secondary rounded-pill ps-5 pe-5&quot; (click)&#x3D;&quot;nextQuestion()&quot; [disabled]&#x3D;&quot;currentQuestionIndex &#x3D;&#x3D;&#x3D; questions.length - 1&quot;&gt;Next&lt;/button&gt;&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Sidebar showing question status --&gt;
+    &lt;div class&#x3D;&quot;col-md-4&quot;&gt;
+      &lt;div class&#x3D;&quot;card p-4 shadow rounded-5&quot;&gt;
+        &lt;h5 class&#x3D;&quot;text-muted&quot;&gt;Questions Summary&lt;/h5&gt;
+        &lt;div class&#x3D;&quot;d-flex flex-wrap mt-2 mb-2&quot;&gt;
+          &lt;button *ngFor&#x3D;&quot;let q of questions; let i &#x3D; index&quot;
+                  class&#x3D;&quot;btn btn-sm me-1 mb-1 rounded-pill&quot;
+                  [ngClass]&#x3D;&quot;userResponses[i] !&#x3D;&#x3D; null ? &#x27;btn btn-success&#x27; : &#x27;btn btn-secondary&#x27;&quot;
+                  (click)&#x3D;&quot;jumpToQuestion(i)&quot;&gt;
+            {{ i + 1 }}
+          &lt;/button&gt;
+        &lt;/div&gt;
+        &lt;p&gt;Attempted: &lt;span class&#x3D;&quot;badge bg-primary rounded-pill&quot;&gt;{{ attempted }}&lt;/span&gt;&lt;/p&gt;
+        &lt;p&gt;Remaining: &lt;span class&#x3D;&quot;badge bg-secondary rounded-pill&quot;&gt;{{ remaining }}&lt;/span&gt;&lt;/p&gt;
+        &lt;button class&#x3D;&quot;btn btn-danger w-100 mt-3 rounded-pill&quot; (click)&#x3D;&quot;submitExam()&quot;&gt;Submit Exam&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;app-logged-in-footer&gt;&lt;/app-logged-in-footer&gt;</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./exam.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">/* Set cursor to pointer on hover for form-check inputs (radio buttons) */
+.form-check-input:hover {
+    cursor: pointer;
+  }
+  
+  /* Set cursor to pointer on hover for buttons */
+  .btn:hover {
+    cursor: pointer;
+  }
+  
+  /* Set cursor to pointer on hover for badges */
+  .badge:hover {
+    cursor: pointer;
+  }
+  
+  #timer {
+    margin-right: 20px;
+  }
+  
+  #user {
+    margin-left: 20px;
+  }
+  
+  .header {
+    background-color: #4a154b;
+    color: white;
+    padding: 5px 0;
+  }
+  
+  .header .logo img {
+    height: 50px;
+    width: auto;
+  }
+  
+  .header .header-text {
+    margin-top: 10px;
+  }
+  
+  
+  /* Adjust padding for smaller screens */
+  @media (max-width: 576px) {
+    .footer {
+      margin-top: 50;
+      padding: 8px 0;
+    }
+  }
+
+  .timer{
+    background-color: #4a154b;
+  }
+  
+
+  .markForReview{
+    background-color: #4a154b;
+  }
+  </code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"><header class="header">  <div class="container  d-flex align-items-center justify-content-between">    <div class="d-flex align-items-center">      <div class="logo me-3">             </div>      <div class="header-text">        <p>Relax and give your best!</p>      </div>    </div>    <div class="d-flex align-items-center" id="user">      <i class="fas fa-user-circle fa-4x me-2"></i>      <h5 class="ms-2">{{(name)}}</h5>    </div>  </div></header><div class="container mt-4 mb-5">  <div class="d-flex justify-content-end mb-3">    <div id="timer" class="timer p-2 rounded-pill ps-5 pe-5 text-light fs-4">Time Left: <span class="fw-bold fs-4"> {{ minutes }}:{{ seconds | number: \'2.0\' }}</span></div>  </div>  <!-- Display current question and options -->  <div class="row">    <div class="col-md-8">      <div class="card p-5 shadow mb-3 rounded-5 fs-5  bordered border-5" *ngIf="questions.length > 0; else loading" style="min-height: 350px;">        <h6 class="text-muted">Question {{ currentQuestionIndex + 1 }}</h6>        <strong>{{ questions[currentQuestionIndex]  .question }}</strong>        <div *ngFor="let option of questions[currentQuestionIndex]?.options; let i = index" class="form-check">          <input class="form-check-input" type="radio" [name]="\'question\' + currentQuestionIndex" [id]="\'option\' + i"                 [value]="i" [(ngModel)]="userResponses[currentQuestionIndex]" (change)="selectOption(i)">          <label class="form-check-label" [for]="\'option\' + i">{{ option }}</label>        </div>              </div>      <!-- Loading placeholder -->      <ng-template #loading>        <div class="card p-4 shadow mb-3">          <h6>Loading questions...</h6>        </div>      </ng-template>      <!-- Navigation buttons -->      <div class="row align-items-center" *ngIf="questions.length > 0">        <div class="col mb-2 mt-2 text-center">        <button class="btn btn-secondary rounded-pill ps-5 pe-5" (click)="previousQuestion()" [disabled]="currentQuestionIndex === 0">Previous</button></div>        <div class="col mb-2 mt-2 text-center">        <button class="btn btn-warning rounded-pill ps-5 pe-5" (click)="clearResponse()">Clear Response</button></div>        <!-- <div class="col mb-2 mt-2">        <button class="btn rounded-pill text-light ps-5 pe-5 markForReview" >Mark for review</button></div> -->        <div class="col mb-2 mt-2 text-center">        <button class="btn btn-secondary rounded-pill ps-5 pe-5" (click)="nextQuestion()" [disabled]="currentQuestionIndex === questions.length - 1">Next</button></div>      </div>    </div>    <!-- Sidebar showing question status -->    <div class="col-md-4">      <div class="card p-4 shadow rounded-5">        <h5 class="text-muted">Questions Summary</h5>        <div class="d-flex flex-wrap mt-2 mb-2">          <button *ngFor="let q of questions; let i = index"                  class="btn btn-sm me-1 mb-1 rounded-pill"                  [ngClass]="userResponses[i] !== null ? \'btn btn-success\' : \'btn btn-secondary\'"                  (click)="jumpToQuestion(i)">            {{ i + 1 }}          </button>        </div>        <p>Attempted: <span class="badge bg-primary rounded-pill">{{ attempted }}</span></p>        <p>Remaining: <span class="badge bg-secondary rounded-pill">{{ remaining }}</span></p>        <button class="btn btn-danger w-100 mt-3 rounded-pill" (click)="submitExam()">Submit Exam</button>      </div>    </div>  </div></div><app-logged-in-footer></app-logged-in-footer></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'ExamComponent', 'selector': 'app-exam'},{'name': 'HomepageComponent', 'selector': 'app-homepage'},{'name': 'LandingPageComponent', 'selector': 'app-landing-page'},{'name': 'LoggedInFooterComponent', 'selector': 'app-logged-in-footer'},{'name': 'LoginComponent', 'selector': 'app-login'},{'name': 'PageNotFoundComponent', 'selector': 'app-page-not-found'},{'name': 'ResultComponent', 'selector': 'app-result'},{'name': 'SignupComponent', 'selector': 'app-signup'},{'name': 'StartExamComponent', 'selector': 'app-start-exam'},{'name': 'TestHistoryComponent', 'selector': 'app-test-history'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'ExamComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'ExamComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

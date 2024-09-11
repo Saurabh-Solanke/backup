@@ -1,0 +1,132 @@
+
+
+<div class="container">
+    <div class="row align-items-center vh-100">
+      <div class="col-md-6 d-md-flex justify-content-center">
+        <img
+          src="../../../assets/images/Signup.gif"
+          alt="Illustration"
+          class="img-fluid illustration animate__animated animate__fadeInLeft"
+        />
+      </div>
+      <div class="col-md-6">
+        <div class="card animate__animated hover-animate">
+          <div class="card-body">
+            <div>
+              <h4 class="card-title text-center fs-3 fw-bold mb-3 c1">
+                Signup / Register
+              </h4>
+            </div>
+    
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group pb-2">
+        <label for="fullName">Name<span class="text-danger"> *</span></label>
+        <input type="text" id="name" formControlName="fullName" class="form-control"
+            placeholder="Enter your fullname here"
+            [class.is-invalid]="signupForm.get('fullName')?.invalid && signupForm.get('fullName')?.touched">
+        <div *ngIf="signupForm.get('fullName')?.invalid && signupForm.get('fullName')?.touched"
+            class="invalid-feedback">
+            <span *ngIf="signupForm.get('fullName')?.errors?.['required']">Name is
+                required.</span>
+            <span *ngIf="signupForm.get('fullName')?.errors?.['pattern']">Please enter a valid
+                name (only
+                letters and spaces).</span>
+        </div>
+    </div>
+
+    <div class="form-group pb-2">
+        <div class="form-group mt-2">
+            <label for="email">Email<span class="text-danger"> *</span></label>
+            <input type="email" id="email" formControlName="email" class="form-control"
+                placeholder="Enter your email here"
+                [class.is-invalid]="signupForm.get('email')?.invalid && signupForm.get('email')?.touched">
+            <div *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched"
+                class="invalid-feedback">
+                <span *ngIf="signupForm.get('email')?.errors?.['required']">Email is
+                    required.</span>
+                <span *ngIf="signupForm.get('email')?.errors?.['email']">Please enter a valid
+                    email
+                    address.</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group pb-2">
+        <label for="mobileNo">Mobile no<span class="text-danger"> *</span></label>
+        <input type="text" id="mobileNo" formControlName="mobileNo" class="form-control"
+            placeholder="Enter your Mobile no here"
+            [class.is-invalid]="signupForm.get('mobileNo')?.invalid && signupForm.get('mobileNo')?.touched">
+        <div *ngIf="signupForm.get('mobileNo')?.invalid && signupForm.get('mobileNo')?.touched"
+            class="invalid-feedback">
+            <span *ngIf="signupForm.get('mobileNo')?.errors?.['required']">Mobile is
+                required.</span>
+            <span *ngIf="signupForm.get('mobileNo')?.errors?.['pattern']">Please enter a valid
+                Mobile (only 10
+                digit number is valid).</span>
+        </div>
+    </div>
+
+
+    <div class="form-group pb-2">
+        <label for="password">Password<span class="text-danger"> *</span></label>
+        <input type="password" id="password" formControlName="password" class="form-control"
+            placeholder="Enter your password here"
+            [class.is-invalid]="signupForm.get('password')?.invalid && signupForm.get('password')?.touched">
+        <div *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched"
+            class="invalid-feedback">
+            <span *ngIf="signupForm.get('password')?.errors?.['required']">Password is
+                required.</span>
+            <span *ngIf="signupForm.get('password')?.errors?.['minlength']">Password must be at
+                least 8
+                characters long.</span>
+        </div>
+    </div>
+
+    <div class="form-group pb-2">
+        <label for="confirmPassword">Confirm Password<span class="text-danger"> *</span></label>
+        <input type="password" id="confirmPassword" formControlName="confirmPassword"
+            class="form-control" placeholder="Confirm your password"
+            [class.is-invalid]="signupForm.get('confirmPassword')?.invalid && signupForm.get('confirmPassword')?.touched || signupForm.hasError('mismatch')">
+        <div *ngIf="signupForm.get('confirmPassword')?.invalid && signupForm.get('confirmPassword')?.touched || signupForm.hasError('mismatch')"
+            class="invalid-feedback">
+            <span *ngIf="signupForm.get('confirmPassword')?.errors?.['required']">Please confirm
+                your
+                password.</span>
+            <span *ngIf="signupForm.hasError('mismatch')">Passwords must match.</span>
+        </div>
+    </div>
+
+
+
+    <div class="d-grid mt-3">
+        <div class="row">
+          <a class="btn btn-nxt w-25 ms-3" routerLink="">
+            <i class="fas fa-arrow-left me-0"></i> Go Back
+          </a>
+          <button type="submit" class="btn btn-prev w-50 ms-auto">
+            <i class="fas fa-user-plus"></i> Create Account
+          </button>
+        </div>
+        </div>
+
+
+
+</form>
+    <div class="text-center mt-3">
+                Already have an account?
+                <a class="c2" routerLink="/login">Login</a>
+              </div>
+              <p class="mt-4 text-muted text-center">
+                By Signing up, you agree to our
+                <a  class="c2">Terms of Service</a>
+                and
+                <a class="c2">Privacy Policy</a>
+              </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+

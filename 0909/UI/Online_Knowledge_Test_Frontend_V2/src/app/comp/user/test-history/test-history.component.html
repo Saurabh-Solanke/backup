@@ -1,0 +1,90 @@
+<app-navbar></app-navbar>
+
+
+<div class="d-flex flex-column flex-md-row mt-5">
+    <!-- Sidebar -->
+    <!-- Sidebar -->
+    <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <div class="position-sticky">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/user/home">
+                        <i class="fas fa-home"></i>
+                        <span class="menu-text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/user/choose-exam">
+                        <i class="fas fa-file-alt"></i>
+                        <span class="menu-text">Take a test</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/profile">
+                        <i class="fas fa-user"></i>
+                        <span class="menu-text">Profile</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/user/test-history">
+                        <i class="fas fa-history"></i>
+                        <span class="menu-text">Test History</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mt-5 ps-5 pe-5 pb-5">
+
+        <div class="container mt-4">
+            <h2 class="text-center mb-4">Your Exam Results</h2>
+
+            <!-- Loading indicator -->
+            <div *ngIf="isLoading" class="text-center">
+                <p-progressSpinner></p-progressSpinner>
+            </div>
+
+            <!-- Error message if any -->
+            <div *ngIf="errorMessage">
+                <p-message severity="error" text="{{ errorMessage }}"></p-message>
+            </div>
+
+            <!-- Results section -->
+            <div *ngIf="!isLoading && examResults.length > 0" class="p-grid p-justify-center">
+                <p-card *ngFor="let result of examResults" class="p-m-2 p-col-12 p-md-4">
+                    <ng-template pTemplate="header">
+                        <h4 class="text-primary">{{ result.examName }}</h4> <!-- Show the exam title -->
+                    </ng-template>
+                    <ng-template pTemplate="content">
+                        <div class="p-grid p-align-center">
+                            <div class="p-col-12">
+                                <p><strong>Score:</strong> {{ result.totalScore }}</p>
+                                <p><strong>Percentage:</strong> {{ result.percentage }}%</p>
+                                <p><strong>Passed:</strong>
+                                    <p-tag [value]="result.passed ? 'Yes' : 'No'"
+                                        [severity]="result.passed ? 'success' : 'danger'"></p-tag>
+                                </p>
+                                <p><strong>Duration:</strong> {{ result.duration }} minutes</p>
+                                <p><strong>Completed:</strong> {{ result.completedDate | date:'short' }}</p>
+                            </div>
+                        </div>
+                    </ng-template>
+                </p-card>
+            </div>
+
+            <!-- No results message -->
+            <div *ngIf="!isLoading && examResults.length === 0" class="text-center">
+                <p-message severity="info" text="No exam results found."></p-message>
+            </div>
+        </div>
+
+
+    </main>
+
+</div>
+
+
+
+<app-footer></app-footer>

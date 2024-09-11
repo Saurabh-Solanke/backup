@@ -1,0 +1,15 @@
+.container {
+    margin-top: 10%;
+  }
+  .display-1 {
+    font-size: 6rem;
+  }
+  .btn-primary {
+    background-color: #9381ff;
+    border-color: #9381ff;
+  }
+
+  .navbar {
+    background-color: #9381ff;
+  }
+  
