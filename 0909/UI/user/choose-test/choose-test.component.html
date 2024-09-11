@@ -1,0 +1,69 @@
+<app-navbar></app-navbar>
+
+
+<div class="d-flex flex-column flex-md-row mt-5">
+  <!-- Sidebar -->
+  <!-- Sidebar -->
+  <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+    <div class="position-sticky">
+      <ul class="nav flex-column">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/user/home">
+            <i class="fas fa-home"></i>
+            <span class="menu-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/user/choose-exam">
+            <i class="fas fa-file-alt"></i>
+            <span class="menu-text">Take a test</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/user/profile">
+            <i class="fas fa-user"></i>
+            <span class="menu-text">Profile</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/user/test-history">
+            <i class="fas fa-history"></i>
+            <span class="menu-text">Test History</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <!-- Exam Cards -->
+
+  <div class="container mt-4">
+
+    <!-- Show a message if no exams are available -->
+    <div *ngIf="exams.length === 0" class="text-center">
+      <p>Hooray! No exams for now. Comeback later</p>
+    </div>
+
+    <!-- Display exams -->
+    <div class="row">
+      <div class="col-md-4 mb-4" *ngFor="let exam of exams">
+        <p-card header="{{ exam.title }}"
+          subheader="{{ exam.startDate | date:'short' }} to {{ exam.endDate | date:'short' }}" styleClass="shadow-sm">
+          <div class="card-content">
+            <p>{{ exam.description }}</p>
+          </div>
+          <p-footer>
+            <button pButton type="button" label="Start Exam" icon="pi pi-play" class="p-button-success"
+              (click)="startExam(exam.examId)"></button>
+          </p-footer>
+        </p-card>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<app-footer></app-footer>

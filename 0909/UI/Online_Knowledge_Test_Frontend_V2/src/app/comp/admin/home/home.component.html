@@ -1,0 +1,78 @@
+<app-navbar></app-navbar>
+
+<div class="d-flex flex-column flex-md-row mt-5">
+    <!-- Sidebar -->
+    <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <div class="position-sticky">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/admin/home">
+                        <i class="fas fa-home"></i>
+                        <span class="menu-text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/create-test">
+                        <i class="fas fa-file-alt"></i>
+                        <span class="menu-text">Create Test</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/create-exam-section">
+                        <i class="fas fa-list"></i>
+                        <span class="menu-text">Create Test Section</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/reports">
+                        <i class="fas fa-chart-bar"></i>
+                        <span class="menu-text">Reports</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/test-history-dash">
+                        <i class="fas fa-history"></i>
+                        <span class="menu-text">Test History</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/admin/manage-users-dash">
+                        <i class="fas fa-users"></i>
+                        <span class="menu-text">Manage Users</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>    
+
+    <!-- Main Content -->
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mt-5 ps-5 pe-5 pb-5">
+        <div class="p-grid p-justify-center mt-2">
+
+            <!-- Card for Results Section -->
+            <div class="p-col-12 p-md-4 p-text-center">
+                <p-card header="Results" styleClass="p-card">
+                    <p>View and manage all exam results.</p>
+                    <button pButton type="button" label="Go to Results"
+                        class="p-button-rounded p-button-primary p-button-lg mt-3" icon="pi pi-chart-line"
+                        (click)="navigateTo('/admin/test-history-dash')"></button>
+                </p-card>
+            </div>
+
+            <!-- Card for Exams Section -->
+            <div class="p-col-12 p-md-4 p-text-center">
+                <p-card header="Exams" styleClass="p-card">
+                    <p>Create, update, and manage all exams.</p>
+                    <button pButton type="button" label="Go to Exams"
+                        class="p-button-rounded p-button-success p-button-lg mt-3" icon="pi pi-book"
+                        (click)="navigateTo('/admin/create-test')"></button>
+                </p-card>
+            </div>
+        </div>
+    </main>
+</div>
+
+
+
+
+<app-footer></app-footer>

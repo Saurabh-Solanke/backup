@@ -1,0 +1,87 @@
+<app-navbar></app-navbar>
+
+
+<div class="d-flex flex-column flex-md-row mt-5">
+    <!-- Sidebar -->
+    <!-- Sidebar -->
+    <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <div class="position-sticky">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/user/home">
+                        <i class="fas fa-home"></i>
+                        <span class="menu-text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/user/choose-exam">
+                        <i class="fas fa-file-alt"></i>
+                        <span class="menu-text">Take a test</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/user/profile">
+                        <i class="fas fa-user"></i>
+                        <span class="menu-text">Profile</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/user/test-history">
+                        <i class="fas fa-history"></i>
+                        <span class="menu-text">Test History</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mt-5 ps-5 pe-5 pb-5">
+        <div class="container mt-4" *ngIf="user">
+            <p-card>
+                <ng-template pTemplate="header">
+                    <h3 class="text-center p-3">{{ user.fullname }}</h3>
+                </ng-template>
+
+                <h5 class="ps-4 pb-3">Your Profile Details :</h5>
+
+                <ng-template pTemplate="content">
+                    <div class="p-grid ps-4">
+                        <div class="p-col-12 p-md-6">
+                            <p><strong>Email:</strong> {{ user.email }}</p>
+                        </div>
+                        <div class="p-col-12 p-md-6">
+                            <p><strong>Mobile No:</strong> {{ user.mobileNo }}</p>
+                        </div>
+                        <div class="p-col-12 p-md-6">
+                            <p><strong class="me-3">Account Active:</strong>
+                                <p-tag [value]="user.isActive ? 'Active' : 'Inactive'"
+                                    [severity]="user.isActive ? 'success' : 'danger'"></p-tag>
+                            </p>
+                        </div>
+                        <div class="p-col-12 p-md-6">
+                            <p><strong>Created On:</strong> {{ user.createdOn | date:'medium' }}</p>
+                        </div>
+                        <div class="p-col-12 p-md-6">
+                            <p><strong>Last Updated:</strong> {{ user.updatedOn | date:'medium' }}</p>
+                        </div>
+                    </div>
+                </ng-template>
+
+                <ng-template pTemplate="footer">
+                    <button pButton type="button" label="Edit Profile" icon="pi pi-pencil" class="p-button-secondary"
+                        (click)="editProfile()"></button>
+                </ng-template>
+            </p-card>
+        </div>
+
+        <div *ngIf="!user" class="text-center mt-5">
+            <p-message severity="info" text="User not found."></p-message>
+        </div>
+
+    </main>
+</div>
+
+
+
+<app-footer></app-footer>

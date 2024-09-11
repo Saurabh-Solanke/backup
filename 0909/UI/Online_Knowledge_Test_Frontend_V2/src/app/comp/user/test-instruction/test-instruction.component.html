@@ -1,0 +1,38 @@
+<app-navbar></app-navbar>
+  <div class="container-fluid main d-flex justify-content-center align-items-center">
+    <div class="card p-3 shadow custom-card rounded-5">
+      <div class="card-body">
+        <h5 class="card-title text-center fs-4 mb-4">INSTRUCTIONS</h5>
+        <div class="terms mt-3">
+          <h6 class="mb-4">Please read them carefully before your start:</h6>
+          <i class="far fa-clock me-2 text-primary"></i>
+          You must complete the exam within 30 minutes<br>
+          <i class="fas fa-laptop me-2 text-primary"></i>
+          No use of electronic devices other than the computer for taking the exam<br>
+          <i class="fas fa-ban me-2 text-primary"></i>
+          Any form of cheating will result in immediate disqualification<br>
+          <i class="fas fa-wifi me-2 text-primary"></i>
+          Ensure you have a stable internet connection before starting the exam<br>
+          <i class="fas fa-sync-alt me-2 text-primary"></i>
+          Do not refresh or close the browser during the exam<br>
+          <i class="fas fa-check me-2 text-primary"></i>
+          All answers must be submitted before the time runs out<br>
+          <i class="fas fa-save me-2 text-primary"></i>
+          Your progress will be saved automatically as you proceed<br>
+          <i class="fas fa-chart-line me-2 text-primary"></i>
+          Results will be available immediately after the exam ends<br>
+        </div>
+        <div class="form-check mt-4">
+          <input type="checkbox" class="form-check-input" id="termsCheck" [(ngModel)]="termsAccepted">
+          <label class="form-check-label" for="termsCheck">I agree to the terms and conditions</label>
+        </div>
+        <button class="btn btn-start rounded-pill w-100 mt-3" (click)="startExam()"><i class="fas fa-pencil me-2"></i>Start
+          Exam</button>
+
+          <button class="btn btn-secondary rounded-pill w-100 mt-2" routerLink="/user/choose-exam">
+            Go Back</button>
+      </div>
+    </div>
+  </div>
+  
+<!-- <app-footer></app-footer> -->
