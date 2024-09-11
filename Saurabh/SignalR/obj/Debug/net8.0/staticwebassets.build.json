@@ -1,0 +1,39 @@
+{
+  "Version": 1,
+  "Hash": "5ODHZhqckxuPjmLzR7op8LJBQ/54L9WK6Si14+MCM7o=",
+  "Source": "SignalR",
+  "BasePath": "_content/SignalR",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "SignalR\\wwwroot",
+      "Source": "SignalR",
+      "ContentRoot": "C:\\Users\\hp\\Desktop\\Saurabh\\SignalR\\wwwroot\\",
+      "BasePath": "_content/SignalR",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\hp\\Desktop\\Saurabh\\SignalR\\wwwroot\\index.html",
+      "SourceId": "SignalR",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\hp\\Desktop\\Saurabh\\SignalR\\wwwroot\\",
+      "BasePath": "_content/SignalR",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    }
+  ]
+}
