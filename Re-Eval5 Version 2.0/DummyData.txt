@@ -1,0 +1,101 @@
+-- Inserting sample users with all required fields
+INSERT INTO AspNetUsers (Id, UserName, NormalizedUserName, Email, NormalizedEmail, EmailConfirmed, PasswordHash, SecurityStamp, ConcurrencyStamp, PhoneNumber, PhoneNumberConfirmed, TwoFactorEnabled, LockoutEnd, LockoutEnabled, AccessFailedCount)
+VALUES 
+('U001', 'student1', 'STUDENT1', 'student1@example.com', 'STUDENT1@EXAMPLE.COM', 1, 'hash1', 'stamp1', 'concurrency1', '1234567890', 0, 0, NULL, 1, 0),
+('U002', 'student2', 'STUDENT2', 'student2@example.com', 'STUDENT2@EXAMPLE.COM', 1, 'hash2', 'stamp2', 'concurrency2', '1234567891', 0, 0, NULL, 1, 0),
+('U003', 'student3', 'STUDENT3', 'student3@example.com', 'STUDENT3@EXAMPLE.COM', 1, 'hash3', 'stamp3', 'concurrency3', '1234567892', 0, 0, NULL, 1, 0),
+('U004', 'student4', 'STUDENT4', 'student4@example.com', 'STUDENT4@EXAMPLE.COM', 1, 'hash4', 'stamp4', 'concurrency4', '1234567893', 0, 0, NULL, 1, 0),
+('U005', 'student5', 'STUDENT5', 'student5@example.com', 'STUDENT5@EXAMPLE.COM', 1, 'hash5', 'stamp5', 'concurrency5', '1234567894', 0, 0, NULL, 1, 0),
+('U006', 'student6', 'STUDENT6', 'student6@example.com', 'STUDENT6@EXAMPLE.COM', 1, 'hash6', 'stamp6', 'concurrency6', '1234567895', 0, 0, NULL, 1, 0),
+('U007', 'student7', 'STUDENT7', 'student7@example.com', 'STUDENT7@EXAMPLE.COM', 1, 'hash7', 'stamp7', 'concurrency7', '1234567896', 0, 0, NULL, 1, 0),
+('U008', 'student8', 'STUDENT8', 'student8@example.com', 'STUDENT8@EXAMPLE.COM', 1, 'hash8', 'stamp8', 'concurrency8', '1234567897', 0, 0, NULL, 1, 0),
+('U009', 'student9', 'STUDENT9', 'student9@example.com', 'STUDENT9@EXAMPLE.COM', 1, 'hash9', 'stamp9', 'concurrency9', '1234567898', 0, 0, NULL, 1, 0),
+('U010', 'student10', 'STUDENT10', 'student10@example.com', 'STUDENT10@EXAMPLE.COM', 1, 'hash10', 'stamp10', 'concurrency10', '1234567899', 0, 0, NULL, 1, 0);
+
+-- Inserting sample exams without specifying the identity column
+INSERT INTO Exams (Title, Description, CreatedByUserId, CreatedDate, StartDate, EndDate, IsPublished, Duration, TotalMarks, PassingMarks, isRandmized)
+VALUES 
+('Math Test 1', 'Basic Math Exam', 'U001', '2023-09-01', '2023-09-01', '2023-09-01', 1, 60, 100, 40, 0),
+('Physics Test 1', 'Basic Physics Exam', 'U001', '2023-09-02', '2023-09-02', '2023-09-02', 1, 60, 100, 40, 0),
+('Chemistry Test 1', 'Basic Chemistry Exam', 'U001', '2023-09-03', '2023-09-03', '2023-09-03', 1, 60, 100, 40, 0);
+
+
+
+-- Inserting sections using subqueries to get ExamId dynamically
+INSERT INTO Sections (ExamId, Title, NumberOfQuestions, TotalMarks, PassingMarks)
+SELECT ExamId, 'Algebra', 10, 50, 20
+FROM Exams
+WHERE Title = 'Math Test 1'
+UNION ALL
+SELECT ExamId, 'Geometry', 10, 50, 20
+FROM Exams
+WHERE Title = 'Math Test 1'
+UNION ALL
+SELECT ExamId, 'Mechanics', 10, 50, 20
+FROM Exams
+WHERE Title = 'Physics Test 1'
+UNION ALL
+SELECT ExamId, 'Optics', 10, 50, 20
+FROM Exams
+WHERE Title = 'Physics Test 1'
+UNION ALL
+SELECT ExamId, 'Organic Chemistry', 10, 50, 20
+FROM Exams
+WHERE Title = 'Chemistry Test 1'
+UNION ALL
+SELECT ExamId, 'Inorganic Chemistry', 10, 50, 20
+FROM Exams
+WHERE Title = 'Chemistry Test 1';
+
+
+
+-- Inserting questions without specifying the identity column
+INSERT INTO Questions (SectionId, QuestionText, IsMultipleChoice, CreatedDate, HasDifferentialMarking, MediaType, MediaUrl)
+VALUES 
+((SELECT SectionId FROM Sections WHERE Title = 'Algebra' AND ExamId = 1), 'What is 2+2?', 1, '2023-09-01', 0, NULL, NULL),
+((SELECT SectionId FROM Sections WHERE Title = 'Algebra' AND ExamId = 1), 'Solve for x: 2x = 10', 1, '2023-09-01', 0, NULL, NULL),
+((SELECT SectionId FROM Sections WHERE Title = 'Geometry' AND ExamId = 1), 'What is the area of a circle?', 1, '2023-09-01', 0, 1, 'image-url-circle.jpg'),
+((SELECT SectionId FROM Sections WHERE Title = 'Geometry' AND ExamId = 1), 'What is the volume of a sphere?', 1, '2023-09-01', 0, NULL, NULL),
+((SELECT SectionId FROM Sections WHERE Title = 'Mechanics' AND ExamId = 2), 'Describe Newton’s First Law.', 0, '2023-09-02', 0, NULL, NULL),
+((SELECT SectionId FROM Sections WHERE Title = 'Optics' AND ExamId = 2), 'Describe Snell’s Law.', 0, '2023-09-02', 0, 1, 'image-url-snells-law.jpg'),
+((SELECT SectionId FROM Sections WHERE Title = 'Organic Chemistry' AND ExamId = 3), 'What is an Alkene?', 1, '2023-09-03', 0, NULL, NULL),
+((SELECT SectionId FROM Sections WHERE Title = 'Inorganic Chemistry' AND ExamId = 3), 'Draw the structure of Benzene.', 0, '2023-09-03', 0, 1, 'image-url-benzene.jpg');
+
+-- Inserting exam results without specifying the identity column
+INSERT INTO ExamResults (UserId, ExamId, AttemptNumber, TotalScore, Percentage, Passed, CompletedDate, Duration, MarkForReview)
+VALUES 
+((SELECT Id FROM AspNetUsers WHERE UserName = 'student1'), (SELECT ExamId FROM Exams WHERE Title = 'Math Test 1'), 1, 80, 80.0, 1, '2023-09-01', 48, 4),  -- Finished 20% early, 4 marked for review
+((SELECT Id FROM AspNetUsers WHERE UserName = 'student2'), (SELECT ExamId FROM Exams WHERE Title = 'Math Test 1'), 1, 50, 50.0, 1, '2023-09-01', 30, 5),  -- Auto submitted after 30 mins, 5 marked for review, attempted < 50%
+((SELECT Id FROM AspNetUsers WHERE UserName = 'student3'), (SELECT ExamId FROM Exams WHERE Title = 'Math Test 1'), 1, 20, 20.0, 0, '2023-09-01', 30, 6),  -- Auto submitted, attempted < 50%
+((SELECT Id FROM AspNetUsers WHERE UserName = 'student4'), (SELECT ExamId FROM Exams WHERE Title = 'Math Test 1'), 1, 95, 95.0, 1, '2023-09-02', 60, 8),  -- Top scorer for percentile report
+((SELECT Id FROM AspNetUsers WHERE UserName = 'student5'), (SELECT ExamId FROM Exams WHERE Title = 'Math Test 1'), 1, 70, 70.0, 1, '2023-09-02', 60, 2),  -- Finished normally, 2 marked for review
+((SELECT Id FROM AspNetUsers WHERE UserName = 'student6'), (SELECT ExamId FROM Exams WHERE Title = 'Math Test 1'), 1, 85, 85.0, 1, '2023-09-03', 45, 5),  -- Finished early, 5 marked for review
+((SELECT Id FROM AspNetUsers WHERE UserName = 'student7'), (SELECT ExamId FROM Exams WHERE Title = 'Math Test 1'), 1, 45, 45.0, 0, '2023-09-03', 60, 6),  -- Finished normally, but low score
+((SELECT Id FROM AspNetUsers WHERE UserName = 'student8'), (SELECT ExamId FROM Exams WHERE Title = 'Math Test 1'), 1, 95, 95.0, 1, '2023-09-03', 60, 7),  -- Another top scorer
+((SELECT Id FROM AspNetUsers WHERE UserName = 'student9'), (SELECT ExamId FROM Exams WHERE Title = 'Math Test 1'), 1, 35, 35.0, 0, '2023-09-01', 60, 5),  -- Failed
+((SELECT Id FROM AspNetUsers WHERE UserName = 'student10'), (SELECT ExamId FROM Exams WHERE Title = 'Math Test 1'), 1, 40, 40.0, 0, '2023-09-01', 60, 6); -- Failed
+
+
+-- Inserting options for questions
+INSERT INTO Options (QuestionId, OptionText, IsCorrect)
+VALUES
+((SELECT QuestionId FROM Questions WHERE QuestionText = 'What is 2+2?'), '4', 1),
+((SELECT QuestionId FROM Questions WHERE QuestionText = 'What is 2+2?'), '3', 0),
+((SELECT QuestionId FROM Questions WHERE QuestionText = 'Solve for x: 2x = 10'), '5', 1),
+((SELECT QuestionId FROM Questions WHERE QuestionText = 'Solve for x: 2x = 10'), '6', 0);
+
+
+
+-- Inserting user answers without specifying the identity column
+INSERT INTO UserAnswers (ResultId, QuestionId, SelectedOptionId)
+VALUES
+((SELECT ExamResultId FROM ExamResults WHERE UserId = 'U001' AND ExamId = (SELECT ExamId FROM Exams WHERE Title = 'Math Test 1')), 
+ (SELECT QuestionId FROM Questions WHERE QuestionText = 'What is 2+2?'), 
+ (SELECT OptionId FROM Options WHERE OptionText = '4')),
+((SELECT ExamResultId FROM ExamResults WHERE UserId = 'U001' AND ExamId = (SELECT ExamId FROM Exams WHERE Title = 'Math Test 1')), 
+ (SELECT QuestionId FROM Questions WHERE QuestionText = 'Solve for x: 2x = 10'), 
+ (SELECT OptionId FROM Options WHERE OptionText = '5'));
+
+
+
+
