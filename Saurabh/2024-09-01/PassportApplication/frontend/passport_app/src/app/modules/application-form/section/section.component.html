@@ -1,0 +1,2219 @@
+<ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link" id="service_required-tab" role="tab"
+      aria-controls="service_required" aria-selected="true"
+      [ngClass]="{'active': selectedFilter === 'service_required'}"
+      (click)="selectFilter('service_required','1')">1. Service Required</a>
+  </li>
+  <li class="nav-item ">
+    <a class="nav-link" id="applicant_details-tab" role="tab"
+      aria-controls="applicant_details" aria-selected="false" 
+      [ngClass]="{'active': selectedFilter === 'applicant_details'}"
+      (click)="selectFilter('applicant_details','2')">2. Applicant</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="family_details-tab" role="tab"
+      aria-controls="family_details" aria-selected="false"
+      [ngClass]="{'active': selectedFilter === 'family_details'}"
+      (click)="selectFilter('family_details','3')">3. Family</a>
+  </li> 
+  <li class="nav-item">
+    <a class="nav-link" id="residential-address-tab" role="tab"
+      aria-controls="residential-address" aria-selected="false"
+      [ngClass]="{'active': selectedFilter === 'residential_address'}"
+      (click)="selectFilter('residential-address','4')">4. Address</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="emergency_contact-tab" role="tab"
+      aria-controls="emergency_contact" aria-selected="false"
+      [ngClass]="{'active': selectedFilter === 'emergency_contact'}"
+      (click)="selectFilter('emergency_contact','5')">5. Emergency Contact</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="other-details-tab" role="tab"
+      aria-controls="other-details" aria-selected="false"
+      [ngClass]="{'active': selectedFilter === 'other_details'}"
+      (click)="selectFilter('other-details','6')">6. Other</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="upload-documents-tab" role="tab"
+      aria-controls="upload-documents" aria-selected="false"
+      [ngClass]="{'active': selectedFilter === 'upload_documents'}"
+      (click)="selectFilter('upload-documents','7')">7. Documents</a>
+  </li>
+</ul>
+
+<div class="tab-content flex-grow-1" [ngClass]="selectedFilter">
+  <form action [formGroup]="form" (ngSubmit)="onSubmit()" method="post">
+    @if(sectionNo==1){
+      <div id="section1" class="form-group section">
+
+        <fieldset formGroupName="service_required">
+          <legend><b>1. Service Required</b></legend>
+      
+          <div class="form-group" id="type_of_application">
+            <label>Type of Application:</label><br />
+            <div class="custom-radio-group">
+              <input
+                class="custom-radio"
+                type="radio"
+                name="applicationType"
+                value="1"
+                id="application_type_normal"
+                formControlName="applicationType"
+                required />
+              <label class="custom-radio-label" for="application_type_normal">
+                Normal
+                <span class="checkmark">&check;</span>
+              </label>
+      
+              <input
+                class="custom-radio"
+                type="radio"
+                name="applicationType"
+                value="2"
+                id="application_type_tatkaal"
+                formControlName="applicationType"
+                required />
+              <label class="custom-radio-label" for="application_type_tatkaal">
+                Tatkaal
+                <span class="checkmark">&check;</span>
+              </label>
+            </div>
+            <p class="control-error" *ngIf="form.get('service_required.applicationType')?.invalid && form.get('service_required.applicationType')?.touched" class="control-error">
+              Please select the type of application.
+            </p>
+          </div>
+      
+          <hr />
+      
+          <div class="form-group" id="passport_booklet_type_group">
+            <label>Type of Passport Booklet:</label><br />
+            <div class="custom-radio-group">
+              <input
+                class="custom-radio"
+                type="radio"
+                name="pagesRequired"
+                value="1"
+                id="passport_booklet_type_36"
+                formControlName="pagesRequired"
+                required />
+              <label class="custom-radio-label" for="passport_booklet_type_36">
+                36 Pages
+                <span class="checkmark">&check;</span>
+              </label>
+      
+              <input
+                class="custom-radio"
+                type="radio"
+                name="pagesRequired"
+                value="2"
+                id="passport_booklet_type_60"
+                formControlName="pagesRequired"
+                required />
+              <label class="custom-radio-label" for="passport_booklet_type_60">
+                60 Pages
+                <span class="checkmark">&check;</span>
+              </label>
+            </div>
+            <p class="control-error" *ngIf="form.get('service_required.pagesRequired')?.invalid && form.get('service_required.pagesRequired')?.touched" class="control-error">
+              Please select the type of passport booklet.
+            </p>
+          </div>
+      
+          <hr />
+      
+          <div class="form-group" id="validity_required_group">
+            <label>Validity Required:</label><br />
+            <div class="custom-radio-group">
+              <input
+                class="custom-radio"
+                type="radio"
+                name="validityReq"
+                value="1"
+                id="validity_required_10"
+                formControlName="validityReq"
+                required />
+              <label class="custom-radio-label" for="validity_required_10">
+                10 Years
+                <span class="checkmark">&check;</span>
+              </label>
+      
+              <input
+                class="custom-radio"
+                type="radio"
+                name="validityReq"
+                value="2"
+                id="validity_required_up_to_18"
+                formControlName="validityReq"
+                required />
+              <label class="custom-radio-label" for="validity_required_up_to_18">
+                Up to age 18 (For minors between 15 and 18 years)
+                <span class="checkmark">&check;</span>
+              </label>
+            </div>
+            <p class="control-error" *ngIf="form.get('service_required.validityReq')?.invalid && form.get('service_required.validityReq')?.touched" class="control-error">
+              Please select the validity required.
+            </p>
+          </div>
+
+          <div class="text-right">
+            <button
+              class="btn btn-primary nextButton btn-custom"
+              type="button"
+              (click)="onClickNext(1)">
+              Next
+            </button>
+          </div>
+        </fieldset>
+      </div>
+    }
+
+    @if(sectionNo==2){
+      <div id="section2" class="form-group section">
+        <fieldset formGroupName="applicant_details">
+          <legend><b>2. Applicant Details</b></legend>
+      
+          <div id="field2_1" class="form-group">
+            <div class="form-group">
+              <label for="applicantFirstName">Given Name:</label>
+              <input
+                type="text"
+                class="form-control"
+                name="applicantFirstName"
+                id="applicantFirstName"
+                required
+                pattern="[A-Za-z\s]+"
+                minlength="1"
+                maxlength="45"
+                placeholder="Enter your given name"
+                formControlName="applicantFirstName" />
+              <em>[Given Name means First name followed by Middle name (If any)(Initials not allowed)]</em>
+              <p class="control-error" *ngIf="form.get('applicant_details.applicantFirstName')?.invalid && form.get('applicant_details.applicantFirstName')?.touched" class="control-error">
+                Please enter your given name
+              </p>
+              <span id="given_name_warning" style="color: red"></span>
+            </div>
+            <div class="form-group">
+              <label for="applicantLastName">Surname:</label>
+              <input
+                type="text"
+                class="form-control"
+                name="applicantLastName"
+                id="applicantLastName"
+                required
+                minlength="1"
+                maxlength="45"
+                placeholder="Enter your surname"
+                formControlName="applicantLastName" />
+              <p class="control-error" *ngIf="form.get('applicant_details.applicantLastName')?.invalid && form.get('applicant_details.applicantLastName')?.touched" class="control-error">
+                Please enter your surname
+              </p>
+              <span id="surname_warning" style="color: red"></span>
+            </div>
+          </div>
+      
+          <hr />
+      
+          <div class="form-group" id="known_by_other_names_group">
+            <label>Are you known by any other names (aliases)?</label><br />
+            <div class="custom-radio-group">
+              <input
+                class="custom-radio"
+                type="radio"
+                name="alias"
+                value="yes"
+                id="known_by_other_names_yes"
+                formControlName="alias" />
+              <label class="custom-radio-label" for="known_by_other_names_yes">
+                Yes
+                <span class="checkmark">&check;</span>
+              </label>
+              <input
+                class="custom-radio"
+                type="radio"
+                name="alias"
+                value="no"
+                id="known_by_other_names_no"
+                formControlName="alias" />
+              <label class="custom-radio-label" for="known_by_other_names_no">
+                No
+                <span class="checkmark">&check;</span>
+              </label>
+            </div>
+            @if(form.get('applicant_details.alias')?.value === 'yes'){
+              <p >
+                <input
+                  type="text"
+                  class="form-control mt-2"
+                  name="aliasName"
+                  id="alias"
+                  minlength="1"
+                  maxlength="45"
+                  placeholder="Enter your alias"
+                  formControlName="aliasName" />
+                <span class="control-error" *ngIf="form.get('applicant_details.aliasName')?.invalid && form.get('applicant_details.aliasName')?.touched" class="control-error">
+                  Please enter other names if you are known by any other names
+                </span>
+              </p>
+            }
+            <p class="control-error" *ngIf="form.get('applicant_details.alias')?.invalid && form.get('applicant_details.alias')?.touched">
+              Please select one option
+            </p>
+          </div>
+      
+          <hr />
+      
+          <div class="form-group" id="changed_name_group">
+            <label>Have you ever changed your name?</label><br />
+            <div class="custom-radio-group">
+              <input
+                class="custom-radio"
+                type="radio"
+                name="nameChanged"
+                value="yes"
+                id="changed_name_yes"
+                formControlName="nameChanged" />
+              <label class="custom-radio-label" for="changed_name_yes">
+                Yes
+                <span class="checkmark">&check;</span>
+              </label>
+              <input
+                class="custom-radio"
+                type="radio"
+                name="nameChanged"
+                value="no"
+                id="changed_name_no"
+                formControlName="nameChanged" />
+              <label class="custom-radio-label" for="changed_name_no">
+                No
+                <span class="checkmark">&check;</span>
+              </label>
+            </div>
+            <p class="control-error" *ngIf="form.get('applicant_details.nameChanged')?.value === 'yes'">
+              <input
+                type="text"
+                class="form-control mt-2"
+                name="changedName"
+                id="previous_name"
+                minlength="1"
+                maxlength="45"
+                placeholder="Enter your previous name"
+                formControlName="changedName" />
+              <span class="control-error" *ngIf="form.get('applicant_details.changedName')?.invalid && form.get('applicant_details.changedName')?.touched">
+                Please enter your changed name
+              </span>
+            </p>
+            <p class="control-error" *ngIf="form.get('applicant_details.nameChanged')?.invalid && form.get('applicant_details.nameChanged')?.touched">
+              Please select one option
+            </p>
+          </div>
+      
+          <hr />
+          <div class="form-group" id="email_group">
+            <label for="applicantEmail">Applicant Email</label>
+            <input 
+              type="email"
+              class="form-control"
+              name="applicantEmail"
+              id="applicantEmail"
+              required
+              placeholder=" Please enter applicant email"
+              formControlName="applicantEmail"
+            />
+            <p class="control-error" *ngIf="form.get('applicant_details.applicantEmail')?.invalid && form.get('applicant_details.applicantEmail')?.touched">
+              Please enter applicant email
+            </p>
+          </div>
+          <div class="form-group" id="mobileno_group">
+            <label for="applicantMobileNo">Applicant Mobile NO</label>
+            <input 
+              type="tel"
+              class="form-control"
+              name="applicantMobileNo"
+              id="applicantMobileNo"
+              required
+              placeholder="Please enter applicant Mobile No "
+              formControlName="applicantMobileNo"
+            />
+            <p class="control-error" *ngIf="form.get('applicant_details.applicantMobileNo')?.invalid && form.get('applicant_details.applicantMobileNo')?.touched">
+              Please enter applicant Mobile No 
+            </p>
+          </div>
+          <div class="form-group" id="dob_group">
+            <label for="dob">Date of Birth:</label>
+            <input
+              type="date"
+              class="form-control"
+              name="dob"
+              id="dob"
+              required
+              formControlName="dob" />
+            <p class="control-error" *ngIf="form.get('applicant_details.dob')?.invalid && form.get('applicant_details.dob')?.touched" class="control-error">
+              Please select your date of birth
+            </p>
+          </div>
+      
+          <hr />
+      
+          <div id="place_of_birth_group" class="form-group">
+            <div class="form-group">
+              <label for="placeOfBirth">Place of Birth (Village or Town or City):</label>
+              <input
+                type="text"
+                class="form-control"
+                name="placeOfBirth"
+                id="place_of_birth"
+                required
+                minlength="1"
+                maxlength="25"
+                placeholder="Enter your place of birth"
+                formControlName="placeOfBirth" />
+              <p class="control-error" *ngIf="form.get('applicant_details.placeOfBirth')?.invalid && form.get('applicant_details.placeOfBirth')?.touched" class="control-error">
+                Please enter your birth place
+              </p>
+            </div>
+            <div class="form-group">
+              <label for="district">District (If born in India):</label>
+              <input
+                type="text"
+                class="form-control"
+                name="district"
+                id="district"
+                minlength="1"
+                maxlength="25"
+                placeholder="Enter your district"
+                formControlName="district" />
+              <p class="control-error" *ngIf="form.get('applicant_details.district')?.invalid && form.get('applicant_details.district')?.touched" class="control-error">
+                Please enter your district
+              </p>
+            </div>
+            <div class="form-group">
+              <label for="state">State/UT (If born in India):</label>
+              <input
+                type="text"
+                class="form-control"
+                name="state"
+                id="state"
+                minlength="1"
+                maxlength="25"
+                placeholder="Enter your state/UT"
+                formControlName="state" />
+              <p class="control-error" *ngIf="form.get('applicant_details.state')?.invalid && form.get('applicant_details.state')?.touched" class="control-error">
+                Please enter your state
+              </p>
+            </div>
+            <div class="form-group">
+              <label for="country">Region/Country (If born abroad):</label>
+              <input
+                type="text"
+                class="form-control"
+                name="country"
+                id="region_country"
+                minlength="1"
+                maxlength="25"
+                placeholder="Enter your region/country"
+                formControlName="country" />
+              <p class="control-error" *ngIf="form.get('applicant_details.country')?.invalid && form.get('applicant_details.country')?.touched" class="control-error">
+                Please select your country if you are born abroad
+              </p>
+            </div>
+          </div>
+      
+          <hr />
+      
+          <div class="form-group" id="gender_group">
+            <label>Gender:</label><br />
+            <div class="custom-radio-group">
+              <input
+                class="custom-radio"
+                type="radio"
+                name="gender"
+                value="1"
+                id="gender_male"
+                required
+                formControlName="gender" />
+              <label class="custom-radio-label" for="gender_male">
+                Male
+                <span class="checkmark">&check;</span>
+              </label>
+              <input
+                class="custom-radio"
+                type="radio"
+                name="gender"
+                value="2"
+                id="gender_female"
+                required
+                formControlName="gender" />
+              <label class="custom-radio-label" for="gender_female">
+                Female
+                <span class="checkmark">&check;</span>
+              </label>
+              <input
+                class="custom-radio"
+                type="radio"
+                name="gender"
+                value="3"
+                id="gender_transgender"
+                required
+                formControlName="gender" />
+              <label class="custom-radio-label" for="gender_transgender">
+                Transgender
+                <span class="checkmark">&check;</span>
+              </label>
+            </div>
+            <p class="control-error" *ngIf="form.get('applicant_details.gender')?.invalid && form.get('applicant_details.gender')?.touched" class="control-error">
+              Please select your gender
+            </p>
+          </div>
+      
+          <hr />
+      
+          <div class="form-group" id="marital_status_group">
+            <label>Marital Status:</label><br />
+            <div class="custom-radio-group">
+              <input
+                class="custom-radio"
+                type="radio"
+                name="maritialStatus"
+                value="1"
+                id="marital_status_single"
+                required
+                formControlName="maritialStatus" />
+              <label class="custom-radio-label" for="marital_status_single">
+                Single
+                <span class="checkmark">&check;</span>
+              </label>
+              <input
+                class="custom-radio"
+                type="radio"
+                name="maritialStatus"
+                value="2"
+                id="marital_status_married"
+                required
+                formControlName="maritialStatus" />
+              <label class="custom-radio-label" for="marital_status_married">
+                Married
+                <span class="checkmark">&check;</span>
+              </label>
+              <input
+                class="custom-radio"
+                type="radio"
+                name="maritialStatus"
+                value="3"
+                id="marital_status_divorced"
+                required
+                formControlName="maritialStatus" />
+              <label class="custom-radio-label" for="marital_status_divorced">
+                Divorced
+                <span class="checkmark">&check;</span>
+              </label>
+              <input
+                class="custom-radio"
+                type="radio"
+                name="maritialStatus"
+                value="4"
+                id="marital_status_widow"
+                required
+                formControlName="maritialStatus" />
+              <label class="custom-radio-label" for="marital_status_widow">
+                Widow/Widower
+                <span class="checkmark">&check;</span>
+              </label>
+              <input
+                class="custom-radio"
+                type="radio"
+                name="maritialStatus"
+                value="5"
+                id="marital_status_separated"
+                required
+                formControlName="maritialStatus" />
+              <label class="custom-radio-label" for="marital_status_separated">
+                Separated
+                <span class="checkmark">&check;</span>
+              </label>
+            </div>
+            <p class="control-error" *ngIf="form.get('applicant_details.maritialStatus')?.invalid && form.get('applicant_details.maritialStatus')?.touched" class="control-error">
+              Please select your marital status
+            </p>
+          </div>
+      
+          <hr />
+      
+          <div class="form-group" id="citizenship_group">
+            <label>Citizenship of India by:</label><br />
+            <div class="custom-radio-group">
+              <input
+                class="custom-radio"
+                type="radio"
+                name="citizenshipBy"
+                value="1"
+                id="citizenship_birth"
+                required
+                formControlName="citizenshipBy" />
+              <label class="custom-radio-label" for="citizenship_birth">
+                Birth
+                <span class="checkmark">&check;</span>
+              </label>
+              <input
+                class="custom-radio"
+                type="radio"
+                name="citizenshipBy"
+                value="2"
+                id="citizenship_descent"
+                required
+                formControlName="citizenshipBy" />
+              <label class="custom-radio-label" for="citizenship_descent">
+                Descent
+                <span class="checkmark">&check;</span>
+              </label>
+              <input
+                class="custom-radio"
+                type="radio"
+                name="citizenshipBy"
+                value="3"
+                id="citizenship_registration"
+                required
+                formControlName="citizenshipBy" />
+              <label class="custom-radio-label" for="citizenship_registration">
+                Registration/Naturalization
+                <span class="checkmark">&check;</span>
+              </label>
+            </div>
+            <p class="control-error" *ngIf="form.get('applicant_details.citizenshipBy')?.invalid && form.get('applicant_details.citizenshipBy')?.touched" class="control-error">
+              Please specify means of citizenship
+            </p>
+          </div>
+      
+          <hr />
+      
+          <div class="form-group" id="pan_group">
+            <label for="pancard">PAN (If available):</label>
+            <input
+              type="text"
+              class="form-control"
+              name="pancard"
+              id="pan"
+              minlength="10"
+              maxlength="10"
+              placeholder="Enter your PAN"
+              formControlName="pancard" />
+            <p class="control-error" *ngIf="form.get('applicant_details.pancard')?.invalid && form.get('applicant_details.pancard')?.touched" class="control-error">
+              Please enter valid PAN number
+            </p>
+            <span id="pan_validation" style="color: red"></span>
+          </div>
+      
+          <hr />
+      
+          <div class="form-group" id="voter_id_group">
+            <label for="voterId">Voter ID (If available):</label>
+            <input
+              type="text"
+              class="form-control"
+              name="voterId"
+              id="voter_id"
+              placeholder="Enter your Voter ID"
+              minlength="10"
+              maxlength="10"
+              formControlName="voterId" />
+            <p class="control-error" *ngIf="form.get('applicant_details.voterId')?.invalid && form.get('applicant_details.voterId')?.touched" class="control-error">
+              Please enter valid voter ID number
+            </p>
+            <span id="voter_validation" style="color: red"></span>
+          </div>
+      
+          <hr />
+      
+          <div class="form-group" id="employment_type_group">
+            <label>Employment Type:</label><br />
+            <div class="custom-radio-group">
+              <input
+                class="custom-radio"
+                type="radio"
+                name="employeeType"
+                value="1"
+                id="employment_type_psu"
+                required
+                formControlName="employeeType" />
+              <label class="custom-radio-label" for="employment_type_psu">
+                PSU
+                <span class="checkmark">&check;</span>
+              </label>
+              <input
+                class="custom-radio"
+                type="radio"
+                name="employeeType"
+                value="2"
+                id="employment_type_government"
+                required
+                formControlName="employeeType" />
+              <label class="custom-radio-label" for="employment_type_government">
+                Government
+                <span class="checkmark">&check;</span>
+              </label>
+              <input
+                class="custom-radio"
+                type="radio"
+                name="employeeType"
+                value="3"
+                id="employment_type_statutory"
+                required
+                formControlName="employeeType" />
+              <label class="custom-radio-label" for="employment_type_statutory">
+                Statutory Body
+                <span class="checkmark">&check;</span>
+              </label>
+              <input
+                class="custom-radio"
+                type="radio"
+                name="employeeType"
+                value="4"
+                id="employment_type_retired"
+                required
+                formControlName="employeeType" />
+              <label class="custom-radio-label" for="employment_type_retired">
+                Retired Government Servant
+                <span class="checkmark">&check;</span>
+              </label>
+              <input
+                class="custom-radio"
+                type="radio"
+                name="employeeType"
+                value="5"
+                id="employment_type_self"
+                required
+                formControlName="employeeType" />
+              <label class="custom-radio-label" for="employment_type_self">
+                Self Employed
+                <span class="checkmark">&check;</span>
+              </label>
+              <input
+                class="custom-radio"
+                type="radio"
+                name="employeeType"
+                value="6"
+                id="employment_type_private"
+                required
+                formControlName="employeeType" />
+              <label class="custom-radio-label" for="employment_type_private">
+                Private
+                <span class="checkmark">&check;</span>
+              </label>
+              <input
+                class="custom-radio"
+                type="radio"
+                name="employeeType"
+                value="7"
+                id="employment_type_homemaker"
+                required
+                formControlName="employeeType" />
+              <label class="custom-radio-label" for="employment_type_homemaker">
+                Homemaker
+                <span class="checkmark">&check;</span>
+              </label>
+              <input
+                class="custom-radio"
+                type="radio"
+                name="employeeType"
+                value="8"
+                id="employment_type_not_employed"
+                required
+                formControlName="employeeType" />
+              <label class="custom-radio-label" for="employment_type_not_employed">
+                Not Employed
+                <span class="checkmark">&check;</span>
+              </label>
+              <input
+                class="custom-radio"
+                type="radio"
+                name="employeeType"
+                value="9"
+                id="employment_type_retired_private"
+                required
+                formControlName="employeeType" />
+              <label class="custom-radio-label" for="employment_type_retired_private">
+                Retired-Private Service
+                <span class="checkmark">&check;</span>
+              </label>
+              <input
+                class="custom-radio"
+                type="radio"
+                name="employeeType"
+                value="10"
+                id="employment_type_student"
+                required
+                formControlName="employeeType" />
+              <label class="custom-radio-label" for="employment_type_student">
+                Student
+                <span class="checkmark">&check;</span>
+              </label>
+              <input
+                class="custom-radio"
+                type="radio"
+                name="employeeType"
+                value="11"
+                id="employment_type_others"
+                required
+                formControlName="employeeType" />
+              <label class="custom-radio-label" for="employment_type_others">
+                Others
+                <span class="checkmark">&check;</span>
+              </label>
+              <input
+                class="custom-radio"
+                type="radio"
+                name="employeeType"
+                value="12"
+                id="employment_type_owners"
+                required
+                formControlName="employeeType" />
+              <label class="custom-radio-label" for="employment_type_owners">
+                Owners, Partners & Directors of companies which are members of CII,
+                FICCI & ASSOCHAM
+                <span class="checkmark">&check;</span>
+              </label>
+            </div>
+            <p  class="control-error" *ngIf="form.get('applicant_details.employeeType')?.invalid && form.get('applicant_details.employeeType')?.touched" class="control-error">
+              Please select your employment type
+            </p>
+          </div>
+<!--       
+         @if([1, 3, 2, 0].includes(Number(form.get('applicant_details.employeeType')?.value))) {
+            <div class="form-group" id="organization_name_group">
+              <label for="organizationalName">If employed in Government/ Statutory Body/ PSU, specify organization name:</label>
+              <input
+                type="text"
+                class="form-control"
+                name="organizationalName"
+                id="organization_name"
+                minlength="1"
+                maxlength="30"
+                placeholder="Enter organization name"
+                formControlName="organizationalName" />
+            </div>
+          } -->
+
+          
+      
+          <hr />
+      
+          <div class="form-group" id="parent_spouse_government_servant_group">
+            <label>Is either of your parent (in case of minor)/ spouse, a government servant?</label><br />
+            <div class="custom-radio-group">
+              <input
+                class="custom-radio"
+                type="radio"
+                name="govermentServent"
+                value="true"
+                id="parent_spouse_government_servant_yes"
+                required
+                formControlName="govermentServent" />
+              <label class="custom-radio-label" for="parent_spouse_government_servant_yes">
+                Yes
+                <span class="checkmark">&check;</span>
+              </label>
+              <input
+                class="custom-radio"
+                type="radio"
+                name="govermentServent"
+                value="false"
+                id="parent_spouse_government_servant_no"
+                required
+                formControlName="govermentServent" />
+              <label class="custom-radio-label" for="parent_spouse_government_servant_no">
+                No
+                <span class="checkmark">&check;</span>
+              </label>
+            </div>
+            <p class="control-error" *ngIf="form.get('applicant_details.govermentServent')?.invalid && form.get('applicant_details.govermentServent')?.touched" class="control-error">
+              Please specify if your parents or spouse are government servants
+            </p>
+          </div>
+      
+          <hr />
+      
+          <div class="form-group" id="education_group">
+            <label>Educational Qualification:</label><br />
+            <div class="custom-radio-group">
+              <input
+                class="custom-radio"
+                type="radio"
+                name="education"
+                value="1"
+                id="education_7th"
+                required
+                formControlName="education" />
+              <label class="custom-radio-label" for="education_7th">
+                7th pass or less
+                <span class="checkmark">&check;</span>
+              </label>
+              <input
+                class="custom-radio"
+                type="radio"
+                name="education"
+                value="2"
+                id="education_between_8th_and_9th"
+                required
+                formControlName="education" />
+              <label class="custom-radio-label" for="education_between_8th_and_9th">
+                Between 8th and 9th Standard
+                <span class="checkmark">&check;</span>
+              </label>
+              <input
+                class="custom-radio"
+                type="radio"
+                name="education"
+                value="3"
+                id="education_10th_above"
+                required
+                formControlName="education" />
+              <label class="custom-radio-label" for="education_10th_above">
+                10th pass and above
+                <span class="checkmark">&check;</span>
+              </label>
+              <input
+                class="custom-radio"
+                type="radio"
+                name="education"
+                value="4"
+                id="education_graduate_above"
+                required
+                formControlName="education" />
+              <label class="custom-radio-label" for="education_graduate_above">
+                Graduate and above
+                <span class="checkmark">&check;</span>
+              </label>
+            </div>
+            <p class="control-error" *ngIf="form.get('applicant_details.education')?.invalid && form.get('applicant_details.education')?.touched" class="control-error">
+              Please select your education level
+            </p>
+          </div>
+      
+          <hr />
+      
+          <div class="form-group" id="non_ecr_group">
+            <label>Are you eligible for Non-ECR category?</label><br />
+            <div class="custom-radio-group">
+              <input
+                class="custom-radio"
+                type="radio"
+                name="nonECR"
+                value="true"
+                id="non_ecr_yes"
+                required
+                formControlName="nonECR" />
+              <label class="custom-radio-label" for="non_ecr_yes">
+                Yes
+                <span class="checkmark">&check;</span>
+              </label>
+              <input
+                class="custom-radio"
+                type="radio"
+                name="nonECR"
+                value="false"
+                id="non_ecr_no"
+                required
+                formControlName="nonECR" />
+              <label class="custom-radio-label" for="non_ecr_no">
+                No
+                <span class="checkmark">&check;</span>
+              </label>
+            </div>
+            <p class="control-error" *ngIf="form.get('applicant_details.nonECR')?.invalid && form.get('applicant_details.nonECR')?.touched" class="control-error">
+              Please select if you fall into ECR category
+            </p>
+          </div>
+      
+          <hr />
+      
+          <div class="form-group" id="distinguishing_mark_group">
+            <label for="distinguishingMark">Visible Distinguishing Mark:</label>
+            <input
+              type="text"
+              class="form-control"
+              name="distinguishingMark"
+              id="distinguishing_mark"
+              minlength="1"
+              maxlength="30"
+              placeholder="Enter your distinguishing mark"
+              formControlName="distinguishingMark" />
+            <p class="control-error" *ngIf="form.get('applicant_details.distinguishingMark')?.invalid && form.get('applicant_details.distinguishingMark')?.touched" class="control-error">
+              Please enter your distinguishing mark
+            </p>
+          </div>
+      
+          <hr />
+      
+          <div class="form-group" id="aadhaar_group">
+            <label for="aadharcard">Aadhaar Number:</label>
+            <input
+              type="text"
+              class="form-control"
+              name="aadharcard"
+              id="aadhaar"
+              required
+              minlength="12"
+              maxlength="12"
+              placeholder="Enter your Aadhaar number"
+              formControlName="aadharcard" />
+            <p  class="control-error" *ngIf="form.get('applicant_details.aadharcard')?.invalid && form.get('applicant_details.aadharcard')?.touched" class="control-error">
+              Please enter valid Aadhaar number
+            </p>
+            <span id="aadhar_warning" style="color: red"></span>
+          </div>
+        </fieldset>
+        <div class="text-right">
+          <button class="btn btn-primary nextButton btn-custom" type="button" (click)="onClickNext(2)">Next</button>
+        </div>
+      </div>
+      
+      
+      
+    }
+
+    @if(sectionNo==3){
+      <div id="section3" class="form-group section">
+        <fieldset formGroupName="family_details">
+          <legend><b>3. Family Details</b></legend>
+      
+          <div id="field3_1" class="form-group">
+            <div class="form-group">
+              <label for="fathersFirstName">Father's Given Name:</label>
+              <input
+                type="text"
+                class="form-control"
+                name="fathersFirstName"
+                id="fathersFirstName"
+                required
+                minlength="1"
+                maxlength="45"
+                placeholder="Enter father's given name"
+                formControlName="fathersFirstName" />
+              <em>[Given Name means First name followed by Middle name (If any)(Initials not allowed)]</em>
+              <p *ngIf="form.get('family_details.fathersFirstName')?.invalid && form.get('family_details.fathersFirstName')?.touched" class="control-error">
+                Please enter your father's given name.
+              </p>
+            </div>
+      
+            <div class="form-group">
+              <label for="fathersLastName">Father's Surname:</label>
+              <input
+                type="text"
+                class="form-control"
+                name="fathersLastName"
+                id="fathersLastName"
+                required
+                minlength="1"
+                maxlength="45"
+                placeholder="Enter father's surname"
+                formControlName="fathersLastName" />
+              <p *ngIf="form.get('family_details.fathersLastName')?.invalid && form.get('family_details.fathersLastName')?.touched" class="control-error">
+                Please enter your father's surname.
+              </p>
+            </div>
+          </div>
+      
+          <hr />
+      
+          <div id="field3_2" class="form-group">
+            <div class="form-group">
+              <label for="mothersFirstName">Mother's Given Name:</label>
+              <input
+                type="text"
+                class="form-control"
+                name="mothersFirstName"
+                id="mothersFirstName"
+                required
+                minlength="1"
+                maxlength="45"
+                placeholder="Enter mother's given name"
+                formControlName="mothersFirstName" />
+              <em>[Given Name means First name followed by Middle name (If any)(Initials not allowed)]</em>
+              <p *ngIf="form.get('family_details.mothersFirstName')?.invalid && form.get('family_details.mothersFirstName')?.touched" class="control-error">
+                Please enter your mother's given name.
+              </p>
+            </div>
+      
+            <div class="form-group">
+              <label for="mothersLastName">Mother's Surname:</label>
+              <input
+                type="text"
+                class="form-control"
+                name="mothersLastName"
+                id="mothersLastName"
+                required
+                minlength="1"
+                maxlength="45"
+                placeholder="Enter mother's surname"
+                formControlName="mothersLastName" />
+              <p *ngIf="form.get('family_details.mothersLastName')?.invalid && form.get('family_details.mothersLastName')?.touched" class="control-error">
+                Please enter your mother's surname.
+              </p>
+            </div>
+          </div>
+      
+          <hr />
+      
+          <div id="field3_3" class="form-group">
+            <div class="form-group">
+              <label for="leagalGuardianFirstName">Legal Guardian's Given Name:</label>
+              <input
+                type="text"
+                class="form-control"
+                name="leagalGuardianFirstName"
+                id="leagalGuardianFirstName"
+                minlength="1"
+                maxlength="45"
+                placeholder="Enter legal guardian's given name"
+                formControlName="leagalGuardianFirstName" />
+              <em>(If applicable) (Initials not allowed)</em>
+              <p *ngIf="form.get('family_details.leagalGuardianFirstName')?.invalid && form.get('family_details.leagalGuardianFirstName')?.touched" class="control-error">
+                Please enter your legal guardian's given name.
+              </p>
+            </div>
+      
+            <div class="form-group">
+              <label for="leagalGuardianLastName">Legal Guardian's Surname:</label>
+              <input
+                type="text"
+                class="form-control"
+                name="leagalGuardianLastName"
+                id="leagalGuardianLastName"
+                minlength="1"
+                maxlength="45"
+                placeholder="Enter legal guardian's surname"
+                formControlName="leagalGuardianLastName" />
+              <p *ngIf="form.get('family_details.leagalGuardianLastName')?.invalid && form.get('family_details.leagalGuardianLastName')?.touched" class="control-error">
+                Please enter your legal guardian's surname.
+              </p>
+            </div>
+          </div>
+      
+          <hr />
+      
+          <div id="field3_4" class="form-group">
+            <div class="form-group">
+              <label for="spouceFirstName">Spouse's Given Name:</label>
+              <input
+                type="text"
+                class="form-control"
+                name="spouceFirstName"
+                id="spouceFirstName"
+                minlength="1"
+                maxlength="45"
+                placeholder="Enter spouse's given name"
+                formControlName="spouceFirstName" />
+              <em>(Given Name means First name followed by Middle name (If any)) (Initials not allowed)</em>
+              <p *ngIf="form.get('family_details.spouceFirstName')?.invalid && form.get('family_details.spouceFirstName')?.touched" class="control-error">
+                Please enter your spouse's given name.
+              </p>
+            </div>
+      
+            <div class="form-group">
+              <label for="spouceLastName">Spouse's Surname:</label>
+              <input
+                type="text"
+                class="form-control"
+                name="spouceLastName"
+                id="spouceLastName"
+                minlength="1"
+                maxlength="45"
+                placeholder="Enter spouse's surname"
+                formControlName="spouceLastName" />
+              <p *ngIf="form.get('family_details.spouceLastName')?.invalid && form.get('family_details.spouceLastName')?.touched" class="control-error">
+                Please enter your spouse's surname.
+              </p>
+            </div>
+          </div>
+      
+          <hr />
+      
+          <div id="field3_5" class="form-group">
+            <div class="form-group" id="check_minor">
+              <label>If applicant is minor, provide the following details:</label><br />
+              <div class="custom-radio-group">
+                <input
+                  class="custom-radio"
+                  type="radio"
+                  name="isMinor"
+                  value="true"
+                  id="check_minor_yes"
+                  formControlName="isMinor" />
+                <label class="custom-radio-label" for="check_minor_yes">
+                  Yes
+                  <span class="checkmark">&check;</span>
+                </label>
+                <input
+                  class="custom-radio"
+                  type="radio"
+                  name="isMinor"
+                  value="false"
+                  id="check_minor_no"
+                  formControlName="isMinor" />
+                <label class="custom-radio-label" for="check_minor_no">
+                  No
+                  <span class="checkmark">&check;</span>
+                </label>
+              </div>
+              <p *ngIf="form.get('family_details.isMinor')?.invalid && form.get('family_details.isMinor')?.touched" class="control-error">
+                Please select an option.
+              </p>
+            </div>
+      
+            <div *ngIf="form.get('family_details.isMinor')?.value === 'true'">
+              <div class="form-group">
+                <label for="fatherPassportNo">Father's/Legal Guardian's File/Passport Number:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="fatherPassportNo"
+                  id="fatherPassportNo"
+                  maxlength="15"
+                  placeholder="Enter father's passport number"
+                  formControlName="fatherPassportNo" />
+                <p *ngIf="form.get('family_details.fatherPassportNo')?.invalid && form.get('family_details.fatherPassportNo')?.touched" class="control-error">
+                  Please enter your father's passport number.
+                </p>
+              </div>
+      
+              <div class="form-group">
+                <label for="fatherNationality">Father's/Legal Guardian's Nationality, if not Indian:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="fatherNationality"
+                  id="fatherNationality"
+                  maxlength="15"
+                  placeholder="Enter father's nationality"
+                  formControlName="fatherNationality" />
+                <p *ngIf="form.get('family_details.fatherNationality')?.invalid && form.get('family_details.fatherNationality')?.touched" class="control-error">
+                  Please enter your father's nationality.
+                </p>
+              </div>
+              <div class="form-group">
+                <label for="motherPassportNo">Mother's/Legal Guardian's File/Passport Number:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="motherPassportNo"
+                  id="motherPassportNo"
+                  maxlength="15"
+                  placeholder="Enter mother's passport number"
+                  formControlName="motherPassportNo" />
+                <p *ngIf="form.get('family_details.motherPassportNo')?.invalid && form.get('family_details.motherPassportNo')?.touched" class="control-error">
+                  Please enter your mother's passport number.
+                </p>
+              </div>
+      
+              <div class="form-group">
+                <label for="motherNationality">Mother's/Legal Guardian's Nationality, if not Indian:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="motherNationality"
+                  id="motherNationality"
+                  maxlength="15"
+                  placeholder="Enter mother's nationality"
+                  formControlName="motherNationality" />
+                <p *ngIf="form.get('family_details.motherNationality')?.invalid && form.get('family_details.motherNationality')?.touched" class="control-error">
+                  Please enter your mother's nationality.
+                </p>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+        <div class="text-right">
+          <button class="btn btn-primary nextButton btn-custom" type="button" (click)="onClickNext(3)">Next</button>
+        </div>
+        <p class="control-error" *ngIf="form.get('family_details')?.invalid && form.get('family_details')?.touched" class="control-error">
+          Please fill in the required fields.
+        </p>
+      </div>
+      
+    
+      
+    }
+
+    @if(sectionNo==4){
+      <div id="section4" class="form-group section">
+        <fieldset formGroupName="residential_address">
+          <legend><b>4. Present Residential Address Details</b></legend>
+      
+          <div id="field4_1" class="form-group">
+            <div class="form-group">
+              <label for="tHouseNo">House No. and Street Name:</label>
+              <input
+                type="text"
+                class="form-control"
+                name="tHouseNo"
+                id="tHouseNo"
+                required
+                minlength="1"
+                maxlength="40"
+                placeholder="Enter house number and street name"
+                formControlName="tHouseNo" />
+              <p class="control-error" *ngIf="form.get('residential_address.tHouseNo')?.invalid && form.get('residential_address.tHouseNo')?.touched" class="control-error">
+                Please enter your house number and street name.
+              </p>
+            </div>
+            <div class="form-group">
+              <label for="tStreet">Street Name:</label>
+              <input
+                type="text"
+                class="form-control"
+                name="tStreet"
+                id="tStreet"
+                required
+                minlength="1"
+                maxlength="40"
+                placeholder="Enter street name"
+                formControlName="tStreet" />
+              <p class="control-error" *ngIf="form.get('residential_address.tStreet')?.invalid && form.get('residential_address.tStreet')?.touched" class="control-error">
+                Please enter your street name.
+              </p>
+            </div>
+            <div class="form-group">
+              <label for="tDistrict">District:</label>
+              <input
+                type="text"
+                class="form-control"
+                name="tDistrict"
+                id="tDistrict"
+                minlength="1"
+                maxlength="30"
+                placeholder="Enter district"
+                formControlName="tDistrict" />
+              <p class="control-error" *ngIf="form.get('residential_address.tDistrict')?.invalid && form.get('residential_address.tDistrict')?.touched" class="control-error">
+                Please enter your district.
+              </p>
+            </div>
+            <div class="form-group">
+              <label for="tPoliceStation">Police Station:</label>
+              <input
+                type="text"
+                class="form-control"
+                name="tPoliceStation"
+                id="tPoliceStation"
+                minlength="1"
+                maxlength="30"
+                placeholder="Enter police station"
+                formControlName="tPoliceStation" />
+              <p class="control-error" *ngIf="form.get('residential_address.tPoliceStation')?.invalid && form.get('residential_address.tPoliceStation')?.touched" class="control-error">
+                Please enter your police station.
+              </p>
+            </div>
+            <div class="form-group">
+              <label for="tState">State/UT:</label>
+              <select class="form-control" name="tState" id="tState" required formControlName="tState">
+                <option value="" disabled>Select your state or UT</option>
+                <option *ngFor="let state of getStatesList()" [value]="state.key">{{ state.key }}</option>
+              </select>
+              <p *ngIf="form.get('residential_address.tState')?.invalid && form.get('residential_address.tState')?.touched" class="control-error">
+                Please select your state or UT.
+              </p>
+            </div>
+            
+            <div class="form-group">
+              <label for="tPincode">PIN:</label>
+              <input
+                type="text"
+                class="form-control"
+                name="tPincode"
+                id="tPincode"
+                required
+                placeholder="Enter PIN"
+                formControlName="tPincode" />
+              <p class="control-error" *ngIf="form.get('residential_address.tPincode')?.invalid && form.get('residential_address.tPincode')?.touched" class="control-error">
+                Please enter 6 digit  PINCODE.
+              </p>
+            </div>
+          </div>
+          
+          <hr />
+        
+          <div id="field4_2" class="form-group">
+            <label>Is permanent address same as present address?</label><br />
+            <div class="custom-radio-group">
+              <input
+                class="custom-radio"
+                type="radio"
+                name="isPermanent"
+                value="true"
+                id="same_address_yes"
+                formControlName="isPermanent" />
+              <label class="custom-radio-label" for="same_address_yes">
+                Yes
+                <span class="checkmark">&check;</span>
+              </label>
+              <input
+                class="custom-radio"
+                type="radio"
+                name="isPermanent"
+                value="false"
+                id="same_address_no"
+                formControlName="isPermanent" />
+              <label class="custom-radio-label" for="same_address_no">
+                No
+                <span class="checkmark">&check;</span>
+              </label>
+             
+            </div>
+              <p class="control-error" *ngIf="form.get('residential_address.isPermanent')?.invalid && form.get('residential_address.isPermanent')?.touched" >
+                please select one option
+              </p>
+          </div>
+          @if(form.get('residential_address.isPermanent')?.value === 'false'){
+            <legend><b>4.1 Permanent Residential Address Details</b></legend>
+            <div id="field4_3" class="form-group">
+              <div class="form-group">
+                <label for="HouseNo">House No. </label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="HouseNo"
+                  id="HouseNo"
+                  required
+                  minlength="1"
+                  maxlength="40"
+                  placeholder="Enter house number and street name"
+                  formControlName="HouseNo" />
+                <p class="control-error" *ngIf="form.get('residential_address.HouseNo')?.invalid && form.get('residential_address.HouseNo')?.touched" class="control-error">
+                  Please enter your house number 
+                </p>
+              </div>
+              <div class="form-group">
+                <label for="Street">Street Name:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="Street"
+                  id="Street"
+                  required
+                  minlength="1"
+                  maxlength="40"
+                  placeholder="Enter street name"
+                  formControlName="Street" />
+                <p class="control-error" *ngIf="form.get('residential_address.Street')?.invalid && form.get('residential_address.Street')?.touched" class="control-error">
+                  Please enter your street name.
+                </p>
+              </div>
+              <div class="form-group">
+                <label for="District">District:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="District"
+                  id="District"
+                  minlength="1"
+                  maxlength="30"
+                  placeholder="Enter district"
+                  formControlName="District" />
+                <p class="control-error" *ngIf="form.get('residential_address.District')?.invalid && form.get('residential_address.District')?.touched" class="control-error">
+                  Please enter your district.
+                </p>
+              </div>
+              <div class="form-group">
+                <label for="PoliceStation">Police Station:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="PoliceStation"
+                  id="PoliceStation"
+                  minlength="1"
+                  maxlength="30"
+                  placeholder="Enter police station"
+                  formControlName="PoliceStation" />
+                <p class="control-error" *ngIf="form.get('residential_address.PoliceStation')?.invalid && form.get('residential_address.PoliceStation')?.touched" class="control-error">
+                  Please enter your police station.
+                </p>
+              </div>
+              <div class="form-group">
+                <label for="State">State/UT:</label>
+                <select class="form-control" name="State" id="State" required formControlName="State">
+                  <option value="" disabled>Select your state or UT</option>
+                  <option *ngFor="let state of getStatesList()" [value]="state.key">{{ state.key }}</option>
+                </select>
+                <p *ngIf="form.get('residential_address.State')?.invalid && form.get('residential_address.State')?.touched" class="control-error">
+                  Please select your state or UT.
+                </p>
+              </div>
+              
+              <div class="form-group">
+                <label for="Pincode">PIN:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="Pincode"
+                  id="Pincode"
+                  minLength="6"
+                  required
+                  placeholder="Enter PIN"
+                  formControlName="Pincode" />
+                <p class="control-error" *ngIf="form.get('residential_address.Pincode')?.invalid && form.get('residential_address.Pincode')?.touched" class="control-error">
+                  Please enter 6 digit PINCODE.
+                </p>
+              </div>
+            </div>
+            
+          }
+        </fieldset>
+        <div class="text-right">
+          <button class="btn btn-primary nextButton btn-custom" type="button" (click)="onClickNext(4)">Next</button>
+        </div>
+        <p class="control-error" *ngIf="form.get('residential_address')?.invalid && form.get('residential_address')?.touched" class="control-error">
+          Please fill in the required fields.
+        </p>
+      </div>
+      
+      
+    
+      
+    }
+
+    @if(sectionNo==5){
+      <div id="section5" class="form-group section">
+        <fieldset formGroupName="emergency_contact">
+          <legend>
+            <b>5. Emergency Contact Details</b>
+            <h5>(Mention address only if different from present residential address)</h5>
+          </legend>
+          <div id="field5_1" class="form-group">
+            <div class="form-group">
+              <label for="contactName">Name:</label>
+              <input
+                type="text"
+                class="form-control"
+                name="contactName"
+                id="contactName"
+                required
+                placeholder="Enter emergency contact name"
+                formControlName="contactName" />
+              <p class="control-error" *ngIf="form.get('emergency_contact.contactName')?.invalid && form.get('emergency_contact.contactName')?.touched" class="control-error">
+                Please enter the emergency contact name.
+              </p>
+            </div>
+      
+            <div class="form-group">
+              <label for="mobile">Mobile Number:</label>
+              <input
+                type="text"
+                class="form-control"
+                name="mobile"
+                id="mobile"
+                required
+                placeholder="Enter mobile number"
+                formControlName="mobile" />
+              <p class="control-error" *ngIf="form.get('emergency_contact.mobile')?.invalid && form.get('emergency_contact.mobile')?.touched" class="control-error">
+                Please enter a valid mobile number.
+              </p>
+            </div>
+      
+            <div class="form-group">
+              <label for="telephone">Telephone Number:</label>
+              <input
+                type="text"
+                class="form-control"
+                name="telephone"
+                id="telephone"
+                placeholder="Enter telephone number"
+                formControlName="telephone" />
+              <p class="control-error" *ngIf="form.get('emergency_contact.telephone')?.invalid && form.get('emergency_contact.telephone')?.touched" class="control-error">
+                Please enter a valid telephone number.
+              </p>
+            </div>
+      
+            <div class="form-group">
+              <label for="email">E-mail ID:</label>
+              <input
+                type="email"
+                class="form-control"
+                name="email"
+                id="email"
+                required
+                placeholder="Enter email address"
+                formControlName="email" />
+              <p class="control-error" *ngIf="form.get('emergency_contact.email')?.invalid && form.get('emergency_contact.email')?.touched" class="control-error">
+                Please enter a valid email address.
+              </p>
+            </div>
+            
+            <div class="form-group">
+              <label for="address">Address:</label>
+              <input
+                type="text"
+                class="form-control"
+                name="address"
+                id="address"
+                placeholder="Enter address"
+                formControlName="address" />
+              <p class="control-error" *ngIf="form.get('emergency_contact.address')?.invalid && form.get('emergency_contact.address')?.touched" class="control-error">
+                Please enter the address.
+              </p>
+            </div>
+      
+            <div class="form-group">
+              <label for="city">City:</label>
+              <input
+                type="text"
+                class="form-control"
+                name="city"
+                id="city"
+                placeholder="Enter city"
+                formControlName="city" />
+              <p class="control-error" *ngIf="form.get('emergency_contact.city')?.invalid && form.get('emergency_contact.city')?.touched" class="control-error">
+                Please enter the city.
+              </p>
+            </div>
+      
+            <div class="form-group">
+              <label for="state">State:</label>
+              <input
+                type="text"
+                class="form-control"
+                name="state"
+                id="state"
+                placeholder="Enter state"
+                formControlName="state" />
+              <p class="control-error" *ngIf="form.get('emergency_contact.state')?.invalid && form.get('emergency_contact.state')?.touched" class="control-error">
+                Please enter the state.
+              </p>
+            </div>
+      
+            <div class="form-group">
+              <label for="pincode">PIN Code:</label>
+              <input
+                type="text"
+                class="form-control"
+                name="pincode"
+                id="pincode"
+                placeholder="Enter PIN code"
+                formControlName="pincode" />
+              <p class="control-error" *ngIf="form.get('emergency_contact.pincode')?.invalid && form.get('emergency_contact.pincode')?.touched" class="control-error">
+                Please enter the PIN code.
+              </p>
+            </div>
+      
+            <div class="form-group">
+              <label for="country">Country:</label>
+              <input
+                type="text"
+                class="form-control"
+                name="country"
+                id="country"
+                placeholder="Enter country"
+                formControlName="country" />
+              <p class="control-error" *ngIf="form.get('emergency_contact.country')?.invalid && form.get('emergency_contact.country')?.touched" class="control-error">
+                Please enter the country.
+              </p>
+            </div>
+          </div>
+        </fieldset>
+        <div class="text-right">
+          <button class="btn btn-primary nextButton btn-custom" type="button" (click)="onClickNext(5)">Next</button>
+        </div>
+        <p class="control-error" *ngIf="form.get('emergency_contact')?.invalid && form.get('emergency_contact')?.touched" class="control-error">
+          Please fill in the required fields.
+        </p>
+      </div>
+      
+    
+    }
+
+    @if(sectionNo==6){
+      <div id="section6" class="form-group section">
+        <fieldset formGroupName="other_details">
+          <legend><b>6. Other Details</b></legend>
+      
+          <div id="field6_1" class="form-group">
+            <h5>Provide the following details if there are any criminal proceedings pending against the applicant.</h5>
+      
+            <div class="form-group">
+              <label>Are any proceedings in respect of an offence alleged to have been committed by you pending before a criminal court in India? If yes, fill Column 6.1 of Supplementary Form</label><br />
+              <div class="custom-radio-group">
+                <input
+                  class="custom-radio"
+                  type="radio"
+                  name="criminalConvictions"
+                  value="true"
+                  id="criminalConvictions_yes"
+                  required
+                  formControlName="criminalConvictions" />
+                <label class="custom-radio-label" for="criminalConvictions_yes">
+                  Yes
+                  <span class="checkmark">&check;</span>
+                </label>
+                <input
+                  class="custom-radio"
+                  type="radio"
+                  name="criminalConvictions"
+                  value="false"
+                  id="criminalConvictions_no"
+                  required
+                  formControlName="criminalConvictions" />
+                <label class="custom-radio-label" for="criminalConvictions_no">
+                  No
+                  <span class="checkmark">&check;</span>
+                </label>
+              </div>
+              <p class="control-error" *ngIf="form.get('other_details.criminalConvictions')?.invalid && form.get('other_details.criminalConvictions')?.touched" class="control-error">
+                Please select an option.
+              </p>
+            </div>
+      
+            <hr />
+      
+            <div class="form-group">
+              <label>Has any warrant or summons for your appearance been issued & pending before a court under any law for the time being in force? If yes, fill Column 6.2 of Supplementary Form</label><br />
+              <div class="custom-radio-group">
+                <input
+                  class="custom-radio"
+                  type="radio"
+                  name="refusedPassport"
+                  value="true"
+                  id="refusedPassport_yes"
+                  required
+                  formControlName="refusedPassport" />
+                <label class="custom-radio-label" for="refusedPassport_yes">
+                  Yes
+                  <span class="checkmark">&check;</span>
+                </label>
+                <input
+                  class="custom-radio"
+                  type="radio"
+                  name="refusedPassport"
+                  value="false"
+                  id="refusedPassport_no"
+                  required
+                  formControlName="refusedPassport" />
+                <label class="custom-radio-label" for="refusedPassport_no">
+                  No
+                  <span class="checkmark">&check;</span>
+                </label>
+              </div>
+              <p class="control-error" *ngIf="form.get('other_details.refusedPassport')?.invalid && form.get('other_details.refusedPassport')?.touched" class="control-error">
+                Please select an option.
+              </p>
+            </div>
+      
+            <hr />
+      
+            <div class="form-group">
+              <label>Has a warrant for your arrest been issued by a court under any law for the time being in force? If yes, fill Column 6.3 of Supplementary Form</label><br />
+              <div class="custom-radio-group">
+                <input
+                  class="custom-radio"
+                  type="radio"
+                  name="impoundedPassport"
+                  value="true"
+                  id="impoundedPassport_yes"
+                  required
+                  formControlName="impoundedPassport" />
+                <label class="custom-radio-label" for="impoundedPassport_yes">
+                  Yes
+                  <span class="checkmark">&check;</span>
+                </label>
+                <input
+                  class="custom-radio"
+                  type="radio"
+                  name="impoundedPassport"
+                  value="false"
+                  id="impoundedPassport_no"
+                  required
+                  formControlName="impoundedPassport" />
+                <label class="custom-radio-label" for="impoundedPassport_no">
+                  No
+                  <span class="checkmark">&check;</span>
+                </label>
+              </div>
+              <p class="control-error" *ngIf="form.get('other_details.impoundedPassport')?.invalid && form.get('other_details.impoundedPassport')?.touched" class="control-error">
+                Please select an option.
+              </p>
+            </div>
+      
+            <hr />
+      
+            <div class="form-group">
+              <label>Has an order prohibiting your departure from India been made by any court? If yes, fill Column 6.4 of Supplementary Form</label><br />
+              <div class="custom-radio-group">
+                <input
+                  class="custom-radio"
+                  type="radio"
+                  name="revokedPassport"
+                  value="true"
+                  id="revokedPassport_yes"
+                  required
+                  formControlName="revokedPassport" />
+                <label class="custom-radio-label" for="revokedPassport_yes">
+                  Yes
+                  <span class="checkmark">&check;</span>
+                </label>
+                <input
+                  class="custom-radio"
+                  type="radio"
+                  name="revokedPassport"
+                  value="false"
+                  id="revokedPassport_no"
+                  required
+                  formControlName="revokedPassport" />
+                <label class="custom-radio-label" for="revokedPassport_no">
+                  No
+                  <span class="checkmark">&check;</span>
+                </label>
+              </div>
+              <p class="control-error" *ngIf="form.get('other_details.revokedPassport')?.invalid && form.get('other_details.revokedPassport')?.touched" class="control-error">
+                Please select an option.
+              </p>
+            </div>
+      
+            <hr />
+      
+            <div class="form-group">
+              <label>Has your passport ever been impounded? If yes, fill Column 6.7 of Supplementary Form</label><br />
+              <div class="custom-radio-group">
+                <input
+                  class="custom-radio"
+                  type="radio"
+                  name="grantedCitizenship"
+                  value="true"
+                  id="grantedCitizenship_yes"
+                  required
+                  formControlName="grantedCitizenship" />
+                <label class="custom-radio-label" for="grantedCitizenship_yes">
+                  Yes
+                  <span class="checkmark">&check;</span>
+                </label>
+                <input
+                  class="custom-radio"
+                  type="radio"
+                  name="grantedCitizenship"
+                  value="false"
+                  id="grantedCitizenship_no"
+                  required
+                  formControlName="grantedCitizenship" />
+                <label class="custom-radio-label" for="grantedCitizenship_no">
+                  No
+                  <span class="checkmark">&check;</span>
+                </label>
+              </div>
+              <p class="control-error" *ngIf="form.get('other_details.grantedCitizenship')?.invalid && form.get('other_details.grantedCitizenship')?.touched" class="control-error">
+                Please select an option.
+              </p>
+            </div>
+      
+            <hr />
+      
+            <div class="form-group">
+              <label>Have you ever been refused/denied a passport? If yes, fill Column 6.6 of Supplementary Form</label><br />
+              <div class="custom-radio-group">
+                <input
+                  class="custom-radio"
+                  type="radio"
+                  name="heldForeignPassport"
+                  value="true"
+                  id="heldForeignPassport_yes"
+                  required
+                  formControlName="heldForeignPassport" />
+                <label class="custom-radio-label" for="heldForeignPassport_yes">
+                  Yes
+                  <span class="checkmark">&check;</span>
+                </label>
+                <input
+                  class="custom-radio"
+                  type="radio"
+                  name="heldForeignPassport"
+                  value="false"
+                  id="heldForeignPassport_no"
+                  required
+                  formControlName="heldForeignPassport" />
+                <label class="custom-radio-label" for="heldForeignPassport_no">
+                  No
+                  <span class="checkmark">&check;</span>
+                </label>
+              </div>
+              <p class="control-error" *ngIf="form.get('other_details.heldForeignPassport')?.invalid && form.get('other_details.heldForeignPassport')?.touched" class="control-error">
+                Please select an option.
+              </p>
+            </div>
+      
+            <hr />
+      
+            <div class="form-group">
+              <label>Has your passport ever been revoked? If yes, fill Column 6.8 of Supplementary Form</label><br />
+              <div class="custom-radio-group">
+                <input
+                  class="custom-radio"
+                  type="radio"
+                  name="surrenderedIndianPassport"
+                  value="true"
+                  id="surrenderedIndianPassport_yes"
+                  required
+                  formControlName="surrenderedIndianPassport" />
+                <label class="custom-radio-label" for="surrenderedIndianPassport_yes">
+                  Yes
+                  <span class="checkmark">&check;</span>
+                </label>
+                <input
+                  class="custom-radio"
+                  type="radio"
+                  name="surrenderedIndianPassport"
+                  value="false"
+                  id="surrenderedIndianPassport_no"
+                  required
+                  formControlName="surrenderedIndianPassport" />
+                <label class="custom-radio-label" for="surrenderedIndianPassport_no">
+                  No
+                  <span class="checkmark">&check;</span>
+                </label>
+              </div>
+              <p class="control-error" *ngIf="form.get('other_details.surrenderedIndianPassport')?.invalid && form.get('other_details.surrenderedIndianPassport')?.touched" class="control-error">
+                Please select an option.
+              </p>
+            </div>
+      
+            <hr />
+      
+            <div class="form-group">
+              <label>Have you ever applied for renunciation of Indian citizenship? If yes, fill Column 6.12 of Supplementary Form</label><br />
+              <div class="custom-radio-group">
+                <input
+                  class="custom-radio"
+                  type="radio"
+                  name="appliedRenunciation"
+                  value="true"
+                  id="appliedRenunciation_yes"
+                  required
+                  formControlName="appliedRenunciation" />
+                <label class="custom-radio-label" for="appliedRenunciation_yes">
+                  Yes
+                  <span class="checkmark">&check;</span>
+                </label>
+                <input
+                  class="custom-radio"
+                  type="radio"
+                  name="appliedRenunciation"
+                  value="false"
+                  id="appliedRenunciation_no"
+                  required
+                  formControlName="appliedRenunciation" />
+                <label class="custom-radio-label" for="appliedRenunciation_no">
+                  No
+                  <span class="checkmark">&check;</span>
+                </label>
+              </div>
+              <p class="control-error" *ngIf="form.get('other_details.appliedRenunciation')?.invalid && form.get('other_details.appliedRenunciation')?.touched" class="control-error">
+                Please select an option.
+              </p>
+            </div>
+      
+            <hr />
+      
+            <div class="form-group">
+              <label>Have you ever surrendered your Indian passport? If yes, fill Column 6.11 of Supplementary Form</label><br />
+              <div class="custom-radio-group">
+                <input
+                  class="custom-radio"
+                  type="radio"
+                  name="passportSurrendered"
+                  value="true"
+                  id="passportSurrendered_yes"
+                  required
+                  formControlName="passportSurrendered" />
+                <label class="custom-radio-label" for="passportSurrendered_yes">
+                  Yes
+                  <span class="checkmark">&check;</span>
+                </label>
+                <input
+                  class="custom-radio"
+                  type="radio"
+                  name="passportSurrendered"
+                  value="false"
+                  id="passportSurrendered_no"
+                  required
+                  formControlName="passportSurrendered" />
+                <label class="custom-radio-label" for="passportSurrendered_no">
+                  No
+                  <span class="checkmark">&check;</span>
+                </label>
+              </div>
+              <p class="control-error" *ngIf="form.get('other_details.passportSurrendered')?.invalid && form.get('other_details.passportSurrendered')?.touched" class="control-error">
+                Please select an option.
+              </p>
+            </div>
+      
+            <hr />
+      
+            <div class="form-group">
+              <label>Have you ever returned to India on Emergency Certificate (EC)? If yes, fill Column 6.13 of Supplementary Form</label><br />
+              <div class="custom-radio-group">
+                <input
+                  class="custom-radio"
+                  type="radio"
+                  name="emergencyCertificate"
+                  value="true"
+                  id="emergencyCertificate_yes"
+                  required
+                  formControlName="emergencyCertificate" />
+                <label class="custom-radio-label" for="emergencyCertificate_yes">
+                  Yes
+                  <span class="checkmark">&check;</span>
+                </label>
+                <input
+                  class="custom-radio"
+                  type="radio"
+                  name="emergencyCertificate"
+                  value="false"
+                  id="emergencyCertificate_no"
+                  required
+                  formControlName="emergencyCertificate" />
+                <label class="custom-radio-label" for="emergencyCertificate_no">
+                  No
+                  <span class="checkmark">&check;</span>
+                </label>
+              </div>
+              <p class="control-error" *ngIf="form.get('other_details.emergencyCertificate')?.invalid && form.get('other_details.emergencyCertificate')?.touched" class="control-error">
+                Please select an option.
+              </p>
+            </div>
+      
+            <hr />
+      
+            <div class="form-group">
+              <label>Have you ever been deported from any country? If yes, was the cost borne by the Government of India and if so, has the same been refunded?</label><br />
+              <div class="custom-radio-group">
+                <input
+                  class="custom-radio"
+                  type="radio"
+                  name="deported"
+                  value="true"
+                  id="deported_yes"
+                  required
+                  formControlName="deported" />
+                <label class="custom-radio-label" for="deported_yes">
+                  Yes
+                  <span class="checkmark">&check;</span>
+                </label>
+                <input
+                  class="custom-radio"
+                  type="radio"
+                  name="deported"
+                  value="false"
+                  id="deported_no"
+                  required
+                  formControlName="deported" />
+                <label class="custom-radio-label" for="deported_no">
+                  No
+                  <span class="checkmark">&check;</span>
+                </label>
+              </div>
+              <p class="control-error" *ngIf="form.get('other_details.deported')?.invalid && form.get('other_details.deported')?.touched" class="control-error">
+                Please select an option.
+              </p>
+            </div>
+      
+            <hr />
+      
+            <div class="form-group">
+              <label>Have you ever been repatriated from any country back to India? If yes, was the cost borne by the Government of India and if so, has the same been refunded?</label><br />
+              <div class="custom-radio-group">
+                <input
+                  class="custom-radio"
+                  type="radio"
+                  name="repatriated"
+                  value="true"
+                  id="repatriated_yes"
+                  required
+                  formControlName="repatriated" />
+                <label class="custom-radio-label" for="repatriated_yes">
+                  Yes
+                  <span class="checkmark">&check;</span>
+                </label>
+                <input
+                  class="custom-radio"
+                  type="radio"
+                  name="repatriated"
+                  value="false"
+                  id="repatriated_no"
+                  required
+                  formControlName="repatriated" />
+                <label class="custom-radio-label" for="repatriated_no">
+                  No
+                  <span class="checkmark">&check;</span>
+                </label>
+              </div>
+              <p class="control-error" *ngIf="form.get('other_details.repatriated')?.invalid && form.get('other_details.repatriated')?.touched" class="control-error">
+                Please select an option.
+              </p>
+            </div>
+      
+            <hr />
+      
+            <div class="form-group">
+              <label>Have you ever held the passport of any other region/country at any time? If yes, fill Column 6.10 of Supplementary Form</label><br />
+              <div class="custom-radio-group">
+                <input
+                  class="custom-radio"
+                  type="radio"
+                  name="registeredMission"
+                  value="true"
+                  id="registeredMission_yes"
+                  required
+                  formControlName="registeredMission" />
+                <label class="custom-radio-label" for="registeredMission_yes">
+                  Yes
+                  <span class="checkmark">&check;</span>
+                </label>
+                <input
+                  class="custom-radio"
+                  type="radio"
+                  name="registeredMission"
+                  value="false"
+                  id="registeredMission_no"
+                  required
+                  formControlName="registeredMission" />
+                <label class="custom-radio-label" for="registeredMission_no">
+                  No
+                  <span class="checkmark">&check;</span>
+                </label>
+              </div>
+              <p class="control-error" *ngIf="form.get('other_details.registeredMission')?.invalid && form.get('other_details.registeredMission')?.touched" class="control-error">
+                Please select an option.
+              </p>
+            </div>
+      
+            <div  *ngIf="form.get('other_details.registeredMission')?.value === 'true'" class="form-group">
+              <label for="registeredMissionName">Specify name of mission:</label>
+              <input
+                type="text"
+                class="form-control"
+                name="registeredMissionName"
+                id="registeredMissionName"
+                required
+                formControlName="registeredMissionName" />
+              <p class="control-error" *ngIf="form.get('other_details.registeredMissionName')?.invalid && form.get('other_details.registeredMissionName')?.touched" class="control-error">
+                Please enter the name of the mission.
+              </p>
+            </div>
+      
+          </div>
+        </fieldset>
+      
+        <div class="text-right">
+          <button
+            class="btn btn-primary nextButton btn-custom"
+            type="button"
+            (click)="onClickNext(6)">
+            Next
+          </button>
+        </div>
+      
+        <p class="control-error" *ngIf="form.get('other_details')?.invalid && form.get('other_details')?.touched" class="control-error">
+          Please select an option.
+        </p>
+      </div>
+      
+      
+    }
+
+    @if(sectionNo==7){
+      <div id="section7" class="form-group section">
+        <fieldset formGroupName="upload_documents">
+          <legend><b>7. Upload Documents</b></legend>
+            <div>
+              <label class="form-check-label" for="aadharCard">Upload any of the below documents for identity proof:
+                <ul>
+                  <li>Aadhaar Card/e-Aadhar containing the 12 digit Aadhaar number issued by the Unique Identification Authority of India(UIDAI)</li>
+                  <li>Electors Photo Identity Card (EPIC)</li>
+                  <li>Last Passport issued (in case of re-issue only)</li>
+                  <li>Permanent Account Number(PAN)</li>
+                  <li>Bank Passbook or Kisan Passbook or Post Office Passbook</li>
+                  <li>Student Photo Identity Cards issued by Recognized Educational Institutions</li>
+                  <li>Driving Licenses (valid and within the jurisdiction of State of submission of applicant)</li>
+                  <li>Birth Certificates issued under the Registration of Births and Deaths Act, 1969 (18 of 1969)</li>
+                  <li>Rations Cards</li>
+                  <li>Arms License issued under the Arms Act, 1959(54 of 1959)</li>
+                </ul>
+              </label>
+              <br>
+              <input type="file" id="aadharCard" name="aadharCard" required formControlName="aadharCard" (change)="onFileSelected($event, 'aadharCard')" />
+              <p class="control-error" *ngIf="form.get('upload_documents.aadharCard')?.invalid && form.get('upload_documents.aadharCard')?.touched" class="control-error">
+                Please upload the Identity Proof.
+              </p>
+            </div>
+      
+            <hr />
+            <div>
+              <label for="pancard">Upload any of the below documents for address proof:
+                <ul>
+                  <li>Water Bill</li>
+                  <li>Telephone (landline or post-paid mobile bill)</li>
+                  <li>Electricity bill</li>
+                  <li>Income Tax Assessment Order</li>
+                  <li>Election Commission Photo ID card</li>
+                  <li>Proof of Gas Connection</li>
+                  <li>Certificate from Employer of reputed companies on letter head</li>
+                  <li>Spouse's passport copy (First and last page including family details mentioning applicant's name as spouse of the passport holder), (provided the applicant's present address matches the address mentioned in the spouse's passport)</li>
+                  <li>Parent's passport copy, in case of minors(First and last page)</li>
+                  <li>Aadhaar Card</li>
+                  <li>Rent Agreement</li>
+                  <li>Photo Passbook of running Bank Account (Scheduled Public Sector Banks, Scheduled Private Sector Indian Banks and Regional Rural Banks only)</li>
+                </ul>
+              </label>
+              <input type="file" id="pancard" name="pancard" required formControlName="pancard" (change)="onFileSelected($event, 'pancard')"/>
+              <p class="control-error" *ngIf="form.get('upload_documents.pancard')?.invalid && form.get('upload_documents.pancard')?.touched" class="control-error">
+                Please upload the Address Proof.
+              </p>
+            </div>
+      
+            <hr />
+            <div>
+              <label for="dobProof" class="form-check-label">Upload any of the below documents for verification of date of birth:
+                <ul>
+                  <li>Birth certificated issued by government authority</li>
+                  <li>Transfer/school leaving certificate</li>
+                  <li>Policy Bond issued by the Public Life Insurance Corporations/Companies having the DOB of the holder of the insurance policy</li>
+                  <li>Election Photo Identity Card (EPIC) issued by the Election Commission of India</li>
+                  <li>PAN Card issued by the Income Tax Department</li>
+                  <li>Driving License issued by the Transport department of concerned state Government</li>
+                  <li>A declaration given by the Head of the Orphanage/Child Care Home on their official letterhead of the organization confirming the DOB of the applicant</li>
+                </ul>
+              </label>
+              <br>
+              <input type="file" id="dobProof" name="dobProof" required formControlName="dobProof" (change)="onFileSelected($event, 'dobProof')" />
+              <p class="control-error" *ngIf="form.get('upload_documents.dobProof')?.invalid && form.get('upload_documents.dobProof')?.touched" class="control-error">
+                Please upload a DOB Proof.
+              </p>
+            </div>
+      
+            <hr />
+            <div>
+              <label for="photo" class="form-check-label">Upload passport size photo (taken in last 2 months)</label>
+              <br>
+              <input type="file" id="photo" name="photo" required formControlName="photo" (change)="onFileSelected($event, 'photo')"/>
+              <p class="control-error" *ngIf="form.get('upload_documents.photo')?.invalid && form.get('upload_documents.photo')?.touched" class="control-error">
+                Please upload a Photo.
+              </p>
+            </div>
+      
+          
+          <div class="text-right">
+            <button
+                type="submit"
+                id="submit"
+                class="btn btn-primary btn-custom"
+               
+            >
+                Submit
+            </button>
+        </div>
+        @if(this.form.invalid){
+            <p class="control-error">
+                Please fill in the required fields.
+            </p>
+        }
+        </fieldset>
+      </div>
+      
+    }
+  </form>
+</div>

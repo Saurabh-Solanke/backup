@@ -1,0 +1,109 @@
+-
+ng new contoso-app
+cd contoso-app
+npm i @auth0/angular-jwt
+npm i bootstrap,jquery
+npm install @popperjs/core
+ "styles": [
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/@popperjs/core/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Contoso</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+  <app-root></app-root>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</body>
+</html>
+
+-app-routing.module.ts
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { HomeComponent } from './components/home/home.component';
+import { AuthGuard } from './guards/auth.guard';
+
+const routes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+  // Add routes for CRUD operations and other views
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+
+-
+ng generate guard guards/auth
+
+-JWT
+
+-Storing the JWT Token
+After a user logs in, the JWT token received from the backend is typically stored in localStorage
+ (or sessionStorage depending on your needs). This allows the token to persist across page reloads 
+and browser sessions.
+
+login(email: string, password: string): Observable<any> {
+  return this.http.post<any>(`${this.baseUrl}/login`, { email, password }).pipe(
+    tap((response: any) => {
+      // Store the JWT token in localStorage
+      localStorage.setItem('access_token', response.token);
+    })
+  );
+}
+
+- Intercepting HTTP Requests
+The AuthInterceptor automatically intercepts every HTTP request made by the Angular application.
+ During this interception, the interceptor checks if a JWT token is stored in localStorage. If a 
+token is found, the interceptor adds an Authorization header to the request with the token included.
+import { Injectable } from '@angular/core';
+import {
+  HttpEvent,
+  HttpHandler,
+  HttpInterceptor,
+  HttpRequest
+} from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+@Injectable()
+export class AuthInterceptor implements HttpInterceptor {
+  intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
+    // Retrieve the token from localStorage
+    const token = localStorage.getItem('access_token');
+
+    // If the token exists, clone the request and add the Authorization header
+    if (token) {
+      const cloned = req.clone({
+        headers: req.headers.set('Authorization', `Bearer ${token}`)
+      });
+      return next.handle(cloned);
+    } else {
+      // If no token, proceed with the request unmodified
+      return next.handle(req);
+    }
+  }
+}
+
+

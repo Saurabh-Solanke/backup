@@ -1,0 +1,53 @@
+.notification-container {
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 350px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  .notification-item {
+    border-left: 4px solid #ccc;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+  }
+  .notification_logo{
+    margin-right:8px;
+  }
+  .bg-darks {
+    background-color: #4e4e76;  /* Bootstrap dark background */
+    color: white;
+  }
+  .bg-darks:hover {
+    background-color: rgb(148, 160, 171);
+    color: black;
+  }
+  
+  .bg-light {
+    background-color: #f8f9fa; /* Bootstrap light background */
+    color: black;
+  }
+  
+  .mark-as-read {
+    color: #e6ecf3;
+    cursor: pointer;
+  }
+  
+  .mark-as-read:hover {
+    text-decoration: underline;
+  }
+  
+  .btn-mark-all:hover {
+    text-decoration: underline;
+  }
+  .btn-mark-all {
+    background: none;
+    border: none;
+    margin-top: 30px;
+    color: black;
+    cursor: pointer;
+  }
+  

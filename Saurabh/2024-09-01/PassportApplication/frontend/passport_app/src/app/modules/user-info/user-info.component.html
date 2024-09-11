@@ -1,0 +1,52 @@
+<div class="container mt-4">
+    <div class="row">
+      <div class="col-md-8">
+        <div class="card profile-card">
+          <div class="profile-header">
+            <img src="https://via.placeholder.com/80" alt="Profile Picture">
+            <div>
+              <!-- <h2>{{currentUser?.firstName+ " " +currentUser?.lastName}}</h2> -->
+              <h5>{{currentUser?.firstname + " " + currentUser?.lastname}}</h5>
+            </div>
+            <button class="update-profile-btn" routerLink="update-profile">Update Profile</button>
+          </div>
+          <div class="profile-details row">
+            <div class="col-md-6">
+              <h5>First Name</h5>
+              <p>{{currentUser?.firstname}}</p>
+              <h5>Address</h5>
+              <p>123 Main St, Anytown USA 12345</p>
+              <h5>Phone</h5>
+              <p>{{currentUser?.mobileNo}}</p>
+              <h5>Email</h5>
+              <p>{{currentUser?.email}}</p>
+            </div>
+            <div class="col-md-6">
+              <h5>Last Name</h5>
+              <p>{{currentUser?.lastname}}</p>
+              <h5>Passport Number</h5>
+              <p>ABC123456</p>
+              <h5>Issued Date</h5>
+              <p>June 1, 2020</p>
+              <h5>Nationality</h5>
+              <p>United States</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card">
+          <div class="card-body">
+            <h5>Quick Links</h5>
+            <ul class="list-group">
+              <li class="list-group-item"><a routerLink="/application-form/section/1">Apply for a New Passport</a></li>
+              <li class="list-group-item"><a routerLink="/application-form/renewal-section/1">Renew an Existing Passport</a></li>
+              <li class="list-group-item"><a routerLink="/application-status">Check status of your application and complaints</a></li>
+              <li class="list-group-item"><a routerLink="/feedback">Feedback or complaint</a></li>
+              <li class="list-group-item logout"><a routerLink="/home" (click)="logout()">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
