@@ -1,0 +1,26 @@
+.container {
+    max-width: 800px; /* Adjust width of the form */
+}
+.form-control {
+    background: none;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0; /* Removes the default border radius */
+}
+.form-control:focus {
+    box-shadow: none; /* Removes the focus shadow */
+    border-color: #aaa;
+}
+.icon-background {
+    background-color: #f8f9fa; /* Matching the icon background to your image */
+    border-radius: 50%;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px; /* Vertically center the icon */
+}
+.btn-custom{
+    background: #e11d48;
+    color: white;
+}

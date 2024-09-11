@@ -1,0 +1,575 @@
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-header bg-danger text-white">
+      <h2 class="card-title">Admin Dashboard</h2>
+    </div>
+    <div class="card-body">
+      <div class="d-flex justify-content-end mb-4">
+        <input
+          type="search"
+          class="form-control search-bar w-25"
+          placeholder="Search..."
+          [(ngModel)]="searchQuery"
+          (ngModelChange)="onSearchChange($event)"
+        />
+        <button class="btn btn-danger disabled">Add New</button>
+      </div>
+      <ul class="nav nav-tabs mb-3">
+        <li class="nav-item">
+          <button
+            class="nav-link"
+            (click)="setActiveTab('users')"
+            [ngClass]="{ active: isActiveTab('users') }"
+          >
+            Users
+          </button>
+        </li>
+        <li class="nav-item">
+          <button
+            class="nav-link"
+            (click)="setActiveTab('applications')"
+            [ngClass]="{ active: isActiveTab('applications') }"
+          >
+            New Applications
+          </button>
+        </li>
+        <li class="nav-item">
+          <button
+            class="nav-link"
+            (click)="setActiveTab('renewal')"
+            [ngClass]="{ active: isActiveTab('renewal') }"
+          >
+            Renewal Applications
+          </button>
+        </li>
+        <li class="nav-item dropdown">
+          <button
+            class="nav-link dropdown-toggle"
+            id="comfeedDropdown"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Complaint/Feedback List
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="comfeedDropdown">
+            <li>
+              <a
+                class="dropdown-item"
+                (click)="setActiveTab('complaint')"
+                [ngClass]="{ active: isActiveTab('complaint') }"
+                >Complaint</a
+              >
+            </li>
+            <li>
+              <a
+                class="dropdown-item"
+                (click)="setActiveTab('feedback')"
+                [ngClass]="{ active: isActiveTab('feedback') }"
+                >Feedback</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <button
+            class="nav-link"
+            (click)="setActiveTab('payments')"
+            [ngClass]="{ active: isActiveTab('payments') }"
+          >
+            Payment List
+          </button>
+        </li>
+      </ul>
+
+      <!-- Users Tab -->
+      <div *ngIf="isActiveTab('users')">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col" class="sortable" (click)="onSortColumn('userId')">
+                ID
+              </th>
+              <th
+                scope="col"
+                class="sortable"
+                (click)="onSortColumn('firstname')"
+              >
+                Name
+              </th>
+              <th scope="col" class="sortable" (click)="onSortColumn('email')">
+                Email
+              </th>
+              <th
+                scope="col"
+                class="sortable"
+                (click)="onSortColumn('mobileNo')"
+              >
+                Mobile
+              </th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="
+                let user of getPageData(filteredUsers);
+                trackBy: trackById
+              "
+            >
+              <td>{{ user.userId }}</td>
+              <td>{{ user.firstname + " " + user.lastname }}</td>
+              <td>{{ user.email }}</td>
+              <td>{{ user.mobileNo }}</td>
+              <td>
+                
+                <button
+                  class="btn btn-outline-danger btn-sm action-button"
+                  title="Delete"
+                  (click)="onDeleteUser(user?.userId)"
+                >
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <app-pagination
+          [currentPage]="currentPage"
+          [totalPages]="totalPages"
+          (pageChanged)="changePage($event)"
+        ></app-pagination>
+      </div>
+
+      <!-- New Applications Tab -->
+      <div *ngIf="isActiveTab('applications')">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th
+                scope="col"
+                class="sortable"
+                (click)="onSortColumn('applicationNo')"
+              >
+                Application ID
+              </th>
+              <th
+                scope="col"
+                class="sortable"
+                (click)="onSortColumn('applicantName')"
+              >
+                Applicant Name
+              </th>
+              <th
+                scope="col"
+                class="sortable"
+                (click)="onSortColumn('createdOn')"
+              >
+                Submit Date
+              </th>
+              <th
+                scope="col"
+                class="sortable"
+                (click)="onSortColumn('applicationType')"
+              >
+                Application Type
+              </th>
+              <th
+                scope="col"
+                class="sortable"
+                (click)="onSortColumn('applicationStatus')"
+              >
+                Application Status
+              </th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="
+                let application of getPageData(filteredApplications);
+                trackBy: trackById
+              "
+            >
+              <td>{{ application.applicationNo }}</td>
+              <td>{{ application.applicantName }}</td>
+              <td>{{ application.createdOn | date : "shortDate" }}</td>
+              <td>{{ getPassportType(application.passportType) }}</td>
+              <td>
+                <ng-container *ngIf="editingNewApplication">
+                  <select
+                    [(ngModel)]="application.applicationStatus"
+                    name="status"
+                    id="status"
+                  >
+                    <option value="{{ application.applicationStatus }}">
+                      {{ getStatusName(application.applicationStatus) }}
+                    </option>
+                    <option value="1">Pending</option>
+                    <option value="2">Approved</option>
+                    <option value="3">Rejected</option>
+                  </select>
+                </ng-container>
+                <ng-container *ngIf="!editingNewApplication">
+                  {{ getStatusName(application.applicationStatus) }}
+                </ng-container>
+              </td>
+              <td>
+                <button
+                  class="btn btn-outline-secondary btn-sm action-button"
+                  title="Edit"
+                  (click)="onEditApplication(application)"
+                >
+                  <i class="fas fa-pencil-alt"></i>
+                </button>
+                <button
+                  class="btn btn-outline-danger btn-sm action-button"
+                  title="Delete"
+                  (click)="onDeleteApplication(application.applicationNo)"
+                >
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+                <ng-container *ngIf="editingNewApplication">
+                  <button
+                    class="btn btn-success btn-sm action-button"
+                    title="Save"
+                    (click)="onSaveApplication(application)"
+                  >
+                    <i class="fas fa-save"></i>
+                  </button>
+                </ng-container>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <app-pagination
+          [currentPage]="currentPage"
+          [totalPages]="totalPages"
+          (pageChanged)="changePage($event)"
+        ></app-pagination>
+      </div>
+
+      <!-- Renewal Applications Tab -->
+      <div *ngIf="isActiveTab('renewal')">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th
+                scope="col"
+                class="sortable"
+                (click)="onSortColumn('applicationNo')"
+              >
+                Application ID
+              </th>
+              <th
+                scope="col"
+                class="sortable"
+                (click)="onSortColumn('applicantName')"
+              >
+                Applicant Name
+              </th>
+              <th
+                scope="col"
+                class="sortable"
+                (click)="onSortColumn('createdOn')"
+              >
+                Submit Date
+              </th>
+              <th
+                scope="col"
+                class="sortable"
+                (click)="onSortColumn('applicationType')"
+              >
+                Application Type
+              </th>
+              <th
+                scope="col"
+                class="sortable"
+                (click)="onSortColumn('applicationStatus')"
+              >
+                Application Status
+              </th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="
+                let renewalApplication of getPageData(
+                  filteredRenewalApplications
+                );
+                trackBy: trackById
+              "
+            >
+              <td>{{ renewalApplication.applicationNo }}</td>
+              <td>{{ renewalApplication.applicantName }}</td>
+              <td>{{ renewalApplication.createdOn | date : "shortDate" }}</td>
+              <td>{{ getPassportType(renewalApplication.passportType) }}</td>
+              <td>
+                <ng-container *ngIf="editingRenewalApplication">
+                  <select
+                    [(ngModel)]="renewalApplication.applicationStatus"
+                    name="status"
+                    id="status"
+                  >
+                    <option value="1">Pending</option>
+                    <option value="2">Approved</option>
+                    <option value="3">Rejected</option>
+                  </select>
+                </ng-container>
+                <ng-container *ngIf="!editingRenewalApplication">
+                  {{ getStatusName(renewalApplication.applicationStatus) }}
+                </ng-container>
+              </td>
+              <td>
+                <button
+                  class="btn btn-outline-secondary btn-sm action-button"
+                  title="Edit"
+                  (click)="onEditRenewalApplication(renewalApplication)"
+                >
+                  <i class="fas fa-pencil-alt"></i>
+                </button>
+                <button
+                  class="btn btn-outline-danger btn-sm action-button"
+                  title="Delete"
+                  (click)="
+                    onDeleteRenewalApplication(renewalApplication.applicationNo)
+                  "
+                >
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+                <ng-container *ngIf="editingRenewalApplication">
+                  <button
+                    class="btn btn-success btn-sm action-button"
+                    title="Save"
+                    (click)="onSaveRenewalApplication(renewalApplication)"
+                  >
+                    <i class="fas fa-save"></i>
+                  </button>
+                </ng-container>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <app-pagination
+          [currentPage]="currentPage"
+          [totalPages]="totalPages"
+          (pageChanged)="changePage($event)"
+        ></app-pagination>
+      </div>
+
+      <!-- Complaint Tab -->
+      <div *ngIf="isActiveTab('complaint')">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th
+                scope="col"
+                class="sortable"
+                (click)="onSortColumn('complaintId')"
+              >
+                Complaint ID
+              </th>
+              <th scope="col" class="sortable" (click)="onSortColumn('title')">
+                Title
+              </th>
+              <th
+                scope="col"
+                class="sortable"
+                (click)="onSortColumn('complaintMessage')"
+              >
+                Complaint Description
+              </th>
+              <th scope="col" class="sortable"(click)="onSortColumn('complaintMessage')">Complaint Status</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="
+                let complaint of getPageData(filteredComplaints);
+                trackBy: trackById
+              "
+            >
+              <td>{{ complaint.id }}</td>
+              <td>{{ complaint.title }}</td>
+              <td>{{ complaint.description }}</td>
+              <td>
+                <ng-container *ngIf="editingComplaint">
+                  <select
+                    [(ngModel)]="complaint.complaintStatus"
+                    name="status"
+                    id="status"
+                  >
+                    <option value="1">Resolved</option>
+                    <option value="2">Unresolved</option>
+                  </select>
+                </ng-container>
+                <ng-container *ngIf="!editingComplaint">
+                  {{ getComplaintStatus(complaint.complaintStatus) }}
+                </ng-container>
+              </td>
+              <td>
+                <button
+                  class="btn btn-outline-secondary btn-sm action-button"
+                  title="Edit"
+                  (click)="onEditComplaint(complaint)"
+                >
+                  <i class="fas fa-pencil-alt"></i>
+                </button>
+                <button
+                  class="btn btn-outline-danger btn-sm action-button"
+                  title="Delete"
+                  (click)="onDeleteComplaint(complaint.id)"
+                >
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+                <ng-container *ngIf="editingComplaint">
+                  <button
+                    class="btn btn-success btn-sm action-button"
+                    title="Save"
+                    (click)="onSaveComplaint(complaint)"
+                  >
+                    <i class="fas fa-save"></i>
+                  </button>
+                </ng-container>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <app-pagination
+          [currentPage]="currentPage"
+          [totalPages]="totalPages"
+          (pageChanged)="changePage($event)"
+        ></app-pagination>
+      </div>
+
+      <!-- Feedback Tab -->
+      <div *ngIf="isActiveTab('feedback')">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col" class="sortable" (click)="onSortColumn('id')">
+                Feedback ID
+              </th>
+              <th scope="col" class="sortable" (click)="onSortColumn('title')">
+                Title
+              </th>
+              <th
+                scope="col"
+                class="sortable"
+                (click)="onSortColumn('description')"
+              >
+                Feedback Message
+              </th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="
+                let feedback of getPageData(filteredFeedbacks);
+                trackBy: trackById
+              "
+            >
+              <td>{{ feedback.id }}</td>
+              <td>{{ feedback.title }}</td>
+              <td>{{ feedback.description }}</td>
+              <td>
+                <button
+                  class="btn btn-outline-secondary btn-sm action-button"
+                  title="Edit"
+                  (click)="onEditFeedback(feedback)"
+                >
+                  <i class="fas fa-pencil-alt"></i>
+                </button>
+                <button
+                  class="btn btn-outline-danger btn-sm action-button"
+                  title="Delete"
+                  (click)="onDeleteFeedback(feedback?.id)"
+                >
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <app-pagination
+          [currentPage]="currentPage"
+          [totalPages]="totalPages"
+          (pageChanged)="changePage($event)"
+        ></app-pagination>
+      </div>
+
+      <!-- Payments Tab -->
+      <div *ngIf="isActiveTab('payments')">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th
+                scope="col"
+                class="sortable"
+                (click)="onSortColumn('paymentId')"
+              >
+                Payment ID
+              </th>
+              <th
+                scope="col"
+                class="sortable"
+                (click)="onSortColumn('applicationId')"
+              >
+                Application ID
+              </th>
+              <th
+                scope="col"
+                class="sortable"
+                (click)="onSortColumn('applicationFee')"
+              >
+                Application Fee
+              </th>
+              <th
+                scope="col"
+                class="sortable"
+                (click)="onSortColumn('paymentStatus')"
+              >
+                Payment Status
+              </th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              *ngFor="
+                let payment of getPageData(filteredPayments);
+                trackBy: trackById
+              "
+            >
+              <td>{{ payment.paymentId }}</td>
+              <td>{{ payment.applicationId }}</td>
+              <td>{{ payment.applicationFee | currency }}</td>
+              <td>{{ payment.paymentStatus }}</td>
+              <td>
+                <button
+                  class="btn btn-outline-secondary btn-sm action-button"
+                  title="Edit"
+                >
+                  <i class="fas fa-pencil-alt"></i>
+                </button>
+                <button
+                  class="btn btn-outline-danger btn-sm action-button"
+                  title="Delete"
+                >
+                  <i class="fas fa-trash-alt"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <app-pagination
+          [currentPage]="currentPage"
+          [totalPages]="totalPages"
+          (pageChanged)="changePage($event)"
+        ></app-pagination>
+      </div>
+    </div>
+  </div>
+</div>

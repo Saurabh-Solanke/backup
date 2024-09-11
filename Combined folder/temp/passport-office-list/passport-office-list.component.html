@@ -1,0 +1,156 @@
+<div class="container-fluid mb-0">
+  <h2 class="fw-bold mb-0">Passport Offices</h2>
+
+  <!-- Passport Offices Table -->
+  <p *ngIf="fetchStatus" class="mt-4 text-danger fs-3 fw-bold">
+    {{ fetchStatus }}
+  </p>
+  <div *ngIf="!fetchStatus">
+    <div class="d-flex align-items-center my-3">
+      <!-- Upload Section -->
+      <div class="upload-section col-auto">
+        <button class="btn btn-nxt" (click)="openUploadModal(uploadModal)">
+          <i class="fas fa-plus-circle"></i> Add Passport Offices
+        </button>
+      </div>
+      <!-- Delete Section -->
+      <div class="delete-section col-auto ms-3">
+        <button
+          class="btn btn-danger"
+          (click)="deleteSelectedOffices()"
+          [disabled]="!hasSelectedOffices()"
+        >
+          <i class="fas fa-trash-alt"></i> Delete Selected
+        </button>
+      </div>
+
+      <!-- Filter Section -->
+      <div class="filter-section col-auto ms-auto">
+        <select class="form-select" (change)="applyFilter($event)">
+          <option value="all">All States</option>
+          <option *ngFor="let state of states" [value]="state">
+            {{ state }}
+          </option>
+        </select>
+      </div>
+    </div>
+    <table class="table table-hover table-bordered">
+      <thead>
+        <tr>
+          <th>
+            <input type="checkbox" (change)="toggleSelectAll($event)" />
+          </th>
+          <th>Name</th>
+          <th>Location</th>
+          <th>State</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let office of displayedOffices">
+          <td>
+            <input type="checkbox" [(ngModel)]="office.selected" />
+          </td>
+          <td>{{ office.officeName }}</td>
+          <td>{{ office.city }}</td>
+          <td>{{ office.state }}</td>
+          <td>
+            <button class="btn btn-review" (click)="openModal(content, office)">
+              <i class="fas fa-eye"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <!-- Pagination -->
+    <nav aria-label="Page navigation">
+      <ul class="pagination justify-content-center mt-4">
+        <li class="page-item">
+          <button
+            class="page-link btn btn-nxtpage mx-1"
+            (click)="previousPage()"
+            [disabled]="page === 1"
+          >
+            <i class="fas fa-chevron-left"></i>
+          </button>
+        </li>
+
+        <!-- Page Number Buttons -->
+        <li class="page-item" *ngFor="let pageNumber of pageNumbers()">
+          <button
+            class="page-link mx-1 rounded-2"
+            (click)="goToPage(pageNumber)"
+            [ngClass]="{
+              'btn-nxt': page === pageNumber,
+              'btn-pageno': page !== pageNumber
+            }"
+          >
+            {{ pageNumber }}
+          </button>
+        </li>
+
+        <li class="page-item">
+          <button
+            class="page-link btn btn-nxtpage mx-1"
+            (click)="nextPage()"
+            [disabled]="page * pageSize >= totalOffices"
+          >
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Modal for Viewing Details -->
+  <ng-template #content let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Passport Office Details</h4>
+    </div>
+    <div class="modal-body">
+      <p><strong>Name:</strong> {{ selectedOffice?.officeName }}</p>
+      <p><strong>Location:</strong> {{ selectedOffice?.city }}</p>
+      <p><strong>State:</strong> {{ selectedOffice?.state }}</p>
+      <p><strong>Country:</strong> {{ selectedOffice?.country }}</p>
+      <p><strong>Email:</strong> {{ selectedOffice?.email }}</p>
+      <p><strong>Phone:</strong> {{ selectedOffice?.contactNumber }}</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-nxt" (click)="closeModal()">
+        Close
+      </button>
+    </div>
+  </ng-template>
+
+  <!-- Modal for Uploading Excel -->
+  <ng-template #uploadModal let-modal>
+    <div class="modal-header">
+      <h4 class="modal-title">Bulk Add Passport Offices</h4>
+    </div>
+    <div class="modal-body">
+      <p>Please ensure the Excel file follows this format:</p>
+      <ul>
+        <li>Column A: Office Name</li>
+        <li>Column B: City</li>
+        <li>Column C: State</li>
+        <li>Column D: Country</li>
+        <li>Column E: Contact Number</li>
+        <li>Column F: Email</li>
+      </ul>
+      <input
+        type="file"
+        (change)="onFileChange($event)"
+        class="form-control d-inline-block w-50"
+      />
+      <button class="btn btn-nxtpage mx-2" (click)="uploadFile()">
+        <i class="fas fa-upload"></i>
+      </button>
+      <p *ngIf="uploadStatus" class="mt-2">{{ uploadStatus }}</p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-nxt" (click)="closeModal()">
+        Close
+      </button>
+    </div>
+  </ng-template>
+</div>

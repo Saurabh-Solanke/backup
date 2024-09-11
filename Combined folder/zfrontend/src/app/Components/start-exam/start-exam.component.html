@@ -1,0 +1,46 @@
+<div class="wrapper">
+  <header class="header">
+    <div class="container d-flex align-items-center justify-content-center">
+      <div class="logo me-3">
+        <img src="../../../assets/quiz.png" alt="Exam Portal Logo" id="logo">
+      </div>
+      <div class="header-text">
+        <h2>Online MCQ Exam Portal</h2>
+        <em>Prepare yourself for success with our interactive and challenging exams.</em>
+      </div>
+    </div>
+  </header>
+  <div class="container d-flex justify-content-center align-items-center">
+    <div class="card p-4 shadow custom-card">
+      <div class="card-body">
+        <h5 class="card-title text-center">Online MCQ Exam</h5>
+        <div class="terms mt-3">
+          <strong>Terms and Conditions : </strong>
+          <ul class="list-unstyled">
+            <li><i class="fas fa-clock"></i> You must complete the exam within the allotted time.</li>
+            <li><i class="fas fa-laptop"></i> No use of electronic devices other than the computer for taking the exam.</li>
+            <li><i class="fas fa-exclamation-triangle"></i> Any form of cheating will result in immediate disqualification.</li>
+            <li><i class="fas fa-wifi"></i> Ensure you have a stable internet connection before starting the exam.</li>
+            <li><i class="fas fa-ban"></i> Do not refresh or close the browser during the exam.</li>
+            <li><i class="fas fa-hourglass-end"></i> All answers must be submitted before the time runs out.</li>
+            <li><i class="fas fa-save"></i> Your progress will be saved automatically as you proceed.</li>
+            <li><i class="fas fa-chart-bar"></i> Results will be available immediately after the exam ends.</li>
+          </ul>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="termsCheck" [(ngModel)]="termsAccepted">
+          <label class="form-check-label" for="termsCheck">I agree to the terms and conditions<sup id="req">*</sup></label>
+        </div>
+        <div class="text-center">
+          <button class="btn btn-success w-20 mt-3" (click)="startExam()" [disabled]="!termsAccepted">Start Exam</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="footer">
+    <div class="container text-center">
+      <p>&copy; 2024 Online MCQ Exam Portal. All rights reserved.</p>
+    </div>
+  </footer>
+</div>

@@ -1,0 +1,23 @@
+<div class="notification-container">
+    <h4>Notifications</h4>
+    @for(notification of userNotifications;track notification.notificationID){
+        <div 
+         class="notification-item" 
+         [class.bg-darks]="!notification.isRead" 
+         [class.bg-light]="notification.isRead">
+      <span class="notification_logo"><i class="fa-solid fa-message"></i></span>
+      <strong>{{ notification.notificationMessage }}</strong>
+      <div class="text-muted text-end"> 
+        @if(!notification.isRead){
+            <span class="mark-as-read" (click)="markAsRead(notification.notificationID)">Mark as read</span>
+        }
+       
+      </div>
+    </div>
+    }
+    <div class="text-end">
+        <button class="btn-mark-all" (click)="markAllAsRead()">Mark All As Read</button>
+    </div>
+    
+  </div>
+  

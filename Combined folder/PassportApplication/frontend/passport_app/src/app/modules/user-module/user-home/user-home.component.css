@@ -1,0 +1,63 @@
+.container {
+  margin-top: 2rem;
+}
+
+.jumbotron {
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 0.3rem;
+}
+
+.dashboard-section {
+  margin-top: 2rem;
+}
+
+.profile-card {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.3rem;
+  background-color: #fff;
+}
+
+.notifications {
+  background-color: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 0.3rem;
+}
+
+.card-header {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.card-body h5 {
+  margin: 1rem 0;
+}
+
+.card-body p {
+  margin: 0.5rem 0;
+}
+
+.btn {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: white;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:hover {
+  background-color: white;
+  border-color: var(--color-secondary);
+  border-width: 1px;
+  color: var(--color-secondary);
+  font-weight: bold;
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}

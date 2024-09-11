@@ -1,0 +1,90 @@
+<!-- card.component.html -->
+<div class="container">
+  <div class="row align-items-center vh-100">
+    <div class="col-md-6 d-none d-md-flex justify-content-center">
+      <!-- Illustration column (hidden on smaller screens) -->
+      <img
+        src="../../../assets/images/login.gif"
+        alt="Illustration"
+        class="img-fluid illustration animate__animated animate__fadeInLeft"
+      />
+    </div>
+    <div class="col-md-6">
+      <div class="card animate__animated hover-animate">
+        <div class="card-body">
+          <!-- Card title for the login form -->
+          <div>
+            <h4 class="c1 card-title text-center fs-3 mb-3 fw-bold">Login</h4>
+          </div>
+
+          <!-- Login form -->
+          <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+            <div>
+              <div class="control no-margin">
+                <label for="email">Email</label>
+                <input
+                  id="email"
+                  type="email"
+                  formControlName="email"
+                  placeholder="Enter your email"
+                  class="form-control rounded"
+                />
+                <div *ngIf="emailIsInvalid" class="control-error small">
+                  <p class="control-error small" *ngIf="myForm.controls['email'].errors?.['required']">
+                    Please enter your email address.
+                  </p>
+                  <p class="control-error small" *ngIf="myForm.controls['email'].errors?.['email']">
+                    Enter a valid email address.
+                  </p>
+                </div>
+              </div>
+
+              <div class="control no-margin">
+                <label for="password">Password</label>
+                <input
+                  id="password"
+                  type="password"
+                  formControlName="password"
+                  placeholder="Enter your password"
+                  class="form-control rounded"
+                />
+                <div *ngIf="passwordIsInvalid" class="control-error small">
+                  <p class="control-error small" *ngIf="myForm.controls['password'].errors?.['required']">
+                    Please enter your password.
+                  </p>
+                  <p class="control-error small" *ngIf="myForm.controls['password'].errors?.['minLength']">
+                    Password must be at least 8 characters.
+                  </p>
+                </div>
+              </div>
+
+                 
+                  <div class="d-grid mt-4 ">
+                    <div class="row">
+                      <a class="btn btn-nxt w-25 ms-3" routerLink=""
+                        ><i class="fas fa-arrow-left me-0"></i> Go Back
+                      </a>
+                      <button
+                        type="submit"
+                        class="btn my-btn btn-prev me-2 ms-auto  w-50"
+                       
+                      >
+                      <i class="fas fa-sign-in-alt me-2"></i>  Login
+                      </button>
+                    </div>
+                  </div>
+      
+                  <!-- Link to the signup page for new users -->
+                  <div class="text-center mt-4">
+                    <span
+                      >Don't have an account?
+                      <a class="c2" routerLink="/signup"> Signup </a></span
+                    >
+                  </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

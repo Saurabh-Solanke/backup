@@ -1,0 +1,146 @@
+<div class="auth-main">
+  <div class="auth-wrapper v3">
+    <div class="auth-form">
+      
+      <div class="card my-4 rounded-5 ">
+        <div class="card-body">
+
+          <div>
+            <h4 class="card-title text-center fs-3 mb-3">Sign up / Register</h4>
+          </div>
+
+          <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+
+            <div class="form-group pb-2">
+              <label for="userFullname">Name<sup id="req">*</sup></label>
+              <input type="text" id="name" formControlName="userFullname" class="form-control"
+                placeholder="Enter your fullname here"
+                [class.is-invalid]="signupForm.get('userFullname')?.invalid && signupForm.get('userFullname')?.touched">
+              <div *ngIf="signupForm.get('userFullname')?.invalid && signupForm.get('userFullname')?.touched"
+                class="invalid-feedback">
+                <span *ngIf="signupForm.get('userFullname')?.errors?.['required']">Name is required.</span>
+                <span *ngIf="signupForm.get('userFullname')?.errors?.['pattern']">Please enter a valid name (only
+                  letters and spaces).</span>
+              </div>
+            </div>
+
+            <div class="form-group pb-2">
+              <div class="form-group mt-2">
+                <label for="userEmail">Email<sup id="req">*</sup></label>
+                <input type="email" id="userEmail" formControlName="userEmail" class="form-control"
+                  placeholder="Enter your email here"
+                  [class.is-invalid]="signupForm.get('userEmail')?.invalid && signupForm.get('userEmail')?.touched">
+                <div *ngIf="signupForm.get('userEmail')?.invalid && signupForm.get('userEmail')?.touched"
+                  class="invalid-feedback">
+                  <span *ngIf="signupForm.get('userEmail')?.errors?.['required']">Email is required.</span>
+                  <span *ngIf="signupForm.get('userEmail')?.errors?.['email']">Please enter a valid email
+                    address.</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group pb-2">
+              <label for="userMobileNo">Mobile no<sup id="req">*</sup></label>
+              <input type="text" id="userMobileNo" formControlName="userMobileNo" class="form-control"
+                placeholder="Enter your Mobile no here"
+                [class.is-invalid]="signupForm.get('userMobileNo')?.invalid && signupForm.get('userMobileNo')?.touched">
+              <div *ngIf="signupForm.get('userMobileNo')?.invalid && signupForm.get('userMobileNo')?.touched"
+                class="invalid-feedback">
+                <span *ngIf="signupForm.get('userMobileNo')?.errors?.['required']">Mobile is required.</span>
+                <span *ngIf="signupForm.get('userMobileNo')?.errors?.['pattern']">Please enter a valid Mobile (only 10
+                  digit number is valid).</span>
+              </div>
+            </div>
+
+            <div class="form-group pb-2">
+              <label for="userAddress">Address<sup id="req">*</sup></label>
+              <input type="text" id="userAddress" formControlName="userAddress" class="form-control"
+                placeholder="Enter your address here"
+                [class.is-invalid]="signupForm.get('userAddress')?.invalid && signupForm.get('userAddress')?.touched">
+              <div *ngIf="signupForm.get('userAddress')?.invalid && signupForm.get('userAddress')?.touched"
+                class="invalid-feedback">
+                <span *ngIf="signupForm.get('userAddress')?.errors?.['required']">Address is required.</span>
+              </div>
+            </div>
+
+            <div class="form-group pb-2">
+              <label for="userPincode">Pincode<sup id="req">*</sup></label>
+              <input type="text" id="userPincode" formControlName="userPincode" class="form-control"
+                placeholder="Enter your pincode here"
+                [class.is-invalid]="signupForm.get('userPincode')?.invalid && signupForm.get('userPincode')?.touched">
+              <div *ngIf="signupForm.get('userPincode')?.invalid && signupForm.get('userPincode')?.touched"
+                class="invalid-feedback">
+                <span *ngIf="signupForm.get('userPincode')?.errors?.['required']">Pincode is required.</span>
+                <span *ngIf="signupForm.get('userPincode')?.errors?.['pattern']">Please enter a valid 6-digit
+                  pincode.</span>
+              </div>
+            </div>
+
+
+            <div class="form-group pb-2">
+              <label for="userPassword">Password<sup id="req">*</sup></label>
+              <input type="password" id="userPassword" formControlName="userPassword" class="form-control"
+                placeholder="Enter your password here"
+                [class.is-invalid]="signupForm.get('userPassword')?.invalid && signupForm.get('userPassword')?.touched">
+              <div *ngIf="signupForm.get('userPassword')?.invalid && signupForm.get('userPassword')?.touched"
+                class="invalid-feedback">
+                <span *ngIf="signupForm.get('userPassword')?.errors?.['required']">Password is required.</span>
+                <span *ngIf="signupForm.get('userPassword')?.errors?.['minlength']">Password must be at least 8
+                  characters long.</span>
+              </div>
+            </div>
+
+            <div class="form-group pb-2">
+              <label for="confirmPassword">Confirm Password<sup id="req">*</sup></label>
+              <input type="password" id="confirmPassword" formControlName="confirmPassword" class="form-control"
+                placeholder="Confirm your password"
+                [class.is-invalid]="signupForm.get('confirmPassword')?.invalid && signupForm.get('confirmPassword')?.touched || signupForm.hasError('mismatch')">
+              <div
+                *ngIf="signupForm.get('confirmPassword')?.invalid && signupForm.get('confirmPassword')?.touched || signupForm.hasError('mismatch')"
+                class="invalid-feedback">
+                <span *ngIf="signupForm.get('confirmPassword')?.errors?.['required']">Please confirm your
+                  password.</span>
+                <span *ngIf="signupForm.hasError('mismatch')">Passwords must match.</span>
+              </div>
+            </div>
+
+            <!-- <div class="d-flex justify-content-end mb-4">
+              <small class="text-muted">fields marked with <span class="text-danger"> *</span> are mandatory</small>
+            </div> -->
+
+            <div class="d-grid mt-3">
+              <button type="submit" class="btn btn-signup rounded-pill">Create Account</button>
+            </div>
+
+
+            <div class="text-center mt-3">
+              <span>Already have an account? <button type="button" class="btn ps-4 pe-4"
+                  style="color: #df6404;" (click)="redirectToLogin()">Login</button></span>
+            </div>
+          </form>
+
+          <p class="mt-4 text-sm text-muted">
+            By Signing up, you agree to our
+            <a class="text-primary">Terms of Service</a>
+            and
+            <a class="text-primary">Privacy Policy</a>
+          </p>
+
+        </div>
+      </div>
+     
+    </div>
+    <div class="auth-footer">
+      <!-- <div class=""> -->
+      <div class="col my-1">
+        <p class="m-0">
+    
+          
+        </p>
+      </div>
+      
+      <!-- </div> -->
+ 
+  </div>
+ 
+</div>

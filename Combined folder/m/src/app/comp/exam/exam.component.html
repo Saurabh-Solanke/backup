@@ -1,0 +1,92 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<header class="header">
+  <div class="container  d-flex align-items-center justify-content-between">
+    <div class="d-flex align-items-center">
+      <div class="logo me-3">
+        <img src="../../../assets/images/logo.png" alt="Exam Portal Logo" id="logo">
+      </div>
+      <div class="header-text">
+        <p>Relax and give your best!</p>
+      </div>
+    </div>
+    <div class="d-flex align-items-center" id="user">
+      <i class="fas fa-user-circle fa-4x me-2"></i>
+      <!-- <h5 class="ms-2">{{(name)}}</h5> -->
+    </div>
+  </div>
+</header>
+
+<div class="container mt-4">
+  <div class="d-flex justify-content-end mb-3">
+    <div id="timer" class="p-3 text-light fw-bold rounded-pill time">Time Left: {{ minutes }}:{{ seconds | number: '2.0' }}</div>
+  </div>
+  <div class="row">
+    <div class="col-lg-8">
+      <div *ngIf="questions.length > 0; else loading">
+        <div class="card p-4 shadow mb-3 questionCard" id="questions">
+          <h6>Question {{ currentQuestionIndex + 1 }}</h6>
+          <strong>{{ questions[currentQuestionIndex].question }}</strong>
+          <!-- Conditional note for multiple-choice questions -->
+          <p *ngIf="questions[currentQuestionIndex].isMultiple" class="text-muted mb-2">
+            Multiple select is allowed<sup id="req">*</sup>
+          </p>
+          <!-- Single choice question -->
+          <div *ngIf="!questions[currentQuestionIndex].isMultiple" class="form-check mt-2">
+            <div *ngFor="let option of questions[currentQuestionIndex]?.options; let i = index">
+              <input class="form-check-input" type="radio" [name]="'question' + currentQuestionIndex"
+                [id]="'option' + i" [value]="i" [(ngModel)]="userResponses[currentQuestionIndex]"
+                (change)="selectOption(i)">
+              <label class="form-check-label" [for]="'option' + i">{{ option }}</label>
+            </div>
+          </div>
+          <!-- Multiple choice question -->
+          <div *ngIf="questions[currentQuestionIndex].isMultiple" class="form-check">
+            <div *ngFor="let option of questions[currentQuestionIndex]?.options; let i = index">
+              <input class="form-check-input" type="checkbox" [id]="'option' + i" [value]="i"
+                [checked]="userResponses[currentQuestionIndex]?.includes(i)"
+                (change)="updateMultipleChoiceAnswer(currentQuestionIndex, i, $event)">
+              <label class="form-check-label" [for]="'option' + i">{{ option }}</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ng-template #loading>
+        <div class="card p-4 shadow mb-3">
+          <h6>Loading questions...</h6>
+        </div>
+      </ng-template>
+      <div class="d-flex justify-content-between" *ngIf="questions.length > 0">
+        <button class="btn btn-secondary rounded-pill" (click)="navigateQuestion('previous')"
+          [hidden]="currentQuestionIndex === 0">Previous</button>
+        <button class="btn btn-warning rounded-pill" (click)="clearResponse()">Clear Response</button>
+        <button class="btn rounded-pill" [ngClass]="reviewedQuestions[currentQuestionIndex] ? 'btn-danger' : 'btn-info'"
+          (click)="toggleReviewStatus()">
+          {{ reviewedQuestions[currentQuestionIndex] ? 'Remove Mark for Review' : 'Mark for Review' }}
+        </button>
+        <button class="btn btn-secondary rounded-pill " (click)="navigateQuestion('next')"
+          [hidden]="currentQuestionIndex === questions.length - 1">Next</button>
+      </div>
+    </div>
+    <div class="col-lg-4" id="questionStatus">
+      <div class="card p-4 shadow">
+        <h5 class="text-center mb-2">Question Status</h5>
+        <div class="d-flex flex-wrap">
+          <button *ngFor="let q of questions; let i = index" class="btn btn-sm me-1 mb-1" [ngClass]="{
+                      'btn-primary': i === currentQuestionIndex,
+                      'btn-success': userResponses[i] !== null && !reviewedQuestions[i],
+                      'btn-orange': reviewedQuestions[i],
+                      'btn-light': userResponses[i] === null && !reviewedQuestions[i]
+                    }" (click)="jumpToQuestion(i)">
+            {{ i + 1 }}
+          </button>
+        </div>
+        <p>Attempted: <span class="badge bg-success">{{ attempted }}</span></p>
+        <p>Remaining: <span class="badge bg-secondary">{{ remaining }}</span></p>
+        <button class="btn btn-danger w-100 mt-3" (click)="submitExam()">Submit Exam</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-logged-in-footer></app-logged-in-footer>

@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\zSaurabh\\thinktest V1.0\\backend\\MCQExamApi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6923E835-64A8-4D02-8B6C-C8C16FE665D4}|MCQExamApi.csproj|f:\\zsaurabh\\thinktest v1.0\\backend\\mcqexamapi\\controllers\\questionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6923E835-64A8-4D02-8B6C-C8C16FE665D4}|MCQExamApi.csproj|solutionrelative:controllers\\questionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6923E835-64A8-4D02-8B6C-C8C16FE665D4}|MCQExamApi.csproj|f:\\zsaurabh\\thinktest v1.0\\backend\\mcqexamapi\\dtos\\question\\questiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6923E835-64A8-4D02-8B6C-C8C16FE665D4}|MCQExamApi.csproj|solutionrelative:dtos\\question\\questiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6923E835-64A8-4D02-8B6C-C8C16FE665D4}|MCQExamApi.csproj|f:\\zsaurabh\\thinktest v1.0\\backend\\mcqexamapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6923E835-64A8-4D02-8B6C-C8C16FE665D4}|MCQExamApi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6923E835-64A8-4D02-8B6C-C8C16FE665D4}|MCQExamApi.csproj|f:\\zsaurabh\\thinktest v1.0\\backend\\mcqexamapi\\controllers\\examscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6923E835-64A8-4D02-8B6C-C8C16FE665D4}|MCQExamApi.csproj|solutionrelative:controllers\\examscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6923E835-64A8-4D02-8B6C-C8C16FE665D4}|MCQExamApi.csproj|f:\\zsaurabh\\thinktest v1.0\\backend\\mcqexamapi\\dtos\\exam\\examdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6923E835-64A8-4D02-8B6C-C8C16FE665D4}|MCQExamApi.csproj|solutionrelative:dtos\\exam\\examdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "QuestionsController.cs",
+              "DocumentMoniker": "F:\\zSaurabh\\thinktest V1.0\\backend\\MCQExamApi\\Controllers\\QuestionsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\QuestionsController.cs",
+              "ToolTip": "F:\\zSaurabh\\thinktest V1.0\\backend\\MCQExamApi\\Controllers\\QuestionsController.cs",
+              "RelativeToolTip": "Controllers\\QuestionsController.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAgwCAAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T00:08:34.851Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "QuestionDTO.cs",
+              "DocumentMoniker": "F:\\zSaurabh\\thinktest V1.0\\backend\\MCQExamApi\\Dtos\\Question\\QuestionDTO.cs",
+              "RelativeDocumentMoniker": "Dtos\\Question\\QuestionDTO.cs",
+              "ToolTip": "F:\\zSaurabh\\thinktest V1.0\\backend\\MCQExamApi\\Dtos\\Question\\QuestionDTO.cs",
+              "RelativeToolTip": "Dtos\\Question\\QuestionDTO.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBYAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-05T00:07:47.514Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ExamsController.cs",
+              "DocumentMoniker": "F:\\zSaurabh\\thinktest V1.0\\backend\\MCQExamApi\\Controllers\\ExamsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ExamsController.cs",
+              "ToolTip": "F:\\zSaurabh\\thinktest V1.0\\backend\\MCQExamApi\\Controllers\\ExamsController.cs",
+              "RelativeToolTip": "Controllers\\ExamsController.cs",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAgwGgAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T23:58:58.172Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ExamDTO.cs",
+              "DocumentMoniker": "F:\\zSaurabh\\thinktest V1.0\\backend\\MCQExamApi\\Dtos\\Exam\\ExamDTO.cs",
+              "RelativeDocumentMoniker": "Dtos\\Exam\\ExamDTO.cs",
+              "ToolTip": "F:\\zSaurabh\\thinktest V1.0\\backend\\MCQExamApi\\Dtos\\Exam\\ExamDTO.cs",
+              "RelativeToolTip": "Dtos\\Exam\\ExamDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T23:58:47.199Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "F:\\zSaurabh\\thinktest V1.0\\backend\\MCQExamApi\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "F:\\zSaurabh\\thinktest V1.0\\backend\\MCQExamApi\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAIwAAAAAAAAAAAAewJYAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-04T16:42:08.968Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

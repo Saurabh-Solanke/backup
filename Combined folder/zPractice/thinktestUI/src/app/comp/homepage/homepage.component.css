@@ -1,0 +1,30 @@
+/* homepage.component.css */
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .navbar {
+    margin-bottom: 1rem;
+  }
+  
+  .sidebar {
+    height: 100vh;
+    padding: 40px;
+  }
+  
+  .card {
+    margin-bottom: 1rem;
+    background-color: Wheat;
+  }
+  
+    .btn-startTest{
+      background-color: #4a154b;
+    }
+
+    .btn-viewHistory{
+      background-color: #4a154b;
+    }
+.nav-item 
+{
+  color: #df6404;
+}

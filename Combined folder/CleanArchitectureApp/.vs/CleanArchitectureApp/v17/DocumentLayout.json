@@ -1,0 +1,122 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\zSaurabh\\CleanArchitectureApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{480BDA8D-500F-41DD-8900-C5A4899870FC}|Infrastructure\\Infrastructure.csproj|f:\\zsaurabh\\cleanarchitectureapp\\infrastructure\\repositories\\productrespository.cs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{480BDA8D-500F-41DD-8900-C5A4899870FC}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\repositories\\productrespository.cs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{547C73D9-4240-4CC3-ABAA-023874594082}|Web\\Web.csproj|f:\\zsaurabh\\cleanarchitectureapp\\web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{547C73D9-4240-4CC3-ABAA-023874594082}|Web\\Web.csproj|solutionrelative:web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{547C73D9-4240-4CC3-ABAA-023874594082}|Web\\Web.csproj|f:\\zsaurabh\\cleanarchitectureapp\\web\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{547C73D9-4240-4CC3-ABAA-023874594082}|Web\\Web.csproj|solutionrelative:web\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8FDCD0FE-A863-449D-931A-0DBA5D0203C7}|Application\\Application.csproj|f:\\zsaurabh\\cleanarchitectureapp\\application\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8FDCD0FE-A863-449D-931A-0DBA5D0203C7}|Application\\Application.csproj|solutionrelative:application\\services\\productservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{480BDA8D-500F-41DD-8900-C5A4899870FC}|Infrastructure\\Infrastructure.csproj|f:\\zsaurabh\\cleanarchitectureapp\\infrastructure\\data\\productdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{480BDA8D-500F-41DD-8900-C5A4899870FC}|Infrastructure\\Infrastructure.csproj|solutionrelative:infrastructure\\data\\productdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{547C73D9-4240-4CC3-ABAA-023874594082}|Web\\Web.csproj|f:\\zsaurabh\\cleanarchitectureapp\\web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{547C73D9-4240-4CC3-ABAA-023874594082}|Web\\Web.csproj|solutionrelative:web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ProductRespository.cs.cs",
+              "DocumentMoniker": "F:\\zSaurabh\\CleanArchitectureApp\\Infrastructure\\Repositories\\ProductRespository.cs.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Repositories\\ProductRespository.cs.cs",
+              "ToolTip": "F:\\zSaurabh\\CleanArchitectureApp\\Infrastructure\\Repositories\\ProductRespository.cs.cs",
+              "RelativeToolTip": "Infrastructure\\Repositories\\ProductRespository.cs.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAQwC0AAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T08:12:13.331Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductService.cs",
+              "DocumentMoniker": "F:\\zSaurabh\\CleanArchitectureApp\\Application\\Services\\ProductService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\ProductService.cs",
+              "ToolTip": "F:\\zSaurabh\\CleanArchitectureApp\\Application\\Services\\ProductService.cs",
+              "RelativeToolTip": "Application\\Services\\ProductService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAD0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T08:09:59.753Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProductDbContext.cs",
+              "DocumentMoniker": "F:\\zSaurabh\\CleanArchitectureApp\\Infrastructure\\Data\\ProductDbContext.cs",
+              "RelativeDocumentMoniker": "Infrastructure\\Data\\ProductDbContext.cs",
+              "ToolTip": "F:\\zSaurabh\\CleanArchitectureApp\\Infrastructure\\Data\\ProductDbContext.cs",
+              "RelativeToolTip": "Infrastructure\\Data\\ProductDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T08:07:35.734Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "F:\\zSaurabh\\CleanArchitectureApp\\Web\\appsettings.json",
+              "RelativeDocumentMoniker": "Web\\appsettings.json",
+              "ToolTip": "F:\\zSaurabh\\CleanArchitectureApp\\Web\\appsettings.json",
+              "RelativeToolTip": "Web\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-09-03T08:05:48.334Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "F:\\zSaurabh\\CleanArchitectureApp\\Web\\Program.cs",
+              "RelativeDocumentMoniker": "Web\\Program.cs",
+              "ToolTip": "F:\\zSaurabh\\CleanArchitectureApp\\Web\\Program.cs",
+              "RelativeToolTip": "Web\\Program.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAABVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T08:04:01.038Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "F:\\zSaurabh\\CleanArchitectureApp\\Web\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "Web\\Controllers\\ProductsController.cs",
+              "ToolTip": "F:\\zSaurabh\\CleanArchitectureApp\\Web\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "Web\\Controllers\\ProductsController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAADoAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T08:01:59.071Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

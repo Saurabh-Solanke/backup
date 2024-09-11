@@ -1,0 +1,58 @@
+<nav class="navbar navbar-expand-lg navbar-light sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="../../../../assets/img/nav-logo.png" class="nav-logo" alt="passportE-Seva" height="50">Passport E-Seva
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="home">Home</a>
+                </li>
+                <li class="nav-item dropdown" [class.disabled]="!isActivate">
+                    <a class="nav-link dropdown-toggle"  id="examsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Apply for Passport
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="examsDropdown">
+                        <a class="dropdown-item" routerLink="application-form/section/1"  >New Passport</a>
+                        <a class="dropdown-item" routerLink="application-form/renewal-section/1" >Passport Renewal</a>
+                    </div>
+                </li>
+                <li class="nav-item" [class.disabled]="!isActivate">
+                    <a class="nav-link"  routerLink="application-status">Check Application Status</a>
+                </li>
+                <li class="nav-item" [class.disabled]="!isActivate">
+                    <a class="nav-link" routerLink="feedback"  >Feedback</a>
+                </li>
+                @if (isActivate) {
+                        <li class="nav-item dropdown">
+                    
+                            <a class="nav-link dropdown-toggle " href="#" id="profileDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <img src="../../../../assets/svg/user.svg" class="nav-logo" > {{currentUser?.firstname}}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="profileDropdown">
+                                <a class="dropdown-item" routerLink="user">Settings</a>
+                                <a class="dropdown-item" routerLink="user/notifications">Notifications</a>
+                                <a class="dropdown-item"(click)="logout()" style="color: red;">Logout</a>
+                                <a class="dropdown-item" routerLink="./">Back</a>
+                            </div>
+                        </li>
+                    
+                }@else {
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/login">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/signup">SignUp</a>
+                    </li>
+                }
+                
+                 
+                   
+                
+            </ul>
+        </div>
+    </div>
+</nav>

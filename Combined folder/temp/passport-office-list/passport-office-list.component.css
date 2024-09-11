@@ -1,0 +1,66 @@
+.modal-header {
+    background-color: var(--color-primary);
+    color: white;
+  }
+  
+  .modal-footer {
+    background-color: #f4f4f4;
+  }
+  
+  th {
+    background-color: var(--color-primary);
+    color: white;
+    text-align: center;
+  }
+  
+  h2 {
+    color: var(--color-secondary);
+  }
+  
+  .btn-review {
+    background-color: var(--color-secondary);
+    color: white;
+  }
+  
+  .btn-review:hover {
+    background-color: white;
+    border-width: 1px;
+    border-color: var(--color-secondary);
+    color: var(--color-secondary);
+  }
+  
+  .table {
+    text-align: center;
+  }
+  
+  .btn-nxt {
+    background-color: var(--color-secondary);
+    border-color: var(--color-secondary);
+    color: white;
+  }
+  
+  .btn-nxt:hover,
+  .btn-pageno {
+    background-color: white;
+    border-color: var(--color-secondary);
+    color: var(--color-secondary);
+  }
+  
+  .btn-nxt:disabled {
+    background-color: white;
+    border-color: var(--color-secondary);
+    color: var(--color-secondary);
+    opacity: 0.6;
+  }
+  
+  .btn-nxtpage {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+  }
+  
+  .btn-nxtpage:hover {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: white;
+  }
+  

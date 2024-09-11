@@ -1,0 +1,190 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\zSaurabh\\Lab 243\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{BBE58989-4943-4C1D-8BC5-1E329700D763}|Lab243.Presentation\\Lab243.Presentation.csproj|f:\\zsaurabh\\lab 243\\lab243.presentation\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{BBE58989-4943-4C1D-8BC5-1E329700D763}|Lab243.Presentation\\Lab243.Presentation.csproj|solutionrelative:lab243.presentation\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|F:\\zSaurabh\\Lab 243\\Lab243.DataAccess\\Migrations\\20240903063400_InitialMigrate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Lab243.DataAccess\\Migrations\\20240903063400_InitialMigrate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03091708-3E35-49B4-B999-4AA2B96901D8}|Lab243.DataAccess\\Lab243.DataAccess.csproj|f:\\zsaurabh\\lab 243\\lab243.dataaccess\\entities\\dtos\\studentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03091708-3E35-49B4-B999-4AA2B96901D8}|Lab243.DataAccess\\Lab243.DataAccess.csproj|solutionrelative:lab243.dataaccess\\entities\\dtos\\studentdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBE58989-4943-4C1D-8BC5-1E329700D763}|Lab243.Presentation\\Lab243.Presentation.csproj|f:\\zsaurabh\\lab 243\\lab243.presentation\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBE58989-4943-4C1D-8BC5-1E329700D763}|Lab243.Presentation\\Lab243.Presentation.csproj|solutionrelative:lab243.presentation\\controllers\\studentcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03091708-3E35-49B4-B999-4AA2B96901D8}|Lab243.DataAccess\\Lab243.DataAccess.csproj|f:\\zsaurabh\\lab 243\\lab243.dataaccess\\lab243.dataaccess.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{03091708-3E35-49B4-B999-4AA2B96901D8}|Lab243.DataAccess\\Lab243.DataAccess.csproj|solutionrelative:lab243.dataaccess\\lab243.dataaccess.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BBE58989-4943-4C1D-8BC5-1E329700D763}|Lab243.Presentation\\Lab243.Presentation.csproj|f:\\zsaurabh\\lab 243\\lab243.presentation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BBE58989-4943-4C1D-8BC5-1E329700D763}|Lab243.Presentation\\Lab243.Presentation.csproj|solutionrelative:lab243.presentation\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{03091708-3E35-49B4-B999-4AA2B96901D8}|Lab243.DataAccess\\Lab243.DataAccess.csproj|f:\\zsaurabh\\lab 243\\lab243.dataaccess\\entities\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{03091708-3E35-49B4-B999-4AA2B96901D8}|Lab243.DataAccess\\Lab243.DataAccess.csproj|solutionrelative:lab243.dataaccess\\entities\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7DE34B2D-8E9E-4B43-9EF5-7D05330A57E7}|Lab243.BusinessLogic\\Lab243.BusinessLogic.csproj|f:\\zsaurabh\\lab 243\\lab243.businesslogic\\interfaces\\istudentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DE34B2D-8E9E-4B43-9EF5-7D05330A57E7}|Lab243.BusinessLogic\\Lab243.BusinessLogic.csproj|solutionrelative:lab243.businesslogic\\interfaces\\istudentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7DE34B2D-8E9E-4B43-9EF5-7D05330A57E7}|Lab243.BusinessLogic\\Lab243.BusinessLogic.csproj|f:\\zsaurabh\\lab 243\\lab243.businesslogic\\interfaces\\istudentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DE34B2D-8E9E-4B43-9EF5-7D05330A57E7}|Lab243.BusinessLogic\\Lab243.BusinessLogic.csproj|solutionrelative:lab243.businesslogic\\interfaces\\istudentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7DE34B2D-8E9E-4B43-9EF5-7D05330A57E7}|Lab243.BusinessLogic\\Lab243.BusinessLogic.csproj|f:\\zsaurabh\\lab 243\\lab243.businesslogic\\repositories\\studentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7DE34B2D-8E9E-4B43-9EF5-7D05330A57E7}|Lab243.BusinessLogic\\Lab243.BusinessLogic.csproj|solutionrelative:lab243.businesslogic\\repositories\\studentrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "F:\\zSaurabh\\Lab 243\\Lab243.Presentation\\appsettings.json",
+              "RelativeDocumentMoniker": "Lab243.Presentation\\appsettings.json",
+              "ToolTip": "F:\\zSaurabh\\Lab 243\\Lab243.Presentation\\appsettings.json",
+              "RelativeToolTip": "Lab243.Presentation\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-09-03T06:35:15.628Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "20240903063400_InitialMigrate.cs",
+              "DocumentMoniker": "F:\\zSaurabh\\Lab 243\\Lab243.DataAccess\\Migrations\\20240903063400_InitialMigrate.cs",
+              "RelativeDocumentMoniker": "Lab243.DataAccess\\Migrations\\20240903063400_InitialMigrate.cs",
+              "ToolTip": "F:\\zSaurabh\\Lab 243\\Lab243.DataAccess\\Migrations\\20240903063400_InitialMigrate.cs",
+              "RelativeToolTip": "Lab243.DataAccess\\Migrations\\20240903063400_InitialMigrate.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T06:34:00.638Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "StudentDTO.cs",
+              "DocumentMoniker": "F:\\zSaurabh\\Lab 243\\Lab243.DataAccess\\Entities\\DTOs\\StudentDTO.cs",
+              "RelativeDocumentMoniker": "Lab243.DataAccess\\Entities\\DTOs\\StudentDTO.cs",
+              "ToolTip": "F:\\zSaurabh\\Lab 243\\Lab243.DataAccess\\Entities\\DTOs\\StudentDTO.cs",
+              "RelativeToolTip": "Lab243.DataAccess\\Entities\\DTOs\\StudentDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T06:31:43.109Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Lab243.DataAccess",
+              "DocumentMoniker": "F:\\zSaurabh\\Lab 243\\Lab243.DataAccess\\Lab243.DataAccess.csproj",
+              "RelativeDocumentMoniker": "Lab243.DataAccess\\Lab243.DataAccess.csproj",
+              "ToolTip": "F:\\zSaurabh\\Lab 243\\Lab243.DataAccess\\Lab243.DataAccess.csproj",
+              "RelativeToolTip": "Lab243.DataAccess\\Lab243.DataAccess.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-09-03T06:31:21.758Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "F:\\zSaurabh\\Lab 243\\Lab243.Presentation\\Program.cs",
+              "RelativeDocumentMoniker": "Lab243.Presentation\\Program.cs",
+              "ToolTip": "F:\\zSaurabh\\Lab 243\\Lab243.Presentation\\Program.cs",
+              "RelativeToolTip": "Lab243.Presentation\\Program.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAgwCwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T06:29:38.328Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "StudentController.cs",
+              "DocumentMoniker": "F:\\zSaurabh\\Lab 243\\Lab243.Presentation\\Controllers\\StudentController.cs",
+              "RelativeDocumentMoniker": "Lab243.Presentation\\Controllers\\StudentController.cs",
+              "ToolTip": "F:\\zSaurabh\\Lab 243\\Lab243.Presentation\\Controllers\\StudentController.cs",
+              "RelativeToolTip": "Lab243.Presentation\\Controllers\\StudentController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T06:29:29.588Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "StudentRepository.cs",
+              "DocumentMoniker": "F:\\zSaurabh\\Lab 243\\Lab243.BusinessLogic\\Repositories\\StudentRepository.cs",
+              "RelativeDocumentMoniker": "Lab243.BusinessLogic\\Repositories\\StudentRepository.cs",
+              "ToolTip": "F:\\zSaurabh\\Lab 243\\Lab243.BusinessLogic\\Repositories\\StudentRepository.cs",
+              "RelativeToolTip": "Lab243.BusinessLogic\\Repositories\\StudentRepository.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAcwDUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T06:28:32.129Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IStudentRepository.cs",
+              "DocumentMoniker": "F:\\zSaurabh\\Lab 243\\Lab243.BusinessLogic\\Interfaces\\IStudentRepository.cs",
+              "RelativeDocumentMoniker": "Lab243.BusinessLogic\\Interfaces\\IStudentRepository.cs",
+              "ToolTip": "F:\\zSaurabh\\Lab 243\\Lab243.BusinessLogic\\Interfaces\\IStudentRepository.cs",
+              "RelativeToolTip": "Lab243.BusinessLogic\\Interfaces\\IStudentRepository.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAuwBIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T06:28:18.509Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "IStudentService.cs",
+              "DocumentMoniker": "F:\\zSaurabh\\Lab 243\\Lab243.BusinessLogic\\Interfaces\\IStudentService.cs",
+              "RelativeDocumentMoniker": "Lab243.BusinessLogic\\Interfaces\\IStudentService.cs",
+              "ToolTip": "F:\\zSaurabh\\Lab 243\\Lab243.BusinessLogic\\Interfaces\\IStudentService.cs",
+              "RelativeToolTip": "Lab243.BusinessLogic\\Interfaces\\IStudentService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T06:28:17.748Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Student.cs",
+              "DocumentMoniker": "F:\\zSaurabh\\Lab 243\\Lab243.DataAccess\\Entities\\Student.cs",
+              "RelativeDocumentMoniker": "Lab243.DataAccess\\Entities\\Student.cs",
+              "ToolTip": "F:\\zSaurabh\\Lab 243\\Lab243.DataAccess\\Entities\\Student.cs",
+              "RelativeToolTip": "Lab243.DataAccess\\Entities\\Student.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-03T06:27:33.664Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

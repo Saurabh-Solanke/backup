@@ -1,0 +1,77 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<div class="auth-main">
+  <div class="auth-wrapper v3">
+    <div class="auth-form">
+      <div class="auth-header">
+        <a routerLink="/"><img src="../../../assets/images/logo.png" class="rounded" alt="logo" height="50px" /></a>
+        &nbsp;&nbsp; &nbsp; &nbsp;
+        <small class="navbar-brand text-dark" href="#">
+          <h3>AM Exam Portal</h3> there's a new skill there &#8482;
+        </small>
+      </div>
+      <div class="card my-5 rounded-5 p-5">
+        <div class="card-body">
+
+          <div>
+            <h4 class="card-title text-center fs-3 mb-3">Login</h4>
+          </div>
+
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div *ngIf="errorMessage" class="alert alert-danger">{{ errorMessage }}</div>
+            <div class="form-group mt-2">
+              <label for="userEmail">Email<sup id="req">*</sup></label>
+              <input type="email" id="userEmail" formControlName="userEmail" placeholder="Enter email here" class="form-control"
+                [class.is-invalid]="loginForm.get('userEmail')?.invalid && (loginForm.get('userEmail')?.touched || loginForm.get('userEmail')?.dirty)" />
+              <div
+                *ngIf="loginForm.get('userEmail')?.invalid && (loginForm.get('userEmail')?.touched || loginForm.get('userEmail')?.dirty)"
+                class="invalid-feedback">
+                Please enter a valid email.
+              </div>
+            </div>
+
+            <div class="form-group mt-2">
+              <label for="password">Password<sup id="req">*</sup></label>
+              <input type="password" id="password" formControlName="password" placeholder="Enter password here"
+                class="form-control"
+                [class.is-invalid]="loginForm.get('password')?.invalid && (loginForm.get('password')?.touched || loginForm.get('password')?.dirty)" />
+              <div
+                *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.touched || loginForm.get('password')?.dirty)"
+                class="invalid-feedback">
+                Password is required.
+              </div>
+            </div>
+            
+            <div class="d-grid mt-4">
+              <button type="submit" class="btn btn-login rounded-pill" [disabled]="loginForm.invalid"> Login</button>
+            </div>
+
+            <div class="text-center mt-3">
+              <!-- (click)="redirectToSignup() -->
+              <span>Don't have an account? <button type="button" class="btn rounded-pill ps-4 pe-4"
+                  style="background-color: #ffeedd;" routerLink="/register">Signup</button></span>
+            </div>
+          </form>
+
+
+
+        </div>
+      </div>
+      <div class="auth-footer row">
+        <div class="col my-1">
+          <p class="m-0">
+            &copy;
+            designed and developed by Anurag
+          </p>
+        </div>
+        <div class="col-auto my-1">
+          <ul class="list-inline footer-link mb-0">
+            <li class="list-inline-item"><a routerLink="/">Home</a></li>
+            <li class="list-inline-item"><a>Privacy Policy</a></li>
+            <li class="list-inline-item"><a>Contact us</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

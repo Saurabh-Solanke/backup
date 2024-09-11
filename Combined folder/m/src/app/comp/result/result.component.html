@@ -1,0 +1,59 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<header class="header">
+  <div class="container d-flex align-items-center justify-content-between">
+    <div class="d-flex align-items-center">
+      <div class="logo me-3">
+        <img src="../../../assets/images/logo.png" alt="Exam Portal Logo" id="logo">
+      </div>
+      <div class="header-text">
+        <small class="navbar-brand text-light" href="#">
+          <h3>AM Exam Portal</h3> there's a new skill there &#8482;
+        </small>
+      </div>
+    </div>
+    <div class="d-flex align-items-center" id="user">
+      <i class="fas fa-user-circle fa-4x me-2"></i>
+      <!-- <h5 class="ms-2">{{name}}</h5> -->
+    </div>
+  </div>
+</header>
+
+  <div class="container d-flex justify-content-center align-items-center" id="Summary">
+    <div class="card p-4 shadow custom-card">
+      <div class="card-body">
+        <h5 class="text-center">Result </h5>
+        <div class="d-flex justify-content-center mb-3" id="result">
+          <div [ngClass]="percentage >= 60 ? 'alert alert-success' : 'alert alert-danger'">
+            <i [ngClass]="percentage >= 60 ? 'fas fa-trophy' : 'fas fa-frown'"></i>
+            {{ percentage >= 60 ? 'You Passed' : 'You Failed' }}
+          </div>
+        </div>
+        <div class="row">
+          <!-- Left Column -->
+          <div class="col-12 text-center">
+            <strong> Percentage: {{ percentage.toFixed(2) }} <i class="fas fa-percentage"></i></strong><br>
+          </div>
+          <div class="col-md-6 mt-3">
+            <p> Questions Attempted: {{ attempted }}</p>
+            <p> Questions Unattempted: {{ unattempted }}</p>
+            <p>Total Questions: {{ totalQuestions }}</p>
+          </div>
+
+          <!-- Right Column -->
+          <div class="col-md-6 mt-3">
+            <p> Correct Questions: {{ correct }}</p>
+            <p> Incorrect Questions: {{ incorrect }}</p>
+            <p> Time Taken: {{ timeTakenStr }}</p>
+          </div>
+
+          <!-- Button Column -->
+          <div class="col-12 text-center">
+            <button class="btn btn-primary mt-3" (click)="exit()">Exit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<app-logged-in-footer></app-logged-in-footer>

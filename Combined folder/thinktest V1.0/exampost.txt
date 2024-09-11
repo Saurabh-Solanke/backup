@@ -1,0 +1,13 @@
+{
+
+  "title": "Mathematics Final Exam",
+  "description": "Final exam covering algebra, calculus, and geometry.",
+  "createdBy": 1,
+  "createdDate": "2024-09-04T23:51:37.395Z",
+  "startDate": "2024-09-10T09:00:00.000Z",
+  "endDate": "2024-09-10T12:00:00.000Z",
+  "duration": 180,
+  "totalMarks": 100,
+  "passingMarks": 40,
+ 
+}
