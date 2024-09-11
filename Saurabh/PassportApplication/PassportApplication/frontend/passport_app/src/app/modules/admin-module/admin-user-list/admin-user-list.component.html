@@ -1,0 +1,35 @@
+
+<table class="table table-hover table-bordered">
+  <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Mobile No</th>
+      <th>Role</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.firstname }}</td>
+      <td>{{ user.lastname }}</td>
+      <td>{{ user.email }}</td>
+      <td>{{ user.mobileNo }}</td>
+      <td>{{ user.role }}</td>
+      <td>
+        <button class="btn btn-danger" (click)="deleteUser(user.userId)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Add a loading indicator -->
+<div *ngIf="loading" class="loading">
+  Loading users...
+</div>
+
+<!-- Add a message if no users are found -->
+<div *ngIf="!loading && users.length === 0" class="no-users">
+  No users found.
+</div>

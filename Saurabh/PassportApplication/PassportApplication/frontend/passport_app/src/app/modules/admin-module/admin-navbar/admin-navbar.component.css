@@ -1,0 +1,33 @@
+.navbar {
+    background-color: var(--color-primary);
+  }
+  
+  .navbar-brand {
+    font-size: xx-large;
+  }
+  
+  .navbar-brand,
+  .nav-link,
+  .navbar-toggler-icon {
+    color: white;
+    cursor: pointer;
+  }
+  
+  .nav-link.active {
+    color: white;
+  }
+  
+  button {
+    background-color: var(--color-secondary);
+    padding: 10px 20px;
+    cursor: pointer;
+    border: 2px solid var(--color-secondary);
+  }
+  
+  button:hover {
+    background-color: white;
+    color: var(--color-primary);
+    font-weight: bold;
+    border: 2px solid white;
+  }
+  

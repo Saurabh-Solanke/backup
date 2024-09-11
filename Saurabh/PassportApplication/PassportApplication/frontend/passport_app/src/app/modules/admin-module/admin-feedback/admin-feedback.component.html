@@ -1,0 +1,32 @@
+
+<div class="container">
+  <h1>Feedback and Complaints</h1>
+
+  <!-- Table displaying feedback complaints -->
+  <table class="table table-hover table-bordered">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let complaint of feedbackComplaints$ | async">
+        <td>{{complaint.feedbackComplaintType | feedbackComplaintType}}</td>
+        <td>{{complaint.title}}</td>
+        <td>{{complaint.description}}</td>
+        <td>{{complaint.complaintStatus | resolvedStatus }}</td>
+        <td>{{complaint.email }}</td>
+        <td>
+          <button (click)="editFeedbackComplaint(complaint)" class="btn btn-warning btn-sm">Edit</button>
+          <button (click)="deleteFeedbackComplaint(complaint.id)" class="btn btn-danger btn-sm">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

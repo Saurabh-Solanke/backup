@@ -1,0 +1,132 @@
+.search-bar {
+    margin-right: 10px; 
+}
+
+
+/* Tooltip Text */
+.tooltip-text {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -60px;
+    /* Offset the tooltip by its width */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Button Hover - Show Tooltip */
+.btn:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.action-button {
+    position: relative;
+    margin-left: 5px;  
+}
+
+.container{
+    margin-bottom: 80px;
+}
+
+.nav-tabs .nav-item .nav-link {
+    border: 1px solid transparent;
+    border-radius: 0.25rem;
+    background-color: #f0e3e4; /* Light gray background */
+    color: #e03444; /* Blue text color */
+    padding: 0.5rem 1rem;
+    margin-right: 2px; /* Space between buttons */
+    transition: background-color 0.15s ease-in-out;
+}
+
+.nav-tabs .nav-item .nav-link:hover {
+    background-color: #afc5db; /* Slightly darker gray on hover */
+    color: #0056b3;
+}
+
+.nav-tabs .nav-item .nav-link.active {
+    background-color: #e03444; /* Blue background for active tab */
+    color: #fff; /* White text for active tab */
+}
+
+/* Table Styles */
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #212529;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+}
+
+.table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+.table-hover tbody tr:hover {
+    color: #212529;
+    background-color: rgba(220, 220, 220, 0.2);
+}
+
+/* Enhance the visibility of striped rows for better readability */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Style for pagination links */
+.pagination {
+    display: -ms-flexbox;
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    border-radius: 0.25rem;
+}
+
+.pagination .page-link {
+    position: relative;
+    display: block;
+    padding: 0.5rem 0.75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #e03444;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+}
+
+.pagination .page-link:hover {
+    color: #0056b3;
+    text-decoration: none;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+}
+
+.pagination .page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #dd3646;
+    border-color: #ec0c22;
+}
+
+.pagination .page-item.disabled .page-link {
+    color: #6c757d;
+    pointer-events: none;
+    background-color: #fff;
+    border-color: #dee2e6;
+}

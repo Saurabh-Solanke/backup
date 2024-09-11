@@ -1,0 +1,308 @@
+<!-- Navigation Bar -->
+<nav
+  class="navbar navbar-expand-lg fixed-top mb-5"
+  style="background-color: var(--color-primary)"
+>
+  <div class="container-fluid">
+    <!-- Font Awesome icon for Passport -->
+    <a class="navbar-brand text-white" href="#">
+      <i class="fas fa-address-card me-2"></i>PassPortal
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a
+            class="nav-link active text-white"
+            aria-current="page"
+            routerLink="/"
+          >
+            <i class="fas fa-home"></i> Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link active text-white"
+            [routerLink]="[]"
+            fragment="testimonials"
+          >
+            <i class="fas fa-comments"></i> Testimonials
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link active text-white"
+            [routerLink]="[]"
+            fragment="how-it-works"
+          >
+            <i class="fas fa-info-circle"></i> How It Works
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link active text-white"
+            [routerLink]="[]"
+            fragment="faq"
+          >
+            <i class="fas fa-question-circle"></i> FAQs
+          </a>
+        </li>
+      </ul>
+      <div class="d-flex">
+        <a routerLink="/login" class="btn btn-nxt mx-1">
+          <i class="fas fa-sign-in-alt me-1"></i> Login
+        </a>
+        <a routerLink="/signup" class="btn btn-nxt mx-1">
+          <i class="fas fa-user-plus me-1"></i> Signup
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container mt-4 pt-3 content" id="home">
+  <div class="">
+    <h1 class="display-4"><b>Pass</b>Portal&trade;</h1>
+    <p class="lead">Simplify Your Passport Application Process</p>
+    <hr class="my-4" />
+    <p>Click the button below to get started with your passport application.</p>
+    <a class="btn btn-nxt btn-lg my-3" routerLink="/signup" role="button">
+      <i class="fas fa-user-plus me-1"></i> Sign Up
+    </a>
+    <a class="btn btn-nxt btn-lg my-3 mx-2" routerLink="/login" role="button">
+      <i class="fas fa-sign-in-alt me-1"></i> Login
+    </a>
+  </div>
+</div>
+
+<!-- Testimonials Section -->
+<div class="container c1 mt-4" id="testimonials">
+  <h2>What Our Users Say</h2>
+  <div class="testimonial">
+    <p>
+      "The passport application process was so smooth and quick! Highly
+      recommend this portal."
+    </p>
+    <h5 class="c2">- Nikhil C.</h5>
+  </div>
+  <div class="testimonial">
+    <p>
+      "I got my passport renewed in just a few days thanks to the efficient
+      online system."
+    </p>
+    <h5 class="c2">- Pradeep S.</h5>
+  </div>
+</div>
+
+<!-- Step-by-Step Guide -->
+<div class="container mt-5" id="how-it-works">
+  <h2 class="c1">How It Works</h2>
+  <div class="row">
+    <div class="col-md-4">
+      <h5 class="c1"><i class="fas fa-user c2"></i> Step 1: Register</h5>
+      <p>Create an account and login to start your application.</p>
+    </div>
+    <div class="col-md-4">
+      <h5 class="c1"><i class="fas fa-edit c2"></i> Step 2: Fill the Form</h5>
+      <p>Provide the necessary details and upload required documents.</p>
+    </div>
+    <div class="col-md-4">
+      <h5 class="c1"><i class="fas fa-paper-plane c2"></i> Step 3: Submit</h5>
+      <p>Submit your application and track its status online.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FAQs Section -->
+<div class="container my-5" id="faq">
+  <h2 class="c1">Passport Application FAQs</h2>
+  <div class="accordion" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingOne">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseOne"
+          aria-expanded="true"
+          aria-controls="collapseOne"
+        >
+          <i class="fas fa-rupee-sign me-4 c2"></i> What are the passport
+          charges in India?
+        </button>
+      </h2>
+      <div
+        id="collapseOne"
+        class="accordion-collapse collapse"
+        aria-labelledby="headingOne"
+        data-bs-parent="#accordionExample"
+      >
+        <div class="accordion-body">
+          <p>
+            Here’s a detailed overview of the passport making charges in India
+            for both new applications and re-issuance:
+          </p>
+          <p>
+            Passport fees in India depend on the type of passport and the
+            applicant’s age. As of current rates, the fees are as follows:
+          </p>
+          <ul>
+            <li>
+              For a 36-page passport booklet, the fee is Rs. 1500 for normal
+              applications and Rs. 3500 for Tatkaal applications.
+            </li>
+            <li>
+              For a 60-page passport booklet, the fee is Rs. 2000 for normal
+              applications and Rs. 4000 for Tatkaal applications.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingTwo">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseTwo"
+          aria-expanded="false"
+          aria-controls="collapseTwo"
+        >
+          <i class="fas fa-file-alt me-4 c2"></i> What documents are required
+          for a passport application?
+        </button>
+      </h2>
+      <div
+        id="collapseTwo"
+        class="accordion-collapse collapse"
+        aria-labelledby="headingTwo"
+        data-bs-parent="#accordionExample"
+      >
+        <div class="accordion-body">
+          <p>
+            When applying for a passport in India, you typically need the
+            following documents:
+          </p>
+          <ul>
+            <li>Proof of identity (Aadhar Card, Voter ID, PAN Card, etc.)</li>
+            <li>Proof of address (Electricity bill, Rent agreement, etc.)</li>
+            <li>Birth certificate</li>
+            <li>Passport size photographs</li>
+            <li>
+              Additional documents as required depending on specific
+              circumstances (marriage certificate, etc.)
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingThree">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseThree"
+          aria-expanded="false"
+          aria-controls="collapseThree"
+        >
+          <i class="fas fa-search me-4 c2"></i> How can I track my passport
+          application status?
+        </button>
+      </h2>
+      <div
+        id="collapseThree"
+        class="accordion-collapse collapse"
+        aria-labelledby="headingThree"
+        data-bs-parent="#accordionExample"
+      >
+        <div class="accordion-body">
+          <p>
+            You can track your passport application status on our portal in
+            history section, You can also track status through the official
+            Passport Seva website. You'll need your application number and date
+            of birth to check the status.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingFour">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseFour"
+          aria-expanded="false"
+          aria-controls="collapseFour"
+        >
+          <i class="fas fa-clock me-4 c2"></i> How long does it take to process
+          a passport application?
+        </button>
+      </h2>
+      <div
+        id="collapseFour"
+        class="accordion-collapse collapse"
+        aria-labelledby="headingFour"
+        data-bs-parent="#accordionExample"
+      >
+        <div class="accordion-body">
+          <p>
+            The time taken to process a passport application varies based on the
+            type of application and other factors. Typically, it can take from
+            10 to 45 days for a normal passport application and 1 to 3 days for
+            a Tatkaal application.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="headingFive">
+        <button
+          class="accordion-button collapsed"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapseFive"
+          aria-expanded="false"
+          aria-controls="collapseFive"
+        >
+          <i class="fas fa-laptop me-4 c2"></i> Can I submit a passport
+          application online?
+        </button>
+      </h2>
+      <div
+        id="collapseFive"
+        class="accordion-collapse collapse"
+        aria-labelledby="headingFive"
+        data-bs-parent="#accordionExample"
+      >
+        <div class="accordion-body">
+          <p>
+            Yes, you can submit a passport application online through our portal
+            or the Passport Seva Portal. This option allows you to fill out the
+            form, upload documents, and schedule appointments.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+
+<app-footer class="content"></app-footer>

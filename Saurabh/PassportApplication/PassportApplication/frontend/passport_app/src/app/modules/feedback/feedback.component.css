@@ -1,0 +1,48 @@
+
+.card-header {
+  color: white;
+  background-color: var(--color-primary);
+}
+
+.btn {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: white;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:hover {
+  background-color: white;
+  border-color: var(--color-secondary);
+  border-width: 1px;
+  color: var(--color-secondary);
+  font-weight: bold;
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
+/* Success toast */
+.p-toast .p-toast-message-success {
+  background-color: #4caf50 !important; /* Green */
+  color: white !important;
+}
+
+/* Error toast */
+.p-toast .p-toast-message-error {
+  background-color: #f44336 !important; /* Red */
+  color: white !important;
+}
+
+/* Info toast */
+.p-toast .p-toast-message-info {
+  background-color: #2196f3 !important; /* Blue */
+  color: white !important;
+}
+
+/* Warning toast */
+.p-toast .p-toast-message-warn {
+  background-color: #ff9800 !important; /* Orange */
+  color: white !important;
+}

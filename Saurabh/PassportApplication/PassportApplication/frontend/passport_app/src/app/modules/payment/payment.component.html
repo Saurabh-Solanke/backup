@@ -1,0 +1,146 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title text-center mb-4">
+            Application Submission Fee
+          </h4>
+          <p class="text-center">
+            Please enter your payment information to complete your application.
+          </p>
+          <form (ngSubmit)="onSubmit()" [formGroup]="paymentForm">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                class="form-control"
+                name="email"
+                placeholder="Enter your email"
+                formControlName="email"
+              />
+            </div>
+            <hr />
+            <h5>Card Details</h5>
+            <div class="form-group">
+              <label for="cardNumber">Card Holder Name</label>
+              <input
+                type="text"
+                class="form-control"
+                name="cardHolderName"
+                placeholder="Rohit Sanjay Bachhav"
+                required
+                formControlName="cardHolderName"
+              />
+              @if(paymentForm.get('cardHolderName')?.invalid  && paymentForm.get('cardHolderName')?.touched){
+                <p class="control-error">
+                    required field.
+                  </p>
+            }
+            </div>
+            <div class="form-group">
+              <label for="cardNumber">Card Number</label>
+              <input
+                type="text"
+                class="form-control"
+                name="cardNumber"
+                placeholder="0000 0000 0000 0000"
+                formControlName="cardNumber"
+                required
+              />
+              @if(paymentForm.get('cardNumber')?.invalid  && paymentForm.get('cardNumber')?.touched){
+                <p class="control-error">
+                    required field.
+                  </p>
+            }
+            </div>
+            <div class="form-row">
+              <div class="col-md-4 mb-3">
+                <label for="expirationMM">Month</label>
+                <select
+                  class="form-control"
+                  name="expirationMM"
+                  formControlName="expirationMM"
+                  required
+                >
+                  <option value="" disabled selected>MM</option>
+                  <option *ngFor="let month of months" [value]="month">
+                    {{ month }}
+                  </option>
+                </select>
+                @if(paymentForm.get('expirationMM')?.invalid  && paymentForm.get('expirationMM')?.touched){
+                    <p class="control-error">
+                        required field.
+                      </p>
+                }
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="expirationYY">Year</label>
+                <select
+                  class="form-control"
+                  name="expirationYY"
+                  formControlName="expirationYY"
+                  required
+                >
+                  <option value="" disabled selected>YY</option>
+                  <option *ngFor="let year of years" [value]="year">
+                    {{ year }}
+                  </option>
+                </select>
+                @if(paymentForm.get('expirationYY')?.invalid  && paymentForm.get('expirationYY')?.touched){
+                    <p class="control-error">
+                        required field.
+                      </p>
+                }
+              </div>
+              <div class="col-md-4 mb-3">
+                <label for="cvv">CVV</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  name="cvv"
+                  placeholder="123"
+                  formControlName="cvv"
+                  required
+                />
+                @if(paymentForm.get('cvv')?.invalid  && paymentForm.get('cvv')?.touched){
+                    <p class="control-error">
+                        required field.
+                      </p>
+                }
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="applicationFee">Application Fee</label>
+              <input
+                type="text"
+                class="form-control"
+                name="applicationFee"
+                value="$50.00"
+                formControlName="applicationFee"
+              />
+            </div>
+            <div class="form-group">
+              <label for="total">Total</label>
+              <input
+                type="text"
+                class="form-control"
+                name="applicationFee"
+                value="$50.00"
+                formControlName="applicationFee"
+              />
+            </div>
+            @if(paymentForm.invalid && paymentForm.touched){
+                <p class="control-error">
+                    Please fill in the required fields.
+                  </p>
+            }
+            <button type="submit" class="btn btn-primary btn-block">
+              Submit Payment
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

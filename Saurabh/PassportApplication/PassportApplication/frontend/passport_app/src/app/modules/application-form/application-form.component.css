@@ -1,0 +1,67 @@
+/* Add styles for the tabs and scrollbar */
+.nav-tabs {
+  margin-bottom: 20px;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: black transparent; /* For Firefox */
+}
+
+.nav-tabs::-webkit-scrollbar {
+  height: 8px; /* Adjust the height of the scrollbar */
+}
+
+.nav-tabs::-webkit-scrollbar-thumb {
+  background-color: black; /* Color of the scrollbar thumb */
+  border-radius: 10px; /* Rounded corners for the scrollbar thumb */
+}
+
+.nav-tabs::-webkit-scrollbar-track {
+  background: transparent; /* Color of the scrollbar track */
+}
+
+.nav-tabs .nav-link {
+  border: 1px solid transparent;
+  border-top-left-radius: .25rem;
+  border-top-right-radius: .25rem;
+  padding: 0.5rem 1rem; /* Adjust padding to fit in one line */
+  white-space: nowrap; /* Prevent line break */
+  background-color: #f8f9fa; /* Background color for inactive tabs */
+  color: #495057;
+}
+
+.nav-tabs .nav-link:hover {
+  border-color: #e9ecef #e9ecef #dee2e6;
+}
+
+.nav-tabs .nav-link.active {
+  color: black;
+  background-color: white; /* Background color for active tab */
+  border-color: black;
+}
+
+.tab-content {
+  background-color: white; /* Background color for active tab content */
+  padding: 1rem;
+  border: 1px solid black;
+  border-top: none;
+  border-bottom-left-radius: .25rem;
+  border-bottom-right-radius: .25rem;
+  color: black; /* Text color for active tab content */
+}
+
+.tab-content > .tab-pane {
+  display: none;
+}
+
+.tab-content > .active {
+  display: block;
+}
+
+.nav-link.active {
+  font-weight: bold;
+  color: #495057;
+  background-color: #e9ecef;
+  border-color: #dee2e6 #dee2e6 #fff;
+}

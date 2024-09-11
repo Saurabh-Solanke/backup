@@ -1,0 +1,353 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{460EAF2C-245E-4C26-AF2D-325984B46F6A}|PassportApi.csproj|c:\\users\\hp\\desktop\\saurabh\\passportapplication\\passportapplication\\backend\\passportapi\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{460EAF2C-245E-4C26-AF2D-325984B46F6A}|PassportApi.csproj|solutionrelative:models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{460EAF2C-245E-4C26-AF2D-325984B46F6A}|PassportApi.csproj|c:\\users\\hp\\desktop\\saurabh\\passportapplication\\passportapplication\\backend\\passportapi\\controllers\\paymentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{460EAF2C-245E-4C26-AF2D-325984B46F6A}|PassportApi.csproj|solutionrelative:controllers\\paymentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{460EAF2C-245E-4C26-AF2D-325984B46F6A}|PassportApi.csproj|c:\\users\\hp\\desktop\\saurabh\\passportapplication\\passportapplication\\backend\\passportapi\\models\\enums\\enums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{460EAF2C-245E-4C26-AF2D-325984B46F6A}|PassportApi.csproj|solutionrelative:models\\enums\\enums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{460EAF2C-245E-4C26-AF2D-325984B46F6A}|PassportApi.csproj|c:\\users\\hp\\desktop\\saurabh\\passportapplication\\passportapplication\\backend\\passportapi\\models\\masterdetailstable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{460EAF2C-245E-4C26-AF2D-325984B46F6A}|PassportApi.csproj|solutionrelative:models\\masterdetailstable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{460EAF2C-245E-4C26-AF2D-325984B46F6A}|PassportApi.csproj|c:\\users\\hp\\desktop\\saurabh\\passportapplication\\passportapplication\\backend\\passportapi\\controllers\\masterdetailstablescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{460EAF2C-245E-4C26-AF2D-325984B46F6A}|PassportApi.csproj|solutionrelative:controllers\\masterdetailstablescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{460EAF2C-245E-4C26-AF2D-325984B46F6A}|PassportApi.csproj|c:\\users\\hp\\desktop\\saurabh\\passportapplication\\passportapplication\\backend\\passportapi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{460EAF2C-245E-4C26-AF2D-325984B46F6A}|PassportApi.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{460EAF2C-245E-4C26-AF2D-325984B46F6A}|PassportApi.csproj|c:\\users\\hp\\desktop\\saurabh\\passportapplication\\passportapplication\\backend\\passportapi\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{460EAF2C-245E-4C26-AF2D-325984B46F6A}|PassportApi.csproj|solutionrelative:controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{460EAF2C-245E-4C26-AF2D-325984B46F6A}|PassportApi.csproj|c:\\users\\hp\\desktop\\saurabh\\passportapplication\\passportapplication\\backend\\passportapi\\controllers\\feedbackcomplaintscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{460EAF2C-245E-4C26-AF2D-325984B46F6A}|PassportApi.csproj|solutionrelative:controllers\\feedbackcomplaintscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{460EAF2C-245E-4C26-AF2D-325984B46F6A}|PassportApi.csproj|c:\\users\\hp\\desktop\\saurabh\\passportapplication\\passportapplication\\backend\\passportapi\\dtos\\feedbackcomplaintdto\\feedbackcomplaintdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{460EAF2C-245E-4C26-AF2D-325984B46F6A}|PassportApi.csproj|solutionrelative:dtos\\feedbackcomplaintdto\\feedbackcomplaintdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{460EAF2C-245E-4C26-AF2D-325984B46F6A}|PassportApi.csproj|c:\\users\\hp\\desktop\\saurabh\\passportapplication\\passportapplication\\backend\\passportapi\\models\\feedbackcomplaint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{460EAF2C-245E-4C26-AF2D-325984B46F6A}|PassportApi.csproj|solutionrelative:models\\feedbackcomplaint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{460EAF2C-245E-4C26-AF2D-325984B46F6A}|PassportApi.csproj|c:\\users\\hp\\desktop\\saurabh\\passportapplication\\passportapplication\\backend\\passportapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{460EAF2C-245E-4C26-AF2D-325984B46F6A}|PassportApi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{460EAF2C-245E-4C26-AF2D-325984B46F6A}|PassportApi.csproj|c:\\users\\hp\\desktop\\saurabh\\passportapplication\\passportapplication\\backend\\passportapi\\data\\passportdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{460EAF2C-245E-4C26-AF2D-325984B46F6A}|PassportApi.csproj|solutionrelative:data\\passportdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{460EAF2C-245E-4C26-AF2D-325984B46F6A}|PassportApi.csproj|c:\\users\\hp\\desktop\\saurabh\\passportapplication\\passportapplication\\backend\\passportapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{460EAF2C-245E-4C26-AF2D-325984B46F6A}|PassportApi.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{460EAF2C-245E-4C26-AF2D-325984B46F6A}|PassportApi.csproj|c:\\users\\hp\\desktop\\saurabh\\passportapplication\\passportapplication\\backend\\passportapi\\controllers\\documenttablescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{460EAF2C-245E-4C26-AF2D-325984B46F6A}|PassportApi.csproj|solutionrelative:controllers\\documenttablescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{460EAF2C-245E-4C26-AF2D-325984B46F6A}|PassportApi.csproj|c:\\users\\hp\\desktop\\saurabh\\passportapplication\\passportapplication\\backend\\passportapi\\dtos\\applicationform\\applicationupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{460EAF2C-245E-4C26-AF2D-325984B46F6A}|PassportApi.csproj|solutionrelative:dtos\\applicationform\\applicationupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{460EAF2C-245E-4C26-AF2D-325984B46F6A}|PassportApi.csproj|c:\\users\\hp\\desktop\\saurabh\\passportapplication\\passportapplication\\backend\\passportapi\\models\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{460EAF2C-245E-4C26-AF2D-325984B46F6A}|PassportApi.csproj|solutionrelative:models\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{460EAF2C-245E-4C26-AF2D-325984B46F6A}|PassportApi.csproj|c:\\users\\hp\\desktop\\saurabh\\passportapplication\\passportapplication\\backend\\passportapi\\controllers\\notificationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{460EAF2C-245E-4C26-AF2D-325984B46F6A}|PassportApi.csproj|solutionrelative:controllers\\notificationscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{460EAF2C-245E-4C26-AF2D-325984B46F6A}|PassportApi.csproj|c:\\users\\hp\\desktop\\saurabh\\passportapplication\\passportapplication\\backend\\passportapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{460EAF2C-245E-4C26-AF2D-325984B46F6A}|PassportApi.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{460EAF2C-245E-4C26-AF2D-325984B46F6A}|PassportApi.csproj|c:\\users\\hp\\desktop\\saurabh\\passportapplication\\passportapplication\\backend\\passportapi\\dtos\\auth\\loggedinuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{460EAF2C-245E-4C26-AF2D-325984B46F6A}|PassportApi.csproj|solutionrelative:dtos\\auth\\loggedinuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{460EAF2C-245E-4C26-AF2D-325984B46F6A}|PassportApi.csproj|c:\\users\\hp\\desktop\\saurabh\\passportapplication\\passportapplication\\backend\\passportapi\\controllers\\servicerequiredscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{460EAF2C-245E-4C26-AF2D-325984B46F6A}|PassportApi.csproj|solutionrelative:controllers\\servicerequiredscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PaymentsController.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\Controllers\\PaymentsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\PaymentsController.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\Controllers\\PaymentsController.cs",
+              "RelativeToolTip": "Controllers\\PaymentsController.cs",
+              "ViewState": "AgIAAGYAAAAAAAAAAAAQwIIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-01T15:25:14.005Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Payment.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\Models\\Payment.cs",
+              "RelativeDocumentMoniker": "Models\\Payment.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\Models\\Payment.cs",
+              "RelativeToolTip": "Models\\Payment.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAIBBwBgAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-01T15:17:27.559Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Enums.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\Models\\Enums\\Enums.cs",
+              "RelativeDocumentMoniker": "Models\\Enums\\Enums.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\Models\\Enums\\Enums.cs",
+              "RelativeToolTip": "Models\\Enums\\Enums.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAjwHEAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-01T12:58:50.478Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "FeedbackComplaint.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\Models\\FeedbackComplaint.cs",
+              "RelativeDocumentMoniker": "Models\\FeedbackComplaint.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\Models\\FeedbackComplaint.cs",
+              "RelativeToolTip": "Models\\FeedbackComplaint.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA0wCUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-01T12:45:26.889Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "FeedbackComplaintDTO.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\Dtos\\FeedbackComplaintDto\\FeedbackComplaintDTO.cs",
+              "RelativeDocumentMoniker": "Dtos\\FeedbackComplaintDto\\FeedbackComplaintDTO.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\Dtos\\FeedbackComplaintDto\\FeedbackComplaintDTO.cs",
+              "RelativeToolTip": "Dtos\\FeedbackComplaintDto\\FeedbackComplaintDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-01T12:45:10.923Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "FeedbackComplaintsController.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\Controllers\\FeedbackComplaintsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\FeedbackComplaintsController.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\Controllers\\FeedbackComplaintsController.cs",
+              "RelativeToolTip": "Controllers\\FeedbackComplaintsController.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAIA0wEIAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-01T12:41:23.585Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAHwAAAAAAAAAAAA2wKoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-01T08:47:39.799Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "Controllers\\UsersController.cs",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAQwIYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T17:51:47.221Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Models\\User.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\Models\\User.cs",
+              "RelativeToolTip": "Models\\User.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAA5wCsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T17:21:12.56Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MasterDetailsTablesController.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\Controllers\\MasterDetailsTablesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\MasterDetailsTablesController.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\Controllers\\MasterDetailsTablesController.cs",
+              "RelativeToolTip": "Controllers\\MasterDetailsTablesController.cs",
+              "ViewState": "AgIAAKAAAAAAAAAAAAAuwL0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T16:52:36.098Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MasterDetailsTable.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\Models\\MasterDetailsTable.cs",
+              "RelativeDocumentMoniker": "Models\\MasterDetailsTable.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\Models\\MasterDetailsTable.cs",
+              "RelativeToolTip": "Models\\MasterDetailsTable.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAIAxwBIAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T20:43:35.553Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-08-31T11:56:23.722Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "DocumentTablesController.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\Controllers\\DocumentTablesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DocumentTablesController.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\Controllers\\DocumentTablesController.cs",
+              "RelativeToolTip": "Controllers\\DocumentTablesController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-31T12:09:06.431Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "PassportDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\Data\\PassportDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\PassportDbContext.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\Data\\PassportDbContext.cs",
+              "RelativeToolTip": "Data\\PassportDbContext.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-01T08:46:57.434Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ApplicationUpdateDTO.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\Dtos\\ApplicationForm\\ApplicationUpdateDTO.cs",
+              "RelativeDocumentMoniker": "Dtos\\ApplicationForm\\ApplicationUpdateDTO.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\Dtos\\ApplicationForm\\ApplicationUpdateDTO.cs",
+              "RelativeToolTip": "Dtos\\ApplicationForm\\ApplicationUpdateDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T20:43:59.34Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Notification.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\Models\\Notification.cs",
+              "RelativeDocumentMoniker": "Models\\Notification.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\Models\\Notification.cs",
+              "RelativeToolTip": "Models\\Notification.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T20:18:56.805Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "NotificationsController.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\Controllers\\NotificationsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\NotificationsController.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\Controllers\\NotificationsController.cs",
+              "RelativeToolTip": "Controllers\\NotificationsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T20:16:14.359Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ServiceRequiredsController.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\Controllers\\ServiceRequiredsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ServiceRequiredsController.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\Controllers\\ServiceRequiredsController.cs",
+              "RelativeToolTip": "Controllers\\ServiceRequiredsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T18:57:36.162Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "LoggedInUser.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\Dtos\\Auth\\LoggedInUser.cs",
+              "RelativeDocumentMoniker": "Dtos\\Auth\\LoggedInUser.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\Dtos\\Auth\\LoggedInUser.cs",
+              "RelativeToolTip": "Dtos\\Auth\\LoggedInUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T19:01:55.833Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\hp\\Desktop\\Saurabh\\PassportApplication\\PassportApplication\\backend\\PassportApi\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Controllers\\AuthController.cs",
+              "ViewState": "AgIAAIAAAAAAAAAAAAAAAI8AAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-30T17:21:40.672Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

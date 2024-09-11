@@ -1,0 +1,30 @@
+<div class="container">
+    <h2>Payments List</h2>
+    <table class="table table-hover table-bordered">
+      <thead>
+        <tr>
+          <th>Payment ID</th>
+          <th>Application ID</th>
+          <th>Application Fee</th>
+          <th>Application Type</th>
+          <th>Payment Date</th>
+          <th>Payment Method</th>
+          <th>Transaction ID</th>
+          <th>Payment Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let payment of payments">
+          <td>{{ payment.paymentId }}</td>
+          <td>{{ payment.applicationId }}</td>
+          <td>{{ payment.applicationFee | currency }}</td>
+          <td>{{ payment.applicationType }}</td>
+          <td>{{ payment.paymentDate | date }}</td>
+          <td>{{ payment.paymentMethod || 'N/A' }}</td>
+          <td>{{ payment.transactionId || 'N/A' }}</td>
+          <td>{{ payment.paymentStatus }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

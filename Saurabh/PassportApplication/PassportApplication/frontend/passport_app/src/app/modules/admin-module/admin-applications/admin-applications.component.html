@@ -1,0 +1,31 @@
+<div class="container">
+    <h1>Applications</h1>
+  
+    <table class="table table-hover table-bordered">
+      <thead>
+        <tr>
+          <th>Application No</th>
+          <th>Applicant Name</th>
+          <th>Application Status</th>
+          <th>Passport Type</th>
+          <th>Created On</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let master of masterDetailsTables">
+          <td>{{ master.applicationNo }}</td>
+          <td>{{ master.applicantName }}</td>
+          <td>{{ master.applicationStatus | applicationStatus }}</td>
+            <td>{{ master.passportType | passportType }}</td>
+            <td>{{ master.createdOn | date: 'short' }}</td>
+          <td>
+            <button class="btn btn-danger" (click)="deleteMasterDetailsTable(master.applicationNo)">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

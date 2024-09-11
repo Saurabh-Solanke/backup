@@ -1,0 +1,420 @@
+<!-- <div class="container">
+  <div class="row align-items-center vh-100">
+    <div class="col-md-6 d-md-flex justify-content-center">
+      <img
+        src="../../../assets/images/Signup.gif"
+        alt="Illustration"
+        class="img-fluid illustration animate__animated animate__fadeInLeft"
+      />
+    </div>
+    <div class="col-md-6">
+      <div class="card animate__animated hover-animate">
+        <div class="card-body">
+          <div>
+            <h4 class="card-title text-center fs-3 fw-bold mb-3 c1">
+              Signup / Register
+            </h4>
+          </div>
+          <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+            <div class="control-row">
+              <div class="control">
+                <label for="first-name">First Name</label>
+                <input
+                  type="text"
+                  id="first-name"
+                  formControlName="firstName"
+                />
+                <div *ngIf="isFieldInvalid('firstName')">
+                  <div
+                    class="control-error"
+                    *ngIf="getErrorMessage('firstName', 'required')"
+                  >
+                    First Name is required
+                  </div>
+                  <div
+                    class="control-error"
+                    *ngIf="getErrorMessage('firstName', 'pattern')"
+                  >
+                    First Name can only contain letters
+                  </div>
+                </div>
+              </div>
+
+              <div class="control">
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" formControlName="lastName" />
+                <div *ngIf="isFieldInvalid('lastName')">
+                  <div
+                    class="control-error"
+                    *ngIf="getErrorMessage('lastName', 'required')"
+                  >
+                    Last Name is required
+                  </div>
+                  <div
+                    class="control-error"
+                    *ngIf="getErrorMessage('lastName', 'pattern')"
+                  >
+                    Last Name can only contain letters
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="control-row">
+              <div class="control">
+                <label for="email">Email</label>
+                <input type="email" id="email" formControlName="email" />
+                <div *ngIf="isFieldInvalid('email')">
+                  <div
+                    class="control-error"
+                    *ngIf="getErrorMessage('email', 'required')"
+                  >
+                    Email is required
+                  </div>
+                  <div
+                    class="control-error"
+                    *ngIf="getErrorMessage('email', 'email')"
+                  >
+                    Please enter a valid email address
+                  </div>
+                  <div class="control-error" *ngIf="uniqueEmail">
+                    Email already exists
+                  </div>
+                </div>
+              </div>
+
+              <div class="control">
+                <label for="mobileNo">mobileNo</label>
+                <input type="tel" id="mobileNo" formControlName="mobileNo" />
+                <div *ngIf="isFieldInvalid('mobileNo')">
+                  <div
+                    class="control-error"
+                    *ngIf="getErrorMessage('mobileNo', 'required')"
+                  >
+                    mobileNo is required
+                  </div>
+                  <div
+                    class="control-error"
+                    *ngIf="getErrorMessage('mobileNo', 'pattern')"
+                  >
+                    Please enter a valid 10-digit mobile number
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="control-row">
+              <div class="control">
+                <label for="password">Password</label>
+                <input
+                  type="password"
+                  id="password"
+                  formControlName="password"
+                />
+                <div *ngIf="isFieldInvalid('password')">
+                  <div
+                    class="control-error"
+                    *ngIf="getErrorMessage('password', 'required')"
+                  >
+                    Password is required
+                  </div>
+                  <div
+                    class="control-error"
+                    *ngIf="getErrorMessage('password', 'minLength')"
+                  >
+                    Password must be 8 characters long
+                  </div>
+                </div>
+              </div>
+
+              <div class="control">
+                <label for="confirm-password">Confirm Password</label>
+                <input
+                  type="password"
+                  id="confirm-password"
+                  formControlName="confirmPassword"
+                />
+                <div *ngIf="isFieldInvalid('confirmPassword')">
+                  <div
+                    class="control-error"
+                    *ngIf="getErrorMessage('confirmPassword', 'required')"
+                  >
+                    Confirm Password is required
+                  </div>
+                  <div class="control-error" *ngIf="isequal">
+                    Passwords do not match
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="control-row">
+              <label for="terms-and-conditions">
+                <input
+                  type="checkbox"
+                  id="terms-and-conditions"
+                  formControlName="agree"
+                />
+                <span class="fw-bold ms-1"
+                  >I agree to the terms and conditions</span
+                >
+              </label>
+              <div *ngIf="isFieldInvalid('agree')">
+                <div
+                  class="control-error"
+                  *ngIf="getErrorMessage('agree', 'required')"
+                >
+                  You must agree to the terms and conditions
+                </div>
+              </div>
+            </div>
+
+            <div class="d-grid mt-3">
+              <div class="row">
+                <a class="btn btn-nxt w-25 ms-3" routerLink=""
+                  ><i class="fas fa-arrow-left me-0"></i> Go Back
+                </a>
+                <button type="submit" class="btn btn-prev w-50 ms-auto">
+                  <i class="fas fa-user-plus"></i> Create Account
+                </button>
+              </div>
+            </div>
+
+          
+          </form>
+
+          <p class="mt-4 text-muted text-center">
+            By Signing up, you agree to our
+            <a href="#" class="c2">Terms of Service</a>
+            and
+            <a href="#" class="c2">Privacy Policy</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+
+<div class="container">
+  <div class="row align-items-center vh-100">
+    <div class="col-md-6 d-md-flex justify-content-center">
+      <img
+        src="../../../assets/images/Signup.gif"
+        alt="Illustration"
+        class="img-fluid illustration animate__animated animate__fadeInLeft"
+      />
+    </div>
+    <div class="col-md-6">
+      <div class="card animate__animated hover-animate">
+        <div class="card-body">
+          <div>
+            <h4 class="card-title text-center fs-3 fw-bold mb-3 c1">
+              Signup / Register
+            </h4>
+          </div>
+          <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+            <div class="control-row">
+              <div class="control">
+                <label for="first-name">First Name</label>
+                <input
+                  type="text"
+                  id="first-name"
+                  formControlName="firstName"
+                  placeholder="Enter your first name"
+                  class="form-control rounded"
+                />
+                <div *ngIf="isFieldInvalid('firstName')">
+                  <div
+                    class="control-error small text-danger"
+                    *ngIf="getErrorMessage('firstName', 'required')"
+                  >
+                    First name is required.
+                  </div>
+                  <div
+                    class="control-error small text-danger"
+                    *ngIf="getErrorMessage('firstName', 'pattern')"
+                  >
+                    First name should contain only letters.
+                  </div>
+                </div>
+              </div>
+
+              <div class="control">
+                <label for="last-name">Last Name</label>
+                <input
+                  type="text"
+                  id="last-name"
+                  formControlName="lastName"
+                  placeholder="Enter your last name"
+                  class="form-control rounded"
+                />
+                <div *ngIf="isFieldInvalid('lastName')">
+                  <div
+                    class="control-error small text-danger"
+                    *ngIf="getErrorMessage('lastName', 'required')"
+                  >
+                    Last name is required.
+                  </div>
+                  <div
+                    class="control-error small text-danger"
+                    *ngIf="getErrorMessage('lastName', 'pattern')"
+                  >
+                    Last name should contain only letters.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="control-row">
+              <div class="control">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  formControlName="email"
+                  placeholder="Enter your email address"
+                  class="form-control rounded"
+                />
+                <div *ngIf="isFieldInvalid('email')">
+                  <div
+                    class="control-error small text-danger"
+                    *ngIf="getErrorMessage('email', 'required')"
+                  >
+                    Email is required.
+                  </div>
+                  <div
+                    class="control-error small text-danger"
+                    *ngIf="getErrorMessage('email', 'email')"
+                  >
+                    Please enter a valid email address.
+                  </div>
+                  <div class="control-error small text-danger" *ngIf="uniqueEmail">
+                    This email is already registered.
+                  </div>
+                </div>
+              </div>
+
+              <div class="control">
+                <label for="mobileNo">Mobile No</label>
+                <input
+                  type="tel"
+                  id="mobileNo"
+                  formControlName="mobileNo"
+                  placeholder="Enter your mobile number"
+                  class="form-control rounded"
+                />
+                <div *ngIf="isFieldInvalid('mobileNo')">
+                  <div
+                    class="control-error small text-danger"
+                    *ngIf="getErrorMessage('mobileNo', 'required')"
+                  >
+                    Mobile number is required.
+                  </div>
+                  <div
+                    class="control-error small text-danger"
+                    *ngIf="getErrorMessage('mobileNo', 'pattern')"
+                  >
+                    Please enter a valid 10-digit mobile number.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="control-row">
+              <div class="control">
+                <label for="password">Password</label>
+                <input
+                  type="password"
+                  id="password"
+                  formControlName="password"
+                  placeholder="Enter your password"
+                  class="form-control rounded"
+                />
+                <div *ngIf="isFieldInvalid('password')">
+                  <div
+                    class="control-error small text-danger"
+                    *ngIf="getErrorMessage('password', 'required')"
+                  >
+                    Password is required.
+                  </div>
+                  <div
+                    class="control-error small text-danger"
+                    *ngIf="getErrorMessage('password', 'minLength')"
+                  >
+                    Password must be at least 8 characters long.
+                  </div>
+                </div>
+              </div>
+
+              <div class="control">
+                <label for="confirm-password">Confirm Password</label>
+                <input
+                  type="password"
+                  id="confirm-password"
+                  formControlName="confirmPassword"
+                  placeholder="Re-enter your password"
+                  class="form-control rounded"
+                />
+                <div *ngIf="isFieldInvalid('confirmPassword')">
+                  <div
+                    class="control-error small text-danger"
+                    *ngIf="getErrorMessage('confirmPassword', 'required')"
+                  >
+                    Confirm password is required.
+                  </div>
+                  <div class="control-error small text-danger" *ngIf="isequal">
+                    Passwords do not match.
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="control-row">
+              <label for="terms-and-conditions">
+                <input
+                  type="checkbox"
+                  id="terms-and-conditions"
+                  formControlName="agree"
+                  class="form-check-input ms-1"
+                />
+                <span class="fw-bold ms-4"
+                  >I agree to the terms and conditions</span
+                >
+              </label>
+              <div *ngIf="isFieldInvalid('agree')">
+                <div
+                  class="control-error small text-danger"
+                  *ngIf="getErrorMessage('agree', 'required')"
+                >
+                  You must agree to the terms and conditions.
+                </div>
+              </div>
+            </div>
+
+            <div class="d-grid mt-3">
+              <div class="row">
+                <a class="btn btn-nxt w-25 ms-3" routerLink="">
+                  <i class="fas fa-arrow-left me-0"></i> Go Back
+                </a>
+                <button type="submit" class="btn btn-prev w-50 ms-auto">
+                  <i class="fas fa-user-plus"></i> Create Account
+                </button>
+              </div>
+            </div>
+          </form>
+  <div class="text-center mt-3">
+              Already have an account?
+              <a class="c2" routerLink="/login">Login</a>
+            </div>
+            <p class="mt-4 text-muted text-center">
+              By Signing up, you agree to our
+              <a  class="c2">Terms of Service</a>
+              and
+              <a class="c2">Privacy Policy</a>
+            </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
