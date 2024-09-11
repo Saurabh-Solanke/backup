@@ -1,0 +1,54 @@
+<app-navbar></app-navbar>
+<div class="container-fluid d-flex justify-content-center align-items-center min-vh-100">
+  <div class="card shadow p-4 rounded-4" style="max-width: 700px; width: 100%;">
+    <div class="card-body">
+      <h5 class="card-title text-center fs-3 mb-4 ">Exam Instructions</h5>
+      <div class="instructions mt-3">
+        <div class="d-flex align-items-start mb-3">
+          <i class="far fa-clock me-3 text-danger fs-5"></i>
+          <p class="mb-0">The exam duration is 30 minutes. Make sure to manage your time effectively.</p>
+        </div>
+        <div class="d-flex align-items-start mb-3">
+          <i class="fas fa-laptop me-3 text-danger fs-5"></i>
+          <p class="mb-0">You may only use your computer. No other electronic devices are allowed.</p>
+        </div>
+        <div class="d-flex align-items-start mb-3">
+          <i class="fas fa-ban me-3 text-danger fs-5"></i>
+          <p class="mb-0">Cheating will lead to disqualification. Ensure you work independently.</p>
+        </div>
+        <div class="d-flex align-items-start mb-3">
+          <i class="fas fa-wifi me-3 text-danger fs-5"></i>
+          <p class="mb-0">Ensure a stable internet connection to avoid disruptions during the exam.</p>
+        </div>
+        <div class="d-flex align-items-start mb-3">
+          <i class="fas fa-sync-alt me-3 text-danger fs-5"></i>
+          <p class="mb-0">Do not refresh or close your browser to prevent losing your progress.</p>
+        </div>
+        <div class="d-flex align-items-start mb-3">
+          <i class="fas fa-check me-3 text-danger fs-5"></i>
+          <p class="mb-0">Submit all answers before time expires to ensure they are recorded.</p>
+        </div>
+        <div class="d-flex align-items-start mb-3">
+          <i class="fas fa-save me-3 text-danger fs-5"></i>
+          <p class="mb-0">Your answers are saved automatically as you proceed through the exam.</p>
+        </div>
+        <div class="d-flex align-items-start mb-3">
+          <i class="fas fa-chart-line me-3 text-danger fs-5"></i>
+          <p class="mb-0">Results will be displayed immediately after the exam concludes.</p>
+        </div>
+      </div>
+      <div class="form-check mt-4">
+        <input type="checkbox" class="form-check-input" id="termsCheck" [(ngModel)]="termsAccepted">
+        <label class="form-check-label" for="termsCheck">I agree to the terms and conditions</label>
+      </div>
+      <div class="d-flex justify-content-between mt-4">
+        <button class="btn btn-nxt w-50" (click)="startExam()">
+          <i class="fas fa-pencil-alt me-2"></i> Start Exam
+        </button>
+        <button class="btn btn-prev w-25" routerLink="/user/choose-exam">
+          <i class="fas fa-arrow-left me-2"></i> Go Back
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

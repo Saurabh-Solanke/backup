@@ -1,0 +1,132 @@
+<app-navbar></app-navbar>
+
+<div class="container mt-5">
+    <!-- Button section for adding a new exam and navigating to admin section -->
+    <div class="d-flex justify-content-between mb-4">
+        <button class="btn btn-nxt" (click)="openModal()">
+            <i class="fas fa-plus"></i> Add New Exam
+        </button>
+        <button class="btn btn-prev" routerLink="/admin/create-exam-section">
+            <i class="fas fa-pencil-alt"></i> Add/Edit Section
+        </button>
+    </div>
+
+    <!-- Cards for displaying exams -->
+    <div class="row">
+        <div class="col-md-4 mb-4" *ngFor="let exam of exams">
+            <div class="card shadow-sm border-light">
+                <div class="card-body">
+                    <h5 class="card-title mb-3">{{ exam.title }}</h5>
+                    <p class="card-text mb-3">{{ exam.description }}</p>
+                    <ul class="list-unstyled mb-3">
+                        <li><strong>Start Date:</strong> {{ exam.startDate | date }}</li>
+                        <li><strong>End Date:</strong> {{ exam.endDate | date }}</li>
+                        <li><strong>Total Marks:</strong> {{ exam.totalMarks }}</li>
+                        <li><strong>Randomized:</strong> {{ exam.isRandmized ? 'Yes' : 'No' }}</li>
+                        <li><strong>Published:</strong> {{ exam.isPublished ? 'Yes' : 'No' }}</li>
+                    </ul>
+                    <div class="d-flex justify-content-between">
+                        <!-- Edit button -->
+                        <button class="btn btn-secondary" (click)="openModal(exam)">
+                            <i class="fas fa-pencil-alt"></i> Edit
+                        </button>
+                        <!-- Toggle status button -->
+                        <button class="btn {{ exam.isPublished ? 'btn-success' : 'btn-warning' }}"
+                            (click)="togglePublishedStatus(exam)">
+                            <i class="fas fa-check"></i> {{ exam.isPublished ? 'Exam is active' : 'Active Exam' }}
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Modal for adding/editing exams with overlay effect -->
+<div *ngIf="showModal" class="modal-backdrop">
+    <div class="modal show modal-fade" style="display: block;">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">{{ editMode ? 'Edit Exam' : 'Add Exam' }}</h5>
+                    <button type="button" class="btn-close" (click)="closeModal()"></button>
+                </div>
+                <div class="modal-body">
+                    <form [formGroup]="examForm" (ngSubmit)="onSubmit()">
+                        <div class="form-group mb-3">
+                            <label for="title">Title</label>
+                            <input id="title" class="form-control" formControlName="title" placeholder="Enter exam title" />
+                            <div *ngIf="examForm.get('title')?.invalid && examForm.get('title')?.touched" class="text-danger">
+                                Title is required
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="description">Description</label>
+                            <textarea id="description" class="form-control" formControlName="description" placeholder="Enter description"></textarea>
+                            <div *ngIf="examForm.get('description')?.invalid && examForm.get('description')?.touched" class="text-danger">
+                                Description is required
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="startDate">Start Date</label>
+                            <input id="startDate" class="form-control" formControlName="startDate" type="date" [min]="minDate" />
+                            <div *ngIf="examForm.get('startDate')?.invalid && examForm.get('startDate')?.touched" class="text-danger">
+                                Start Date is required
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="endDate">End Date</label>
+                            <input id="endDate" class="form-control" formControlName="endDate" type="date" [min]="minDate" />
+                            <div *ngIf="examForm.get('endDate')?.invalid && examForm.get('endDate')?.touched" class="text-danger">
+                                End Date is required
+                                <div *ngIf="examForm.get('endDate')?.value && examForm.get('endDate')?.value < examForm.get('startDate')?.value">
+                                    End Date cannot be before Start Date
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="duration">Duration (minutes)</label>
+                            <input id="duration" class="form-control" formControlName="duration" type="number" />
+                            <div *ngIf="examForm.get('duration')?.invalid && examForm.get('duration')?.touched" class="text-danger">
+                                Duration is required and cannot exceed 1440 minutes
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="totalMarks">Total Marks</label>
+                            <input id="totalMarks" class="form-control" formControlName="totalMarks" type="number" />
+                            <div *ngIf="examForm.get('totalMarks')?.invalid && examForm.get('totalMarks')?.touched" class="text-danger">
+                                Total Marks is required
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="passingMarks">Passing Marks</label>
+                            <input id="passingMarks" class="form-control" formControlName="passingMarks" type="number" />
+                            <div *ngIf="examForm.get('passingMarks')?.invalid && examForm.get('passingMarks')?.touched" class="text-danger">
+                                Passing Marks is required
+                                <div *ngIf="examForm.get('passingMarks')?.value > examForm.get('totalMarks')?.value">
+                                    Passing Marks cannot be greater than Total Marks
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label for="isRandmized">Randomized?</label>
+                            <input type="checkbox" id="isRandmized" formControlName="isRandmized" />
+                        </div>
+
+                        <button type="submit" class="btn btn-primary mt-3">{{ editMode ? 'Update Exam' : 'Create Exam' }}</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</div>
+

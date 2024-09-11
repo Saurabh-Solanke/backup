@@ -1,0 +1,54 @@
+<app-navbar></app-navbar>
+
+<div class="container mt-5">
+    <!-- Main Content Section with Card Grid -->
+    <div class="row g-4">
+
+        <!-- Card for Results -->
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="card text-center shadow-sm p-3" (click)="navigateTo('/admin/test-history-dash')" style="cursor: pointer;">
+                <div class="card-body">
+                    <i class="pi pi-chart-line" style="font-size: 3rem; color: #007bff;"></i>
+                    <h5 class="card-title mt-3">Results</h5>
+                    <p class="card-text text-muted">Manage exam results</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card for Exams -->
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="card text-center shadow-sm p-3" (click)="navigateTo('/admin/create-test')" style="cursor: pointer;">
+                <div class="card-body">
+                    <i class="pi pi-book" style="font-size: 3rem; color: #28a745;"></i>
+                    <h5 class="card-title mt-3">Exams</h5>
+                    <p class="card-text text-muted">Create and manage exams</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card for Test Sections -->
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="card text-center shadow-sm p-3" (click)="navigateTo('/admin/create-exam-section')" style="cursor: pointer;">
+                <div class="card-body">
+                    <i class="pi pi-list" style="font-size: 3rem; color: #ffc107;"></i>
+                    <h5 class="card-title mt-3">Test Sections</h5>
+                    <p class="card-text text-muted">Manage test sections</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card for Reports -->
+        <div class="col-12 col-sm-6 col-md-4">
+            <div class="card text-center shadow-sm p-3" (click)="navigateTo('/admin/reports')" style="cursor: pointer;">
+                <div class="card-body">
+                    <i class="pi pi-chart-bar" style="font-size: 3rem; color: #17a2b8;"></i>
+                    <h5 class="card-title mt-3">Reports</h5>
+                    <p class="card-text text-muted">View reports</p>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+</div>

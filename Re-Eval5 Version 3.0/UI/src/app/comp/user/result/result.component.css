@@ -1,0 +1,93 @@
+/* your-component.component.css */
+
+:root {
+  --color-primary: #4a154b;
+  --color-secondary: #df6404;
+  --color-success: #28a745;
+  --color-error: #dc3545;
+  --color-bg-light: #f9f9f9;
+  --color-bg-dark: #343a40;
+}
+
+.container {
+  background-color: var(--color-bg-light);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: var(--color-primary);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.success-message {
+  background-color: var(--color-success);
+  color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.error-message {
+  background-color: var(--color-error);
+  color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.exam-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.detail-card {
+  background-color: var(--color-bg-light);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.section-results h4 {
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.p-table {
+  border-radius: 8px;
+  background-color: var(--color-bg-light);
+}
+
+.p-datatable-striped .p-datatable-tbody > tr:nth-child(odd) {
+  background-color: #f2f2f2;
+}
+
+.p-datatable-thead > tr > th {
+  background-color: var(--color-primary);
+  color: #fff;
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: var(--color-secondary);
+  border: none;
+  color: #fff;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.btn-primary:hover {
+  background-color: darken(var(--color-secondary), 10%);
+}
+
+.fas.fa-home {
+  margin-right: 0.5rem;
+}

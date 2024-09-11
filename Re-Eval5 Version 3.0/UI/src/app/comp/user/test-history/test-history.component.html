@@ -1,0 +1,72 @@
+<app-navbar></app-navbar>
+
+<div class="container-fluid mt-5">
+  <div class="row">
+    <main class="col-md-12">
+      <div class="content-container mt-4">
+        <h2 class="text-center mb-4">Your Exam Results</h2>
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div class="form-group">
+            <input type="text" class="form-control" [(ngModel)]="searchTerm" (input)="search()" placeholder="Search exam results">
+          </div>
+
+       
+        </div>
+
+        <div *ngIf="isLoading" class="text-center mb-4">
+          <p-progressSpinner></p-progressSpinner>
+        </div>
+
+        <div *ngIf="errorMessage" class="alert alert-danger">
+          {{ errorMessage }}
+        </div>
+
+        <div *ngIf="paginatedResults.length > 0" class="table-responsive">
+          <table class="table table-striped table-bordered">
+            <thead class="thead-dark">
+              <tr>
+                <th (click)="sortResults('examName')">Exam Name</th>
+                <th (click)="sortResults('totalScore')">Score</th>
+                <th (click)="sortResults('percentage')">Percentage</th>
+                <th>Passed</th>
+                <th (click)="sortResults('duration')">Duration (minutes)</th>
+                <th (click)="sortResults('completedDate')">Completed On</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let result of paginatedResults">
+                <td>{{ result.examName }}</td>
+                <td>{{ result.totalScore }}</td>
+                <td>{{ result.percentage }}%</td>
+                <td>
+                  <p-tag [value]="result.passed ? 'Yes' : 'No'" [severity]="result.passed ? 'success' : 'danger'"></p-tag>
+                </td>
+                <td>{{ result.duration }}</td>
+                <td>{{ result.completedDate | date: 'short' }}</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <!-- Pagination Controls -->
+          <nav aria-label="Page navigation">
+            <ul class="pagination">
+              <li class="page-item" [class.disabled]="currentPage === 1">
+                <a class="page-link" (click)="changePage(-1)">Previous</a>
+              </li>
+              <li class="page-item" [class.disabled]="currentPage * pageSize >= filteredResults.length">
+                <a class="page-link" (click)="changePage(1)">Next</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div *ngIf="!isLoading && examResults.length === 0" class="text-center mt-4">
+          <p-message severity="info" text="No exam results found."></p-message>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<app-footer></app-footer>

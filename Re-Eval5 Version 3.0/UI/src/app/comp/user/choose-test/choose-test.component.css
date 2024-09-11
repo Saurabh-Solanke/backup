@@ -1,0 +1,44 @@
+/* your-component.component.css */
+
+:root {
+  --color-primary: #4a154b;
+  --color-secondary: #df6404;
+}
+
+.p-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.p-card-header {
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: 8px 8px 0 0;
+}
+
+.p-card-footer {
+  background: #f1f1f1;
+  border-radius: 0 0 8px 8px;
+}
+
+.card-content {
+  padding: 1rem;
+  background-color: #f9f9f9;
+  border-radius: 0 0 8px 8px;
+}
+
+.p-button-success {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+
+.p-button-success:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: white;
+}
+
+.p-button-success:focus {
+  box-shadow: 0 0 0 0.2rem rgba(223, 100, 4, 0.5);
+}

@@ -1,0 +1,65 @@
+<app-navbar></app-navbar>
+
+<div class="container mt-4">
+  <h2 class="text-center ">Exam Result</h2>
+  <div class="d-flex-block text-center my-3">
+    <!-- PrimeNG button to go to home with logo -->
+    <a class="btn" aria-current="page" href="/user/home">
+      <i class="fas fa-home"></i>
+      <span class="menu-text">Exit to Home</span>
+    </a>
+  </div>
+  <!-- Overall Result -->
+  <div class="text-center mb-4">
+    <p-message *ngIf="passed" class="success" text="✅ Congratulations! You Passed!"></p-message>
+    <p-message *ngIf="!passed" class="error" text="❌ Unfortunately, You Failed."></p-message>
+  </div>
+
+  <!-- Exam Details -->
+  <div class="exam-details mb-4 p-grid p-align-center p-justify-center">
+    <div class="p-col-12 p-md-6 p-lg-3">
+      <p><strong>Attempt Number:</strong> {{ examResult.attemptNumber }}</p>
+    </div>
+    <div class="p-col-12 p-md-6 p-lg-3">
+      <p><strong>Total Score:</strong> {{ examResult.totalScore }}</p>
+    </div>
+    <div class="p-col-12 p-md-6 p-lg-3">
+      <p><strong>Percentage:</strong> {{ examResult.percentage | number:'1.2-2' }}%</p>
+    </div>
+    <div class="p-col-12 p-md-6 p-lg-3">
+      <p><strong>Duration:</strong> {{ examResult.duration }} minutes</p>
+    </div>
+  </div>
+
+  <!-- Section-wise Results -->
+  <div class="section-results mt-4">
+    <h4>Section-wise Results</h4>
+    <p-table [value]="examResult.sectionResults" class="p-datatable-striped" [paginator]="true" [rows]="5" responsiveLayout="scroll">
+      <ng-template pTemplate="header">
+        <tr>
+          <th>#</th>
+          <th>Section ID</th>
+          <th>Attempted Questions</th>
+          <th>Correct Answers</th>
+          <th>Score</th>
+          <th>Status</th>
+        </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-section let-i="rowIndex">
+        <tr>
+          <td>{{ i + 1 }}</td>
+          <td>{{ section.sectionId }}</td>
+          <td>{{ section.attemptedQuestions }}</td>
+          <td>{{ section.correctAnswers }}</td>
+          <td>{{ section.sectionScore }}</td>
+          <td>
+            <p-tag [value]="section.isPassed ? '✅ Pass' : '❌ Fail'" [severity]="section.isPassed ? 'success' : 'danger'"></p-tag>
+          </td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,237 @@
+<app-navbar></app-navbar>
+
+<div class="d-flex flex-column flex-md-row mt-3">
+
+
+  <!-- Main Content -->
+   
+  <main class="col-md-12 ms-sm-auto ">
+    <h1>Create Sections</h1> 
+    <div class="container mt-5">
+      <!-- Dropdown to select an exam -->
+      <div class="form-group">
+        <label for="exam">Select an exam from existing exams:</label>
+        <select class="form-control select-exam" id="exam" (change)="onSelectExam($event)"
+          [formControl]="examFormControl">
+          <option value="" disabled selected>Please select exam</option>
+          <option *ngFor="let exam of exams" [value]="exam.examId">{{ exam.title }}</option>
+        </select>
+      </div>
+
+      <!-- Add Section Form -->
+      <div *ngIf="selectedExamId">
+        <p-card class="mt-5">
+          <ng-template pTemplate="header">
+            <div class="p-card-title p-3">Add New Section</div>
+          </ng-template>
+
+          <form [formGroup]="sectionForm" (ngSubmit)="addSection()">
+            <div class="p-fluid p-grid">
+              <div class="p-field p-col-12 p-3">
+                <label for="sectionTitle">Section Title</label> &nbsp;
+                <input id="sectionTitle" pInputText formControlName="title" placeholder="Enter section title" />
+              </div>
+              <div class="p-field p-col-12 p-md-6  p-3">
+                <label for="numberOfQuestions">Number of Questions</label>&nbsp;
+                <input id="numberOfQuestions" pInputText formControlName="numberOfQuestions" type="number" />
+              </div>
+              <div class="p-field p-col-12 p-md-6  p-3">
+                <label for="totalMarks">Total Marks</label>&nbsp;
+                <input id="totalMarks" pInputText formControlName="totalMarks" type="number" />
+              </div>
+              <div class="p-field p-col-12 p-md-6  p-3">
+                <label for="passingMarks">Passing Marks</label>&nbsp;
+                <input id="passingMarks" pInputText formControlName="passingMarks" type="number" />
+              </div>
+              <div class="p-field p-col-12 p-md-6  p-3">
+                <label for="weightage">Section Weightage %</label> &nbsp;
+                <p-inputNumber formControlName="weightage" [min]="1" [max]="100" [showButtons]="true"></p-inputNumber>
+                <div *ngIf="sectionForm.get('weightage')?.invalid && sectionForm.get('weightage')?.touched"
+                  class="text-danger">
+                  Weightage must be between 1 and 100.
+                </div>
+              </div>
+            </div>
+            <button pButton type="submit" label="Add Section" icon="pi pi-check" class="p-button-danger mt-3"></button>
+          </form>
+        </p-card>
+      </div>
+
+      <!-- Display Sections -->
+      <div *ngFor="let section of sections" class="mt-4">
+        <div class="card shadow-sm">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <h5 class="mb-0">{{ section.title }}</h5>
+            <div>
+              <button class="btn  btn-link btn-my " (click)="toggleSection(section.sectionId)">
+                {{ isSectionExpanded(section.sectionId) ? 'Collapse' : 'Expand' }}
+              </button>
+              <button class="btn btn-warning btn-my" (click)="openEditPopup(section)">
+                <i class="fas fa-edit"></i> Edit
+              </button>
+              <button class="btn btn-danger btn-my" (click)="removeSection(section.sectionId)">
+                <i class="fas fa-trash"></i> Delete
+              </button>
+            </div>
+          </div>
+
+          <div *ngIf="isSectionExpanded(section.sectionId)" class="card-body">
+            <h6>Questions:</h6>
+            <div *ngFor="let question of section.questions" class="mt-3">
+              <div class="d-flex justify-content-between align-items-center">
+                <p>{{ question.questionText }}</p>
+                <div>
+                  <button class="btn btn-link btn-my " (click)="toggleQuestion(question.questionId)">
+                    {{ isQuestionExpanded(question.questionId) ? 'Collapse' : 'Expand' }}
+                  </button>
+                  <button class="btn btn-danger btn-my" (click)="removeQuestion(section, question.questionId)">
+                    <i class="fas fa-trash"></i> Remove Question
+                  </button>
+                </div>
+              </div>
+
+              <div *ngIf="isQuestionExpanded(question.questionId)">
+                <h6>Options:</h6>
+                <ul class="list-group">
+                  <li *ngFor="let option of question.options"
+                    class="list-group-item d-flex justify-content-between align-items-center">
+                    {{ option.optionText }} ({{ option.isCorrect ? 'Correct' : 'Incorrect' }}) [ Marks: {{ option.marks
+                    }} ]
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Add New Question Form -->
+            <div class="card mt-3">
+              <div class="card-header">
+                <h5 class="mb-0">Add New Question</h5>
+              </div>
+              <div class="card-body">
+                <form [formGroup]="questionForm">
+                  <div class="form-group">
+                    <label for="questionText">Question Text</label>
+                    <input id="questionText" class="form-control" formControlName="questionText"
+                      placeholder="Enter question text" />
+                  </div>
+
+                  <!-- Radio buttons for media inclusion -->
+                  <div class="form-group mt-3">
+                    <label>Include Image/Video:</label>
+                    <div class="form-check">
+                      <input type="radio" id="includeMediaYes" class="form-check-input" value="1"
+                        formControlName="includeMedia" />
+                      <label for="includeMediaYes" class="form-check-label">Yes</label>
+                    </div>
+                    <div class="form-check">
+                      <input type="radio" id="includeMediaNo" class="form-check-input" value="0"
+                        formControlName="includeMedia" />
+                      <label for="includeMediaNo" class="form-check-label">No</label>
+                    </div>
+                  </div>
+
+                  <!-- Conditionally show media type dropdown and URL input if "Yes" is selected -->
+                  <div *ngIf="questionForm.get('includeMedia')?.value === '1'" class="form-group mt-3">
+                    <label for="mediaType">Select Media Type:</label>
+                    <select id="mediaType" class="form-control" formControlName="mediaType">
+                      <option value="" disabled>Select type</option>
+                      <option value="1">Image</option>
+                      <option value="2">Video</option>
+                    </select>
+                  </div>
+
+                  <div *ngIf="questionForm.get('includeMedia')?.value === '1'" class="form-group mt-3">
+                    <label for="mediaUrl">Media URL:</label>
+                    <input id="mediaUrl" class="form-control" formControlName="mediaUrl"
+                      placeholder="Enter media URL" />
+                  </div>
+
+                  <!-- Add Option Form -->
+                  <h6 class="mt-4">Add Options:</h6>
+                  <form [formGroup]="optionForm" (ngSubmit)="addOption()">
+                    <div class="form-group">
+                      <label for="optionText">Option Text</label>
+                      <input id="optionText" class="form-control" formControlName="optionText"
+                        placeholder="Enter option text" />
+                    </div>
+                    <div class="form-group">
+                      <label for="isCorrect">Is Correct?</label>
+                      <input id="isCorrect" type="checkbox" formControlName="isCorrect" />
+                    </div>
+                    <div class="form-group">
+                      <label for="marks">Marks for this Option</label> <!-- New Marks field -->
+                      <input id="marks" class="form-control" type="number" formControlName="marks"
+                        placeholder="Default marks is 0" />
+                    </div>
+                    <button type="submit" class="btn btn-secondary mt-3">
+                      <i class="fas fa-plus"></i> Add Option
+                    </button>
+                  </form>
+
+                  <!-- Display Options for New Question -->
+                  <ul class="list-group mt-3">
+                    <li *ngFor="let option of newQuestionOptions"
+                      class="list-group-item d-flex justify-content-between align-items-center">
+                      {{ option.optionText }} ({{ option.isCorrect ? 'Correct' : 'Incorrect' }})
+                      <button class="btn btn-danger btn-sm" (click)="removeNewOption(option.optionText)">
+                        <i class="fas fa-times"></i> Remove Option
+                      </button>
+                    </li>
+                  </ul>
+
+                  <!-- Save Question Button (only enabled if there are options added) -->
+                  <button class="btn btn-primary mt-3" [disabled]="newQuestionOptions.length === 0"
+                    (click)="saveQuestion(section)">
+                    <i class="fas fa-save"></i> Save Question
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Edit Section Popup -->
+      <div *ngIf="isEditMode" class="popup-overlay">
+        <div class="popup">
+          <div class="popup-header">
+            <h5>Edit Section</h5>
+            <button class="btn btn-secondary" (click)="closeEditPopup()">Close</button>
+          </div>
+          <div class="popup-body">
+            <form [formGroup]="editSectionForm" (ngSubmit)="saveEditedSection()">
+              <div class="form-group">
+                <label for="sectionTitle">Section Title</label>
+                <input id="sectionTitle" class="form-control" formControlName="title"
+                  placeholder="Enter section title" />
+              </div>
+              <div class="form-group">
+                <label for="numberOfQuestions">Number of Questions</label>
+                <input id="numberOfQuestions" class="form-control" formControlName="numberOfQuestions" type="number" />
+              </div>
+              <div class="form-group">
+                <label for="totalMarks">Total Marks</label>
+                <input id="totalMarks" class="form-control" formControlName="totalMarks" type="number" />
+              </div>
+              <div class="form-group">
+                <label for="passingMarks">Passing Marks</label>
+                <input id="passingMarks" class="form-control" formControlName="passingMarks" type="number" />
+              </div>
+              <div class="form-group">
+                <label for="weightage">Section Weightage %</label>
+                <input id="weightage" class="form-control" formControlName="weightage" type="number"
+                  placeholder="Enter section weightage (1-100)" min="1" max="100" />
+                <div *ngIf="sectionForm.get('weightage')?.invalid && sectionForm.get('weightage')?.touched"
+                  class="text-danger">
+                  Weightage must be between 1 and 100.
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block mt-3">Save Changes</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+</div>

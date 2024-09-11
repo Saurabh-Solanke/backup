@@ -1,0 +1,37 @@
+<app-navbar></app-navbar>
+
+
+<div class="d-flex flex-column flex-md-row mt-5">
+
+
+  <!-- Exam Cards -->
+
+  <div class="container mt-4">
+
+    <!-- Show a message if no exams are available -->
+    <div *ngIf="exams.length === 0" class="text-center">
+      <p>Hooray! No exams for now. Comeback later</p>
+    </div>
+
+    <!-- Display exams -->
+    <div class="row">
+      <div class="col-md-4 mb-4" *ngFor="let exam of exams">
+        <p-card header="{{ exam.title }}"
+          subheader="{{ exam.startDate | date:'short' }} to {{ exam.endDate | date:'short' }}" styleClass="shadow-sm">
+          <div class="card-content">
+            <p>{{ exam.description }}</p>
+          </div>
+          <p-footer>
+            <button pButton type="button" label="Start Exam" icon="pi pi-play" class="p-button-success"
+              (click)="startExam(exam.examId)"></button>
+          </p-footer>
+        </p-card>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<app-footer></app-footer>
